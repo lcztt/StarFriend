@@ -12,7 +12,8 @@ target 'StarFriend' do
   pod 'RxGRDB/SQLCipher'
   pod 'SnapKit'
   pod 'SwiftyStoreKit' # 内购
-  pod "PromiseKit"
+  pod 'PromiseKit'
+  pod 'Kingfisher'
 
 #  pod 'Alamofire' # 网络
   pod 'Toast-Swift', '~> 5.0.1'

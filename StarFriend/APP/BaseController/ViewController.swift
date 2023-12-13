@@ -61,7 +61,7 @@ class ViewController: UIViewController {
     }
     
     private func addStar() {
-        for _ in 0..<100 {
+        for _ in 0..<50 {
             // 创建小星星
             let starView = UIView()
             let starViewX = CGFloat(arc4random_uniform(UInt32(view.bounds.width)))
@@ -76,23 +76,7 @@ class ViewController: UIViewController {
             starView.layer.cornerRadius = starViewWH * 0.5
             view.addSubview(starView)
             
-            // 小星星闪烁动画
-            let delayTime = TimeInterval(arc4random_uniform(10)) / 10.0 + 0.5
-            let duration = TimeInterval(arc4random_uniform(2) + 1)
-            let toValue = Float(arc4random_uniform(6)) / 10.0
-            
-            let starOpacityAnim = CABasicAnimation(keyPath: "opacity")
-            starOpacityAnim.fromValue = 1.0
-            starOpacityAnim.toValue = toValue
-            starOpacityAnim.duration = duration
-            starOpacityAnim.beginTime = CACurrentMediaTime() + delayTime
-            starOpacityAnim.autoreverses = true
-            starOpacityAnim.repeatCount = .greatestFiniteMagnitude
-            starOpacityAnim.isRemovedOnCompletion = false
-            starOpacityAnim.fillMode = .forwards
-            starOpacityAnim.timingFunction = CAMediaTimingFunction(name: .easeInEaseOut)
-            
-            starView.layer.add(starOpacityAnim, forKey: nil)
+//            starView.addStarBulinAnimation()
         }
     }
 }

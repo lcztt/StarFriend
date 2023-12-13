@@ -28,23 +28,15 @@ protocol RadarViewDataSource: AnyObject {
     func numberOfTargetInRadarView(_ view: RadarView) -> Int
     
     // 自定义目标点视图
-    func radarView(_ view: RadarView, targetViewFor index: Int) -> UIView
+    func radarView(_ view: RadarView, targetViewFor index: Int) -> RadarTargetView
     
     // 目标点所在位置
     func radarView(_ view: RadarView, targetPositionFor index: Int) -> CGPoint
 }
 
-// 代理
-protocol RadarViewDelegate: AnyObject {
-    
-    // 点击事件
-    func radarView(_ view: RadarView, didSelectTargetAt index: Int)
-}
-
-class RadarView: UIView, RadarTargetViewDelegate {
+class RadarView: UIView {
     
     weak var dataSource: RadarViewDataSource? = nil
-    weak var delegate: RadarViewDelegate? = nil
     
     var radius: CGFloat = RADAR_DEFAULT_RADIUS // 半径
     var startColor: UIColor = INDICATOR_START_COLOR //渐变开始颜色
@@ -52,7 +44,7 @@ class RadarView: UIView, RadarTargetViewDelegate {
     var indicatorAngle: CGFloat = INDICATOR_ANGLE //指针渐变角度
     var isClockwise: Bool = INDICATOR_CLOCKWISE //是否顺时针
 //    var backgroundImage: UIImage? //背景图片
-    var tipLabel: ShimmerLabel = ShimmerLabel(frame: .zero) //提示标签
+    var tipLabel: UILabel = UILabel(frame: .zero) //提示标签
     var tips: String = "" { //提示文字
         didSet {
             tipLabel.text = tips
@@ -86,12 +78,6 @@ class RadarView: UIView, RadarTargetViewDelegate {
         tipLabel.frame = CGRect(x: 0, y: center.y + radius, width: bounds.size.width, height: 30)
         addSubview(tipLabel)
         
-        tipLabel.shimmerType = .autoReverse
-        tipLabel.shimmerWidth = 20  // 高亮的宽度
-        tipLabel.shimmerRadius = 20 // 阴影的宽度
-        tipLabel.shimmerColor = UIColor.yellow   // 高亮颜色
-        tipLabel.startShimmer()
-        
         targetContentView.frame = bounds
         addSubview(targetContentView)
     }
@@ -112,11 +98,6 @@ class RadarView: UIView, RadarTargetViewDelegate {
         guard let context = UIGraphicsGetCurrentContext() else {
             return
         }
-        
-        /*背景图片*/
-//        if let backgroundImage = backgroundImage {
-//            backgroundImage.draw(in: bounds)
-//        }
         
         var sectionsNum = RADAR_DEFAULT_SECTIONS_NUM
         if let value = dataSource?.numberOfCirclesInRadarView(self) {
@@ -174,44 +155,38 @@ class RadarView: UIView, RadarTargetViewDelegate {
                 let posDirection = Int(position.x)  // 方向(角度)
                 let posDistance = Int(position.y)  // 距离(半径)
                 
-                let customView = dataSource.radarView(self, targetViewFor: index)
-                let pointView = RadarTargetView(frame: .zero)
-                pointView.addSubview(customView)
-                pointView.tag = index
-                pointView.frame = customView.frame
-                pointView.center = CGPoint(x: self.center.x + CGFloat(posDistance) * sin(DEGREES_TO_RADIANS(posDirection)),
+                let targetView = dataSource.radarView(self, targetViewFor: index)
+                
+                targetView.center = CGPoint(x: self.center.x + CGFloat(posDistance) * sin(DEGREES_TO_RADIANS(posDirection)),
                                            y: self.center.y + CGFloat(posDistance) * cos(DEGREES_TO_RADIANS(posDirection)))
                 
-                pointView.delegate = self
-                
                 // 动画
-                pointView.alpha = 0.0
-                let fromTransform = CGAffineTransform(scaleX: 0.1, y: 0.1)
-                pointView.transform = fromTransform
+                targetView.alpha = 0.0
+                let fromTransform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+                targetView.transform = fromTransform
                 
-                let toTransform = pointView.transform.inverted()
+                let toTransform = targetView.transform.inverted()
                 
                 let delayInSeconds = 0.05 * Double(index)
                 let popTime = DispatchTime.now() + delayInSeconds
                 DispatchQueue.main.asyncAfter(deadline: popTime) {
                     UIView.animate(withDuration: 0.3) {
-                        pointView.alpha = 1.0
-                        pointView.transform = toTransform
+                        targetView.alpha = 1.0
+                        targetView.transform = toTransform
+                    } completion: { _ in
+                        targetView.addAvatarBulinAnimation()
                     }
                 }
                 
-                self.targetContentView.addSubview(pointView)
+                self.targetContentView.addSubview(targetView)
             }
         }
     }
     
     //隐藏目标
     func hideTarget() {
-        
-    }
-    
-    // RadarTargetViewDelegate
-    func didSelectRadarTarget(_ target: RadarTargetView) {
-        delegate?.radarView(self, didSelectTargetAt: target.tag)
+        for subview in targetContentView.subviews {
+            subview.isHidden = true
+        }
     }
 }

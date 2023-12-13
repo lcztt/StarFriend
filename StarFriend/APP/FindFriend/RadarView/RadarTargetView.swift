@@ -13,14 +13,33 @@ protocol RadarTargetViewDelegate: AnyObject {
     func didSelectRadarTarget(_ target: RadarTargetView)
 }
 
-class RadarTargetView: UIView {
+class RadarTargetView: UIImageView {
     weak var delegate: RadarTargetViewDelegate? = nil
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            if touch.tapCount == 1 {
-                delegate?.didSelectRadarTarget(self)
-            }
-        }
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        commonInit()
+    }
+    
+    override init(image: UIImage?) {
+        super.init(image: image)
+        
+        commonInit()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func commonInit() {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapHandler(_:)))
+        addGestureRecognizer(tap)
+        isUserInteractionEnabled = true
+        contentMode = .scaleAspectFill
+    }
+    
+    @objc func tapHandler(_ tap: UITapGestureRecognizer) {
+        delegate?.didSelectRadarTarget(self)
     }
 }

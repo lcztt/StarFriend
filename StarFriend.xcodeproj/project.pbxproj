@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0B5249E62D9C0BA300127E9C /* Pods_StarFriend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64DA2EA4824AFD16BB8B1F75 /* Pods_StarFriend.framework */; };
+		43297B362B2A165400A538D0 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43297B352B2A165400A538D0 /* UIView+Extension.swift */; };
+		43297B392B2A166B00A538D0 /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43297B372B2A166B00A538D0 /* UserItem.swift */; };
+		43297B3A2B2A166B00A538D0 /* UserHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43297B382B2A166B00A538D0 /* UserHomeViewController.swift */; };
+		43297B3C2B2A168200A538D0 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43297B3B2B2A168200A538D0 /* UIColor+Extension.swift */; };
+		43297B3E2B2A174200A538D0 /* RadarTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43297B3D2B2A174200A538D0 /* RadarTargetView.swift */; };
+		43297B402B2A17CE00A538D0 /* FindFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43297B3F2B2A17CE00A538D0 /* FindFriendViewController.swift */; };
+		43297B422B2A17F900A538D0 /* RadarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43297B412B2A17F900A538D0 /* RadarView.swift */; };
 		4353A4FF2B29B3A5006C7CC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A4FE2B29B3A5006C7CC4 /* AppDelegate.swift */; };
 		4353A5012B29B3A5006C7CC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A5002B29B3A5006C7CC4 /* SceneDelegate.swift */; };
 		4353A5082B29B3A5006C7CC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4353A5072B29B3A5006C7CC4 /* Assets.xcassets */; };
@@ -17,12 +24,7 @@
 		4353A53B2B29B57C006C7CC4 /* UIImagePickerController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A5182B29B57C006C7CC4 /* UIImagePickerController+Rx.swift */; };
 		4353A53C2B29B57C006C7CC4 /* RxImagePickerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A5192B29B57C006C7CC4 /* RxImagePickerDelegateProxy.swift */; };
 		4353A53D2B29B57C006C7CC4 /* RadarIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A51C2B29B57C006C7CC4 /* RadarIndicatorView.swift */; };
-		4353A53E2B29B57C006C7CC4 /* RadarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A51D2B29B57C006C7CC4 /* RadarView.swift */; };
-		4353A53F2B29B57C006C7CC4 /* RadarTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A51E2B29B57C006C7CC4 /* RadarTargetView.swift */; };
-		4353A5402B29B57C006C7CC4 /* ShimmerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A51F2B29B57C006C7CC4 /* ShimmerLabel.swift */; };
-		4353A5412B29B57C006C7CC4 /* FindFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A5202B29B57C006C7CC4 /* FindFriendViewController.swift */; };
 		4353A5422B29B57C006C7CC4 /* Feedbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A5222B29B57C006C7CC4 /* Feedbacks.swift */; };
-		4353A5432B29B57C006C7CC4 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A5232B29B57C006C7CC4 /* UIColor.swift */; };
 		4353A5442B29B57C006C7CC4 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A5242B29B57C006C7CC4 /* UIViewController+Extension.swift */; };
 		4353A5452B29B57C006C7CC4 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A5252B29B57C006C7CC4 /* Observable+Extensions.swift */; };
 		4353A5462B29B57C006C7CC4 /* UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A5262B29B57C006C7CC4 /* UIScreen.swift */; };
@@ -44,6 +46,13 @@
 
 /* Begin PBXFileReference section */
 		3821741135C545AF73DB5E6E /* Pods-StarFriend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarFriend.release.xcconfig"; path = "Target Support Files/Pods-StarFriend/Pods-StarFriend.release.xcconfig"; sourceTree = "<group>"; };
+		43297B352B2A165400A538D0 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		43297B372B2A166B00A538D0 /* UserItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
+		43297B382B2A166B00A538D0 /* UserHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHomeViewController.swift; sourceTree = "<group>"; };
+		43297B3B2B2A168200A538D0 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		43297B3D2B2A174200A538D0 /* RadarTargetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarTargetView.swift; sourceTree = "<group>"; };
+		43297B3F2B2A17CE00A538D0 /* FindFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindFriendViewController.swift; sourceTree = "<group>"; };
+		43297B412B2A17F900A538D0 /* RadarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarView.swift; sourceTree = "<group>"; };
 		4353A4FB2B29B3A5006C7CC4 /* StarFriend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarFriend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4353A4FE2B29B3A5006C7CC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4353A5002B29B3A5006C7CC4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,12 +64,7 @@
 		4353A5182B29B57C006C7CC4 /* UIImagePickerController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+Rx.swift"; sourceTree = "<group>"; };
 		4353A5192B29B57C006C7CC4 /* RxImagePickerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxImagePickerDelegateProxy.swift; sourceTree = "<group>"; };
 		4353A51C2B29B57C006C7CC4 /* RadarIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarIndicatorView.swift; sourceTree = "<group>"; };
-		4353A51D2B29B57C006C7CC4 /* RadarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarView.swift; sourceTree = "<group>"; };
-		4353A51E2B29B57C006C7CC4 /* RadarTargetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarTargetView.swift; sourceTree = "<group>"; };
-		4353A51F2B29B57C006C7CC4 /* ShimmerLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShimmerLabel.swift; sourceTree = "<group>"; };
-		4353A5202B29B57C006C7CC4 /* FindFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindFriendViewController.swift; sourceTree = "<group>"; };
 		4353A5222B29B57C006C7CC4 /* Feedbacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feedbacks.swift; sourceTree = "<group>"; };
-		4353A5232B29B57C006C7CC4 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		4353A5242B29B57C006C7CC4 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		4353A5252B29B57C006C7CC4 /* Observable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
 		4353A5262B29B57C006C7CC4 /* UIScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScreen.swift; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				4353A5542B29B5B4006C7CC4 /* TabViewController.swift */,
+				43297B382B2A166B00A538D0 /* UserHomeViewController.swift */,
+				43297B372B2A166B00A538D0 /* UserItem.swift */,
 				4353A5132B29B57C006C7CC4 /* BaseController */,
 				4353A5322B29B57C006C7CC4 /* Chat */,
 				4353A51A2B29B57C006C7CC4 /* FindFriend */,
@@ -136,7 +142,6 @@
 				4353A52D2B29B57C006C7CC4 /* IAP */,
 				4353A5162B29B57C006C7CC4 /* Report */,
 				4353A5212B29B57C006C7CC4 /* Utils */,
-				4353A5312B29B57C006C7CC4 /* Welcome */,
 			);
 			path = APP;
 			sourceTree = "<group>";
@@ -162,8 +167,8 @@
 		4353A51A2B29B57C006C7CC4 /* FindFriend */ = {
 			isa = PBXGroup;
 			children = (
+				43297B3F2B2A17CE00A538D0 /* FindFriendViewController.swift */,
 				4353A51B2B29B57C006C7CC4 /* RadarView */,
-				4353A5202B29B57C006C7CC4 /* FindFriendViewController.swift */,
 			);
 			path = FindFriend;
 			sourceTree = "<group>";
@@ -172,9 +177,8 @@
 			isa = PBXGroup;
 			children = (
 				4353A51C2B29B57C006C7CC4 /* RadarIndicatorView.swift */,
-				4353A51D2B29B57C006C7CC4 /* RadarView.swift */,
-				4353A51E2B29B57C006C7CC4 /* RadarTargetView.swift */,
-				4353A51F2B29B57C006C7CC4 /* ShimmerLabel.swift */,
+				43297B412B2A17F900A538D0 /* RadarView.swift */,
+				43297B3D2B2A174200A538D0 /* RadarTargetView.swift */,
 			);
 			path = RadarView;
 			sourceTree = "<group>";
@@ -183,8 +187,9 @@
 			isa = PBXGroup;
 			children = (
 				4353A5222B29B57C006C7CC4 /* Feedbacks.swift */,
-				4353A5232B29B57C006C7CC4 /* UIColor.swift */,
+				43297B3B2B2A168200A538D0 /* UIColor+Extension.swift */,
 				4353A5242B29B57C006C7CC4 /* UIViewController+Extension.swift */,
+				43297B352B2A165400A538D0 /* UIView+Extension.swift */,
 				4353A5252B29B57C006C7CC4 /* Observable+Extensions.swift */,
 				4353A5262B29B57C006C7CC4 /* UIScreen.swift */,
 			);
@@ -211,13 +216,6 @@
 				4353A5302B29B57C006C7CC4 /* StoreViewController.swift */,
 			);
 			path = IAP;
-			sourceTree = "<group>";
-		};
-		4353A5312B29B57C006C7CC4 /* Welcome */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Welcome;
 			sourceTree = "<group>";
 		};
 		4353A5322B29B57C006C7CC4 /* Chat */ = {
@@ -366,13 +364,11 @@
 				4353A54C2B29B57C006C7CC4 /* IAPManager.swift in Sources */,
 				4353A54A2B29B57C006C7CC4 /* NumberCell.swift in Sources */,
 				4353A5442B29B57C006C7CC4 /* UIViewController+Extension.swift in Sources */,
-				4353A53F2B29B57C006C7CC4 /* RadarTargetView.swift in Sources */,
-				4353A5402B29B57C006C7CC4 /* ShimmerLabel.swift in Sources */,
+				43297B3C2B2A168200A538D0 /* UIColor+Extension.swift in Sources */,
 				4353A54E2B29B57C006C7CC4 /* StoreViewController.swift in Sources */,
 				4353A53D2B29B57C006C7CC4 /* RadarIndicatorView.swift in Sources */,
 				4353A5552B29B5B4006C7CC4 /* TabViewController.swift in Sources */,
 				4353A5532B29B57C006C7CC4 /* ChatMessageCell.swift in Sources */,
-				4353A5432B29B57C006C7CC4 /* UIColor.swift in Sources */,
 				4353A5482B29B57C006C7CC4 /* Randomizer.swift in Sources */,
 				4353A5472B29B57C006C7CC4 /* PseudoRandomGenerator.swift in Sources */,
 				4353A4FF2B29B3A5006C7CC4 /* AppDelegate.swift in Sources */,
@@ -380,16 +376,20 @@
 				4353A5512B29B57C006C7CC4 /* SendMessageViewController.swift in Sources */,
 				4353A53A2B29B57C006C7CC4 /* ReportUserController.swift in Sources */,
 				4353A5492B29B57C006C7CC4 /* NumberSectionView.swift in Sources */,
-				4353A5412B29B57C006C7CC4 /* FindFriendViewController.swift in Sources */,
+				43297B422B2A17F900A538D0 /* RadarView.swift in Sources */,
 				4353A5422B29B57C006C7CC4 /* Feedbacks.swift in Sources */,
-				4353A53E2B29B57C006C7CC4 /* RadarView.swift in Sources */,
+				43297B402B2A17CE00A538D0 /* FindFriendViewController.swift in Sources */,
 				4353A5382B29B57C006C7CC4 /* ViewController.swift in Sources */,
+				43297B3A2B2A166B00A538D0 /* UserHomeViewController.swift in Sources */,
 				4353A54B2B29B57C006C7CC4 /* FriendListController.swift in Sources */,
 				4353A5502B29B57C006C7CC4 /* User.swift in Sources */,
+				43297B392B2A166B00A538D0 /* UserItem.swift in Sources */,
 				4353A5462B29B57C006C7CC4 /* UIScreen.swift in Sources */,
 				4353A5452B29B57C006C7CC4 /* Observable+Extensions.swift in Sources */,
 				4353A5522B29B57C006C7CC4 /* SendMessageAPI.swift in Sources */,
+				43297B362B2A165400A538D0 /* UIView+Extension.swift in Sources */,
 				4353A53C2B29B57C006C7CC4 /* RxImagePickerDelegateProxy.swift in Sources */,
+				43297B3E2B2A174200A538D0 /* RadarTargetView.swift in Sources */,
 				4353A54D2B29B57C006C7CC4 /* AppleReceiptValidatorX.swift in Sources */,
 				4353A54F2B29B57C006C7CC4 /* ChatViewController.swift in Sources */,
 				4353A5012B29B3A5006C7CC4 /* SceneDelegate.swift in Sources */,
