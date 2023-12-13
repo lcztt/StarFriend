@@ -1,0 +1,87 @@
+PODS:
+  - Differentiator (5.0.0)
+  - GRDB.swift (6.23.0):
+    - GRDB.swift/standard (= 6.23.0)
+  - GRDB.swift/SQLCipher (6.23.0):
+    - SQLCipher (>= 3.4.2)
+  - GRDB.swift/standard (6.23.0)
+  - PromiseKit (8.1.1):
+    - PromiseKit/CorePromise (= 8.1.1)
+    - PromiseKit/Foundation (= 8.1.1)
+    - PromiseKit/UIKit (= 8.1.1)
+  - PromiseKit/CorePromise (8.1.1)
+  - PromiseKit/Foundation (8.1.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (8.1.1):
+    - PromiseKit/CorePromise
+  - RxCocoa (6.6.0):
+    - RxRelay (= 6.6.0)
+    - RxSwift (= 6.6.0)
+  - RxDataSources (5.0.0):
+    - Differentiator (~> 5.0)
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxGRDB (3.0.0):
+    - RxGRDB/default (= 3.0.0)
+    - RxSwift (~> 6.0)
+  - RxGRDB/default (3.0.0):
+    - GRDB.swift (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxGRDB/SQLCipher (3.0.0):
+    - GRDB.swift/SQLCipher (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxRelay (6.6.0):
+    - RxSwift (= 6.6.0)
+  - RxSwift (6.6.0)
+  - SnapKit (5.6.0)
+  - SQLCipher (4.5.5):
+    - SQLCipher/standard (= 4.5.5)
+  - SQLCipher/common (4.5.5)
+  - SQLCipher/standard (4.5.5):
+    - SQLCipher/common
+  - SwiftyStoreKit (0.16.1)
+  - Toast-Swift (5.0.1)
+
+DEPENDENCIES:
+  - PromiseKit
+  - RxCocoa (= 6.6.0)
+  - RxDataSources (~> 5.0)
+  - RxGRDB
+  - RxGRDB/SQLCipher
+  - RxSwift (= 6.6.0)
+  - SnapKit
+  - SwiftyStoreKit
+  - Toast-Swift (~> 5.0.1)
+
+SPEC REPOS:
+  trunk:
+    - Differentiator
+    - GRDB.swift
+    - PromiseKit
+    - RxCocoa
+    - RxDataSources
+    - RxGRDB
+    - RxRelay
+    - RxSwift
+    - SnapKit
+    - SQLCipher
+    - SwiftyStoreKit
+    - Toast-Swift
+
+SPEC CHECKSUMS:
+  Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
+  GRDB.swift: e819934eb2df28a6907f28d746eb3cf9c7c53b75
+  PromiseKit: d1be44b474e5acfa16adf007a1f49f104e10fead
+  RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
+  RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
+  RxGRDB: aa1fb609094c74d598fa65e2c6c376405cf431c4
+  RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
+  RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SQLCipher: f2e96b3822e3006b379181a0e4fd145f6de29b56
+  SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
+  Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
+
+PODFILE CHECKSUM: b186969c18dba34dc3369fef7a269cef839f8463
+
+COCOAPODS: 1.14.2
