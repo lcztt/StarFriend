@@ -21,12 +21,16 @@ class RadarIndicatorView: UIView {
         guard let context = UIGraphicsGetCurrentContext() else {
             return
         }
+        
+        // 同心圆圆心位置
+        let centerPoint = CGPoint(x: width * 0.5, y: height * 0.5)
+//        centerPoint.y -= 20
 
         // 画扇形
         context.setFillColor(startColor.cgColor)
         context.setLineWidth(0)
-        context.move(to: CGPoint(x: center.x, y: center.y))
-        context.addArc(center: CGPoint(x: center.x, y: center.y),
+        context.move(to: CGPoint(x: centerPoint.x, y: centerPoint.y))
+        context.addArc(center: CGPoint(x: centerPoint.x, y: centerPoint.y),
                        radius: radius,
                        startAngle: (clockwise ? angle : 0) * .pi / 180,
                        endAngle: (clockwise ? (angle - 1) : 1) * .pi / 180,
@@ -57,8 +61,12 @@ class RadarIndicatorView: UIView {
             let aColor = UIColor(red: R, green: G, blue: B, alpha: A)
             context.setFillColor(aColor.cgColor)
             context.setLineWidth(0)
-            context.move(to: CGPoint(x: center.x, y: center.y))
-            context.addArc(center: CGPoint(x: center.x, y: center.y), radius: radius, startAngle: CGFloat(i) * .pi / 180, endAngle: (CGFloat(i) + (clockwise ? -1 : 1)) * .pi / 180, clockwise: clockwise)
+            context.move(to: CGPoint(x: centerPoint.x, y: centerPoint.y))
+            context.addArc(center: CGPoint(x: centerPoint.x, y: centerPoint.y),
+                           radius: radius,
+                           startAngle: CGFloat(i) * .pi / 180,
+                           endAngle: (CGFloat(i) + (clockwise ? -1 : 1)) * .pi / 180,
+                           clockwise: clockwise)
             context.closePath()
             context.drawPath(using: .fillStroke)
         }

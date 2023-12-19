@@ -16,6 +16,8 @@ protocol RadarTargetViewDelegate: AnyObject {
 class RadarTargetView: UIImageView {
     weak var delegate: RadarTargetViewDelegate? = nil
     
+    var user: UserItem? = nil
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         

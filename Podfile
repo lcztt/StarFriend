@@ -14,7 +14,7 @@ target 'StarFriend' do
   pod 'SwiftyStoreKit' # 内购
   pod 'PromiseKit'
   pod 'Kingfisher'
-
+#  pod "LiquidLoader", '~> 1.2.0'
 #  pod 'Alamofire' # 网络
   pod 'Toast-Swift', '~> 5.0.1'
 #  pod 'SVProgressHUD'

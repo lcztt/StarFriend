@@ -28,7 +28,7 @@ class TabViewController: UITabBarController {
         
         let friendVC = FriendListController()
         friendVC.hidesBottomBar = false
-        friendVC.title = "好友"
+        friendVC.title = "Friends"
         let friendnvc = UINavigationController(rootViewController: friendVC)
         
         let iapVC = StoreViewController()

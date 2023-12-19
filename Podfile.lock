@@ -5,6 +5,7 @@ PODS:
   - GRDB.swift/SQLCipher (6.23.0):
     - SQLCipher (>= 3.4.2)
   - GRDB.swift/standard (6.23.0)
+  - Kingfisher (7.10.1)
   - PromiseKit (8.1.1):
     - PromiseKit/CorePromise (= 8.1.1)
     - PromiseKit/Foundation (= 8.1.1)
@@ -43,6 +44,7 @@ PODS:
   - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
+  - Kingfisher
   - PromiseKit
   - RxCocoa (= 6.6.0)
   - RxDataSources (~> 5.0)
@@ -57,6 +59,7 @@ SPEC REPOS:
   trunk:
     - Differentiator
     - GRDB.swift
+    - Kingfisher
     - PromiseKit
     - RxCocoa
     - RxDataSources
@@ -71,6 +74,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   GRDB.swift: e819934eb2df28a6907f28d746eb3cf9c7c53b75
+  Kingfisher: bc5abe80a8e0144537ef1dd5a0b2621b04f7f439
   PromiseKit: d1be44b474e5acfa16adf007a1f49f104e10fead
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
@@ -82,6 +86,6 @@ SPEC CHECKSUMS:
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: b186969c18dba34dc3369fef7a269cef839f8463
+PODFILE CHECKSUM: 647fc8259efbfec5198188f359d2403d8e9d38f2
 
 COCOAPODS: 1.14.2

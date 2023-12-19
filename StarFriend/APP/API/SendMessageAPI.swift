@@ -13,7 +13,7 @@ class SendMessageAPI {
     
     private init() {}
     
-    func getExampleUserResultSet() -> Observable<[User]> {
+    func getExampleUserResultSet() -> Observable<[UserItem]> {
         let url = URL(string: "http://api.randomuser.me/?results=20")!
         return URLSession.shared.rx.json(url: url)
             .map { json in
@@ -25,26 +25,26 @@ class SendMessageAPI {
             }
     }
     
-    private func parseJSON(_ json: [String: AnyObject]) throws -> [User] {
+    private func parseJSON(_ json: [String: AnyObject]) throws -> [UserItem] {
         guard let results = json["results"] as? [[String: AnyObject]] else {
             throw exampleError("Can't find results")
         }
 
         let userParsingError = exampleError("Can't parse user")
        
-        let searchResults: [User] = try results.map { user in
+        let searchResults: [UserItem] = try results.map { user in
             let name = user["name"] as? [String: String]
             let pictures = user["picture"] as? [String: String]
             
-            guard let firstName = name?["first"], let lastName = name?["last"], let imageURL = pictures?["medium"] else {
+            guard let firstName = name?["first"], let location = name?["location"], let avatar = pictures?["avatar"] else {
                 throw userParsingError
             }
             
-            let returnUser = User(
-                firstName: firstName.capitalized,
-                lastName: lastName.capitalized,
-                imageURL: imageURL
-            )
+            let returnUser = UserItem()
+//            returnUser.nickname = firstName
+//            returnUser.location = location
+//            returnUser.avatarUrl = avatar
+            
             return returnUser
         }
         

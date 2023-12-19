@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     var hidesBottomBar: Bool = true
     
     lazy var backgroundView: UIImageView = {
-        let view = UIImageView(image: UIImage(named: "view_background"))
+        let view = UIImageView(image: UIImage(named: "view_background_2"))
         view.contentMode = .scaleAspectFill
         return view
     }()
@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     lazy var backButton = {
         let button = UIButton(frame: .zero)
         button.setImage(UIImage(named: "icon_back_white"), for: .normal)
-        button.frame.size = CGSize(width: 44, height: 44)
+        button.frame.size = CGSize(width: 32, height: 32)
         return button
     }()
         
@@ -76,7 +76,7 @@ class ViewController: UIViewController {
             starView.layer.cornerRadius = starViewWH * 0.5
             view.addSubview(starView)
             
-//            starView.addStarBulinAnimation()
+            starView.addStarBulinAnimation()
         }
     }
 }

@@ -9,5 +9,15 @@ import Foundation
 import UIKit
 
 extension UIScreen {
+    static var width: CGFloat {
+        get {
+            UIScreen.main.bounds.width
+        }
+    }
     
+    static var height: CGFloat {
+        get {
+            UIScreen.main.bounds.height
+        }
+    }
 }

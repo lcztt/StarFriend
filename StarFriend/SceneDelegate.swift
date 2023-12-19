@@ -78,3 +78,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+// common ui setter
+extension SceneDelegate {
+    func UICommonSetter() {
+        UITabBar.appearance().barTintColor = .white
+    }
+}

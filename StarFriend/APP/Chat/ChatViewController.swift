@@ -21,8 +21,8 @@ Another way to do "MVVM". There are different ideas what does MVVM mean dependin
  because it's not possible to observe partial model changes.
 */
 struct TableViewEditingCommandsViewModel {
-    let favoriteUsers: [User]
-    let users: [User]
+    let favoriteUsers: [UserItem]
+    let users: [UserItem]
 
     static func executeCommand(state: TableViewEditingCommandsViewModel, _ command: TableViewEditingCommand) -> TableViewEditingCommandsViewModel {
         switch command {
@@ -46,12 +46,11 @@ struct TableViewEditingCommandsViewModel {
 }
 
 enum TableViewEditingCommand {
-    case setUsers(users: [User])
-    case setFavoriteUsers(favoriteUsers: [User])
+    case setUsers(users: [UserItem])
+    case setFavoriteUsers(favoriteUsers: [UserItem])
     case deleteUser(indexPath: IndexPath)
     case moveUser(from: IndexPath, to: IndexPath)
 }
-
 
 class ChatViewController: ViewController, UITableViewDelegate {
     lazy var tableView: UITableView = {
@@ -66,7 +65,7 @@ class ChatViewController: ViewController, UITableViewDelegate {
     
         print("viewdidload")
         
-        tableView.backgroundColor = UIColor.lightGray
+        tableView.backgroundColor = UIColor.clear
         tableView.register(ChatMessageCell.self, forCellReuseIdentifier: "ChatMessageCell")
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
@@ -77,16 +76,8 @@ class ChatViewController: ViewController, UITableViewDelegate {
 
         self.navigationItem.rightBarButtonItem = self.editButtonItem
 
-        let superMan =  User(
-            firstName: "Super",
-            lastName: "Man",
-            imageURL: "http://nerdreactor.com/wp-content/uploads/2015/02/Superman1.jpg"
-        )
-
-        let watMan = User(firstName: "Wat",
-            lastName: "Man",
-            imageURL: "http://www.iri.upc.edu/files/project/98/main.GIF"
-        )
+        let superMan = UserItem()
+        let watMan = UserItem()
 
         let loadFavoriteUsers = SendMessageAPI.sharedAPI
             .getExampleUserResultSet()
@@ -169,7 +160,7 @@ class ChatViewController: ViewController, UITableViewDelegate {
 
     // MARK: Navigation
 
-    private func showDetailsForUser(_ user: User) {
+    private func showDetailsForUser(_ user: UserItem) {
         
         let vc = SendMessageViewController(nibName: nil, bundle: nil)
 //        viewController.user = user
@@ -177,11 +168,11 @@ class ChatViewController: ViewController, UITableViewDelegate {
     }
     
     // MARK: Work over Variable
-    static func configureDataSource() -> RxTableViewSectionedReloadDataSource<SectionModel<String, User>> {
-        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, User>>(
-            configureCell: { (_, tv, ip, user: User) in
+    static func configureDataSource() -> RxTableViewSectionedReloadDataSource<SectionModel<String, UserItem>> {
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, UserItem>>(
+            configureCell: { (_, tv, ip, user: UserItem) in
                 let cell = tv.dequeueReusableCell(withIdentifier: "ChatMessageCell")!
-                cell.textLabel?.text = user.firstName + " " + user.lastName
+                cell.textLabel?.text = user.nickname + " " + user.location
                 return cell
             },
             titleForHeaderInSection: { dataSource, sectionIndex in
