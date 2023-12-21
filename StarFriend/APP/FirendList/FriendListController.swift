@@ -13,7 +13,7 @@ import RxCocoa
 import SnapKit
 
 
-let sectionEdgeInsets = UIEdgeInsets(top: 12, left: 20, bottom: 0, right: 20)
+let sectionEdgeInsets = UIEdgeInsets(top: 12, left: 20, bottom: 12, right: 20)
 let itemMargin: CGFloat = 20
 
 class FriendListController: BaseViewController {
@@ -39,8 +39,8 @@ class FriendListController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let barbutton = UIBarButtonItem(customView: refreshButton)
-        navigationItem.rightBarButtonItem = barbutton
+//        let barbutton = UIBarButtonItem(customView: refreshButton)
+//        navigationItem.rightBarButtonItem = barbutton
         
         collectionView.backgroundColor = UIColor.clear
         collectionView.register(FriendListCell.self, forCellWithReuseIdentifier: "UserCardCell")
@@ -106,10 +106,11 @@ class FriendListController: BaseViewController {
     override func viewSafeAreaInsetsDidChange() {
         super.viewSafeAreaInsetsDidChange()
         
-//        collectionView.snp.updateConstraints { make in
-//            var edge = view.safeAreaInsets
-//            edge.bottom = tabBarController?.tabBar.height ?? 0
-//            make.edges.equalToSuperview().inset(edge)
-//        }
+        collectionView.snp.updateConstraints { make in
+            var edge = view.safeAreaInsets
+            edge.top = 0
+            edge.bottom = tabBarController?.tabBar.height ?? 0
+            make.edges.equalToSuperview().inset(edge)
+        }
     }
 }

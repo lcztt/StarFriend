@@ -79,10 +79,33 @@ extension UIViewController {
             navigationItem.compactScrollEdgeAppearance = appearance
         }
     }
+    
+    func setDefaultNavigationBar() {
+        UINavigationBar.appearance().barTintColor = .white
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().isTranslucent = true
+        
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = .clear
+            appearance.backgroundImage = UIImage(named: "")
+            appearance.backgroundEffect = UIBlurEffect(style: .regular)
+            appearance.shadowColor = .clear
+            appearance.shadowImage = UIImage(named: "")
+            UINavigationBar.appearance().standardAppearance = appearance
+            UINavigationBar.appearance().compactAppearance = appearance
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+            if #available(iOS 15.0, *) {
+                UINavigationBar.appearance().compactScrollEdgeAppearance = appearance
+            }
+        }
+    }
 }
 
-// tabbar
-extension UIViewController {
+// MARK: tabbar
+
+extension UITabBarController {
     // 配置导航栏标题颜色
     func setTabBarTitleColor(normal norColor: UIColor, selected selColor: UIColor) {
         if #available(iOS 13.0, *) {
@@ -129,25 +152,41 @@ extension UIViewController {
     }
     
     func setTabBarTranslucent(_ isTranslucent: Bool) {
-        tabBarController?.tabBar.isTranslucent = isTranslucent
+        tabBar.isTranslucent = isTranslucent
     }
     
     private func getTabBarAppearance() -> UITabBarAppearance {
-        var appearance = tabBarController?.tabBar.standardAppearance
-        if appearance == nil {
-            appearance = UITabBarAppearance()
-        }
-        
-        return appearance!
+        var appearance = tabBar.standardAppearance
+        return appearance
     }
     
     private func setTabBarAppearance(_ appearance: UITabBarAppearance) {
         if #available(iOS 13.0, *) {
-            tabBarController?.tabBar.standardAppearance = appearance
+            tabBar.standardAppearance = appearance
         }
         
         if #available(iOS 15.0, *) {
-            tabBarController?.tabBar.scrollEdgeAppearance = appearance
+            tabBar.scrollEdgeAppearance = appearance
+        }
+    }
+    
+    func setDefaultTabBar() {
+        UITabBar.appearance().barTintColor = .white
+        UITabBar.appearance().tintColor = .white
+        UITabBar.appearance().isTranslucent = true
+        
+        if #available(iOS 13.0, *) {
+            let appearance = UITabBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            appearance.backgroundColor = .clear
+            appearance.backgroundImage = UIImage(named: "")
+            appearance.backgroundEffect = UIBlurEffect(style: .regular)
+            appearance.shadowColor = .clear
+            appearance.shadowImage = UIImage(named: "")
+            UITabBar.appearance().standardAppearance = appearance
+            if #available(iOS 15.0, *) {
+                UITabBar.appearance().scrollEdgeAppearance = appearance
+            }
         }
     }
 }

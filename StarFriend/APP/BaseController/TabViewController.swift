@@ -21,9 +21,10 @@ class TabViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setTabBarTranslucent(true)
-        setTabBarBarBackground(effect: .light, color: .red)
+        setTabBarTranslucent(false)
+        setTabBarBarBackground()
         setTabBarTitleColor(normal: .white, selected: .green)
+        removeTabbarShadowLine()
         
         let findVC = FindFriendViewController(nibName: nil, bundle: nil)
         findVC.hidesBottomBarWhenPushed = false
