@@ -14,6 +14,9 @@
             "nickname": "Aadil",
             "avatar": "boy_Aadil.jpg",
             "location": "New York, US",
+            "profession_en": "Plumber",
+            "profession_zh": "管道工",
+            "desc": "Plumbing experts, plumbers ensure the flow of clean water and proper sanitation in our homes and businesses.",
             "photos": [
                 ""
             ]
@@ -23,6 +26,9 @@
             "nickname": "Aadil",
             "avatar": "boy_Aadil.jpg",
             "location": "New York, US",
+            "profession_en": "Mechanic",
+            "profession_zh": "机械师",
+            "desc": "Masters of machinery, mechanics keep vehicles and equipment running smoothly, contributing to efficient transportation and industry.",
             "photos": [
                 ""
             ]
@@ -32,6 +38,9 @@
             "nickname": "Hamed",
             "avatar": "boy_Hamed.jpg",
             "location": "New York, US",
+            "profession_en": "Firefighter",
+            "profession_zh": "消防员",
+            "desc": "Brave heroes, firefighters risk their lives to save others and protect communities from fires.",
             "photos": [
                 ""
             ]
@@ -41,6 +50,9 @@
             "nickname": "Hamed",
             "avatar": "boy_Nikki.jpg",
             "location": "New York, US",
+            "profession_en": "Architect",
+            "profession_zh": "建筑师",
+            "desc": "Design pioneers, architects shape our physical environments, blending form and function.",
             "photos": [
                 ""
             ]
@@ -50,6 +62,9 @@
             "nickname": "BossMan",
             "avatar": "boy_BossMan.jpg",
             "location": "New York, US",
+            "profession_en": "Chef",
+            "profession_zh": "厨师",
+            "desc": "Culinary artists, chefs delight the senses with their creative and delicious cuisine.",
             "photos": [
                 ""
             ]
@@ -59,6 +74,9 @@
             "nickname": "Ebony",
             "avatar": "boy_Ebony.jpg",
             "location": "New York, US",
+            "profession_en": "Electrician",
+            "profession_zh": "电工",
+            "desc": "Masters of electrical systems, electricians keep our homes and businesses powered and safe.",
             "photos": [
                 ""
             ]
@@ -68,6 +86,9 @@
             "nickname": "Amoil",
             "avatar": "boy_Amoil.jpg",
             "location": "New York, US",
+            "profession_en": "Police Officer",
+            "profession_zh": "Protectors of the community, police officers uphold law and order, ensuring public safety.",
+            "desc": "",
             "photos": [
                 ""
             ]
@@ -77,6 +98,9 @@
             "nickname": "Christian",
             "avatar": "boy_Christian.jpg",
             "location": "New York, US",
+            "profession_en": "Doctor",
+            "profession_zh": "医生",
+            "desc": "Bringing healing and comfort to patients, doctors strive to improve and save lives.",
             "photos": [
                 ""
             ]
@@ -86,6 +110,9 @@
             "nickname": "SK",
             "avatar": "boy_SK.jpg",
             "location": "New York, US",
+            "profession_en": "Teacher",
+            "profession_zh": "教师",
+            "desc": "Shaping the future by imparting knowledge and fostering the growth of young minds.",
             "photos": [
                 ""
             ]
@@ -95,6 +122,9 @@
             "nickname": "Cam",
             "avatar": "boy_Cam.jpg",
             "location": "New York, US",
+            "profession_en": "Engineer",
+            "profession_zh": "工程师",
+            "desc": "Innovators and problem solvers, engineers create solutions that improve our daily lives.",
             "photos": [
                 ""
             ]
@@ -104,61 +134,70 @@
             "nickname": "Susan",
             "avatar": "girl_Susan.jpg",
             "location": "New York, US",
+            "profession_en": "Doctor",
+            "profession_zh": "医生",
+            "desc": "Bringing healing and comfort to patients, doctors strive to improve and save lives.",
             "photos": [
                 ""
             ]
         },
         {
-            "uid": 11,
+            "uid": 12,
             "nickname": "Amanda",
             "avatar": "girl_Amanda-1.jpg",
             "location": "New York, US",
+            "profession_en": "Nurse",
+            "profession_zh": "护士",
+            "desc": "Compassionate caregivers, nurses provide essential support and comfort to those in need.",
             "photos": [
                 "girl_Amanda-2",
                 "girl_Amanda-3"
             ]
         },
         {
-            "uid": 12,
+            "uid": 13,
             "nickname": "Ritam",
             "avatar": "girl_Ritam.jpg",
             "location": "New York, US",
-            "photos": [
-                ""
-            ]
-        },
-        {
-            "uid": 13,
-            "nickname": "Vickychad",
-            "avatar": "girl_Vickychad.jpg",
-            "location": "New York, US",
+            "profession_en": "Teacher",
+            "profession_zh": "教师",
+            "desc": "Shaping the future by imparting knowledge and fostering the growth of young minds.",
             "photos": [
                 ""
             ]
         },
         {
             "uid": 14,
-            "nickname": "Elena",
-            "avatar": "girl_Elena.jpg",
+            "nickname": "Vickychad",
+            "avatar": "girl_Vickychad.jpg",
             "location": "New York, US",
+            "profession_en": "Engineer",
+            "profession_zh": "工程师",
+            "desc": "Innovators and problem solvers, engineers create solutions that improve our daily lives.",
             "photos": [
                 ""
             ]
         },
         {
             "uid": 15,
-            "nickname": "Sarah",
-            "avatar": "girl_Sarah.jpg",
+            "nickname": "Elena",
+            "avatar": "girl_Elena.jpg",
             "location": "New York, US",
+            "profession_en": "Lawyer",
+            "profession_zh": "律师",
+            "desc": "Defenders of justice, lawyers work to uphold the law and protect the rights of individuals.",
             "photos": [
                 ""
             ]
         },
         {
             "uid": 16,
-            "nickname": "Abigail",
-            "avatar": "girl_1.jpg",
+            "nickname": "Sarah",
+            "avatar": "girl_Sarah.jpg",
             "location": "New York, US",
+            "profession_en": "Programmer",
+            "profession_zh": "程序员",
+            "desc": "Architects of the digital world, programmers build the technology that powers our modern society.",
             "photos": [
                 ""
             ]
@@ -166,8 +205,11 @@
         {
             "uid": 17,
             "nickname": "Abigail",
-            "avatar": "girl_Jessican.jpg",
+            "avatar": "girl_1.jpg",
             "location": "New York, US",
+            "profession_en": "Accountant",
+            "profession_zh": "会计",
+            "desc": "Guardians of financial integrity, accountants ensure accuracy and transparency in financial matters.",
             "photos": [
                 ""
             ]
@@ -175,8 +217,11 @@
         {
             "uid": 18,
             "nickname": "Abigail",
-            "avatar": "girl_Ana.jpg",
+            "avatar": "girl_Jessican.jpg",
             "location": "New York, US",
+            "profession_en": "Scientist",
+            "profession_zh": "科学家",
+            "desc": "Explorers of the unknown, scientists contribute to our understanding of the world and drive technological advancements.",
             "photos": [
                 ""
             ]
@@ -184,8 +229,11 @@
         {
             "uid": 19,
             "nickname": "Abigail",
-            "avatar": "girl_Sutton.jpg",
+            "avatar": "girl_Ana.jpg",
             "location": "New York, US",
+            "profession_en": "Artist",
+            "profession_zh": "艺术家",
+            "desc": "Creative visionaries, artists express emotions and perspectives, enriching our cultural experiences.",
             "photos": [
                 ""
             ]
@@ -193,8 +241,11 @@
         {
             "uid": 20,
             "nickname": "Abigail",
-            "avatar": "girl_big.jpg",
+            "avatar": "girl_Sutton.jpg",
             "location": "New York, US",
+            "profession_en": "Journalist",
+            "profession_zh": "记者",
+            "desc": "Guardians of truth, journalists inform and educate the public, holding power accountable.",
             "photos": [
                 ""
             ]
@@ -202,8 +253,11 @@
         {
             "uid": 21,
             "nickname": "Abigail",
-            "avatar": "girl_grab.jpg",
+            "avatar": "girl_big.jpg",
             "location": "New York, US",
+            "profession_en": "Actor/Actress",
+            "profession_zh": "演员",
+            "desc": "Storytellers and entertainers, actors captivate audiences, bringing stories to life.",
             "photos": [
                 ""
             ]
@@ -211,8 +265,11 @@
         {
             "uid": 22,
             "nickname": "Abigail",
-            "avatar": "girl_Kenda.jpg",
+            "avatar": "girl_grab.jpg",
             "location": "New York, US",
+            "profession_en": "Dentist",
+            "profession_zh": "牙医",
+            "desc": "Oral health advocates, dentists promote healthy smiles and overall well-being.",
             "photos": [
                 ""
             ]
@@ -220,8 +277,11 @@
         {
             "uid": 23,
             "nickname": "Abigail",
-            "avatar": "girl_Kennedy.jpg",
+            "avatar": "girl_Kenda.jpg",
             "location": "New York, US",
+            "profession_en": "Pilot",
+            "profession_zh": "飞行员",
+            "desc": "Sky navigators, pilots enable global connectivity and transport people safely to their destinations.",
             "photos": [
                 ""
             ]
@@ -229,8 +289,23 @@
         {
             "uid": 24,
             "nickname": "Abigail",
+            "avatar": "girl_Kennedy.jpg",
+            "location": "New York, US",
+            "profession_en": "Actor/Actress",
+            "profession_zh": "演员",
+            "desc": "Storytellers and entertainers, actors captivate audiences, bringing stories to life.",
+            "photos": [
+                ""
+            ]
+        },
+        {
+            "uid": 25,
+            "nickname": "Abigail",
             "avatar": "girl_lili.jpg",
             "location": "New York, US",
+            "profession_en": "Accountant",
+            "profession_zh": "会计",
+            "desc": "Guardians of financial integrity, accountants ensure accuracy and transparency in financial matters.",
             "photos": [
                 ""
             ]

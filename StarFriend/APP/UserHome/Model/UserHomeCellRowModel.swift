@@ -9,9 +9,8 @@ import Foundation
 
 struct UserHomeCellRowModel {
     enum CellType {
+        case switchCell
         case userInfoCell
-        case galleryCell
-        case otherInfoCell
     }
     
     var type: CellType

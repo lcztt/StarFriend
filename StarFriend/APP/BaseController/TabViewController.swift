@@ -21,20 +21,24 @@ class TabViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let findVC = FindFriendViewController()
-        findVC.hidesBottomBar = false
+        setTabBarTranslucent(true)
+        setTabBarBarBackground(effect: .light, color: .red)
+        setTabBarTitleColor(normal: .white, selected: .green)
+        
+        let findVC = FindFriendViewController(nibName: nil, bundle: nil)
+        findVC.hidesBottomBarWhenPushed = false
         findVC.title = "发现"
-        let findNVC = UINavigationController(rootViewController: findVC)
+        let findNVC = BaseNavigationController(rootViewController: findVC)
         
-        let friendVC = FriendListController()
-        friendVC.hidesBottomBar = false
+        let friendVC = FriendListController(nibName: nil, bundle: nil)
+        friendVC.hidesBottomBarWhenPushed = false
         friendVC.title = "Friends"
-        let friendnvc = UINavigationController(rootViewController: friendVC)
+        let friendnvc = BaseNavigationController(rootViewController: friendVC)
         
-        let iapVC = StoreViewController()
-        iapVC.hidesBottomBar = false
+        let iapVC = StoreViewController(nibName: nil, bundle: nil)
+        iapVC.hidesBottomBarWhenPushed = false
         iapVC.title = "iap"
-        let iapnvc = UINavigationController(rootViewController: iapVC)
+        let iapnvc = BaseNavigationController(rootViewController: iapVC)
         
         viewControllers = [findNVC, friendnvc, iapnvc]
         tabBar.barTintColor = .clear

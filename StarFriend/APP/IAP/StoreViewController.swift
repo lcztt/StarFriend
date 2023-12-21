@@ -14,7 +14,7 @@ import Toast_Swift
 //import SVProgressHUD
 import StoreKit
 
-class StoreViewController: ViewController {
+class StoreViewController: BaseViewController {
     lazy var button: UIButton = {
         let button = UIButton(frame: .zero)
         return button

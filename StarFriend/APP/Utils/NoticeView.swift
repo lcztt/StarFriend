@@ -19,7 +19,7 @@ class NoticeView: UIView
     
     lazy private (set) var scrollLabel: AutoScrollLabel = {
         let scrollLabel = AutoScrollLabel(scrollAttribute: AutoScrollAttribute(textFont:UIFont.systemFont(ofSize: 13), 
-                                                                               textColor: UIColor(hexVal: 0xd81e06)))
+                                                                               textColor: UIColor.hexVal(0xED40F8)))
         addSubview(scrollLabel)
         return scrollLabel
     }()

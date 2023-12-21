@@ -11,12 +11,24 @@ import SnapKit
 import Kingfisher
 
 class FriendListCell : UICollectionViewCell {
-    let avatar: UIImageView = UIImageView(image: nil)
-    let nameLabel: UILabel = UILabel(frame: .zero)
-    let locationLabel: UILabel = UILabel(frame: .zero)
-    let chatBtn: UIButton = UIButton(frame: .zero)
-    lazy var photoNumberLabel: UILabel = {
+    let avatar: CustomImageView = CustomImageView(image: nil)
+    let coverView: UIView = UIView(frame: .zero)
+    lazy var nameLabel: UILabel = {
         let label = UILabel(frame: .zero)
+        label.textColor = .white
+        label.font = UIFont.size(16)
+        return label
+    }()
+    lazy var profession: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.textColor = .white
+        label.font = UIFont.size(12)
+        return label
+    }()
+    lazy var descLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.textColor = .white
+        label.font = UIFont.size(12)
         return label
     }()
     
@@ -25,15 +37,42 @@ class FriendListCell : UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = UIColor.random()
+        backgroundColor = UIColor.clear
         
+        avatar.needsBetterFace = true
         avatar.layer.cornerRadius = 8
         avatar.layer.masksToBounds = true
+        avatar.contentMode = .scaleAspectFill
         addSubview(avatar)
+        
+        coverView.backgroundColor = UIColor.hexVal(0x222222, 0.2)
+        addSubview(coverView)
+        
         addSubview(nameLabel)
-        addSubview(locationLabel)
-        addSubview(chatBtn)
-        addSubview(photoNumberLabel)
+        addSubview(profession)
+        addSubview(descLabel)
+        
+        coverView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        
+        nameLabel.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(12)
+            make.height.equalTo(UIFont.size(16).lineHeight)
+            make.bottom.equalTo(profession.snp.top).offset(-8)
+        }
+        
+        profession.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(12)
+            make.height.equalTo(UIFont.size(12).lineHeight)
+            make.bottom.equalTo(descLabel.snp.top).offset(-8)
+        }
+        
+        descLabel.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(12)
+            make.height.equalTo(UIFont.size(12).lineHeight)
+            make.bottom.equalToSuperview().inset(12)
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -51,8 +90,10 @@ class FriendListCell : UICollectionViewCell {
     public func setUser(_ user: UserItem) {
         userItem = user
         
-        avatar.kf.setImage(with: URL(string: user.avatarUrl))
+        avatar.image = UIImage(named: user.avatarUrl)
+//        avatar.kf.setImage(with: URL(string: user.avatarUrl))
         nameLabel.text = user.nickname
-        locationLabel.text = user.location
+        profession.text = user.profession_en
+        descLabel.text = user.desc
     }
 }

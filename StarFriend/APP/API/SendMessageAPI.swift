@@ -40,7 +40,7 @@ class SendMessageAPI {
                 throw userParsingError
             }
             
-            let returnUser = UserItem()
+            let returnUser = UserItem(data: [:])
 //            returnUser.nickname = firstName
 //            returnUser.location = location
 //            returnUser.avatarUrl = avatar

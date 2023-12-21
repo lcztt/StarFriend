@@ -11,7 +11,7 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-class ReportUserController: ViewController {
+class ReportUserController: BaseViewController {
     let imageView: UIImageView = UIImageView(frame: .zero)
     let cameraButton: UIButton = UIButton(frame: .zero)
     let galleryButton: UIButton = UIButton(frame: .zero)

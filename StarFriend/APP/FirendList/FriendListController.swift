@@ -13,14 +13,14 @@ import RxCocoa
 import SnapKit
 
 
-let sectionEdgeInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+let sectionEdgeInsets = UIEdgeInsets(top: 12, left: 20, bottom: 0, right: 20)
 let itemMargin: CGFloat = 20
 
-class FriendListController: ViewController {
+class FriendListController: BaseViewController {
     
     lazy var collectionView: UICollectionView = {
         let width = (UIScreen.width - sectionEdgeInsets.left - sectionEdgeInsets.right - itemMargin) * 0.5
-        let height = width / 0.618
+        let height = width
         let flow = UICollectionViewFlowLayout()
         flow.itemSize = CGSize(width: width, height: height)
         flow.sectionInset = sectionEdgeInsets
@@ -46,7 +46,7 @@ class FriendListController: ViewController {
         collectionView.register(FriendListCell.self, forCellWithReuseIdentifier: "UserCardCell")
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(view.safeAreaInsets)
+            make.edges.equalToSuperview().inset(UIEdgeInsets.zero)
         }
         
         // 绑定数据源获取方法
@@ -64,7 +64,7 @@ class FriendListController: ViewController {
                                                               for: indexPath) as! FriendListCell
                 
                 
-                cell.nameLabel.text = "\(element.nickname)"
+                cell.setUser(element)
                 return cell}
         )
         
@@ -95,13 +95,21 @@ class FriendListController: ViewController {
     func getFriendList() -> Observable<[SectionModel<String, UserItem>]> {
         print("正在请求数据......")
         
-        let items = (0 ..< 5).map {_ in
-            UserItem()
-        }
+        let items = UserData.shared.friendList
         
         let observable = Observable.just([SectionModel(model: "", items: items)])
         
-        return observable.delay(DispatchTimeInterval.seconds(1),
+        return observable.delay(DispatchTimeInterval.seconds(0),
                                 scheduler: MainScheduler.instance)
+    }
+    
+    override func viewSafeAreaInsetsDidChange() {
+        super.viewSafeAreaInsetsDidChange()
+        
+//        collectionView.snp.updateConstraints { make in
+//            var edge = view.safeAreaInsets
+//            edge.bottom = tabBarController?.tabBar.height ?? 0
+//            make.edges.equalToSuperview().inset(edge)
+//        }
     }
 }

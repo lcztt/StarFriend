@@ -7,7 +7,7 @@
 import UIKit
 
 private let kTextsScrollSpace: CGFloat = 30
-private let kScrollSpeed: CGFloat = 0.8
+private let kScrollSpeed: CGFloat = 0.4
 
 public enum AutoScrollDirection{
     /// ←_← 滚动  (正数)

@@ -12,7 +12,7 @@ import PromiseKit
 //import LiquidLoader
 
 
-class FindFriendViewController: ViewController {
+class FindFriendViewController: BaseViewController {
     
     lazy var radarView: RadarView = {
         let view = RadarView(frame: UIScreen.main.bounds)
@@ -40,7 +40,7 @@ class FindFriendViewController: ViewController {
         radarView.radius = view.frame.width * 0.5 - 10
         view.addSubview(radarView)
         
-        tipLabel.backgroundColor = UIColor(hexVal: 0x233552)
+        tipLabel.backgroundColor = UIColor.hexVal(0x233552)
         tipLabel.alpha = 0.7
         tipLabel.textAlignment = .center
         view.addSubview(tipLabel)
@@ -74,10 +74,10 @@ extension FindFriendViewController {
         findButton.centerX = view.centerX
         findButton.centerY = (view.height + view.centerY + radarView.radius) * 0.5 - 40
         findButton.layer.cornerRadius = 27
-        findButton.layer.borderColor = UIColor(hexVal: 0xcc236c).cgColor
+        findButton.layer.borderColor = UIColor.hexVal(0xcc236c).cgColor
         findButton.layer.borderWidth = 0.5
         findButton.titleLabel?.font = UIFont.size(18)
-        findButton.setTitleColor(UIColor(hexVal: 0xcc236c), for: .normal)
+        findButton.setTitleColor(UIColor.hexVal(0xcc236c), for: .normal)
         findButton.rx.tap.subscribe {[weak self] button in
             guard let self = self else {
                 return
@@ -109,7 +109,7 @@ extension FindFriendViewController {
         
         attr.append(NSAttributedString(string: "\(self.todayFreeTime)",
                                        attributes: [NSAttributedString.Key.font: UIFont.size(24, font: .PingFangSC_Semibold),
-                                                    NSAttributedString.Key.foregroundColor: UIColor(hexVal: 0xd81e06)]))
+                                                    NSAttributedString.Key.foregroundColor: UIColor.hexVal(0xd81e06)]))
         
         
         tipLabel.attributedText = attr
@@ -166,16 +166,25 @@ extension FindFriendViewController: RadarViewDataSource, RadarTargetViewDelegate
     }
     
     func radarView(_ view: RadarView, targetViewFor index: Int) -> RadarTargetView {
-        let user = UserData.shared.dataList.first!
-        let pointView = RadarTargetView(image: UIImage(named: user.avatarUrl))
-        pointView.user = user
-        pointView.layer.masksToBounds = true
-        pointView.layer.cornerRadius = 20
-        pointView.tag = index
-        pointView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
-        pointView.backgroundColor = UIColor.random()
-        pointView.delegate = self
-        return pointView
+        if let user = UserData.shared.getRandomUser() {
+            
+            UserData.shared.addFriend(user)
+            UserData.shared.save()
+            
+            let pointView = RadarTargetView(image: UIImage(named: user.avatarUrl))
+            pointView.user = user
+            pointView.layer.masksToBounds = true
+            pointView.layer.cornerRadius = 20
+            pointView.tag = index
+            pointView.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+            pointView.backgroundColor = UIColor.random()
+            pointView.delegate = self
+            return pointView
+        }
+        
+        let view = RadarTargetView(image: nil)
+        view.isHidden = true
+        return view
     }
     
     func radarView(_ view: RadarView, targetPositionFor index: Int) -> CGPoint {
@@ -188,7 +197,18 @@ extension FindFriendViewController: RadarViewDataSource, RadarTargetViewDelegate
         print("radarView did select target at: \(target.tag)")
         if let user = target.user {
             let vc = UserHomeViewController(user: user)
+            vc.delegate = self
             navigationController?.pushViewController(vc, animated: true)
         }
+    }
+}
+
+extension FindFriendViewController: UserHomeViewControllerDelegate {
+    func userHomeController(_ vc: UserHomeViewController, didBlock user: UserItem) {
+        
+        
+        
+        navigationController?.popToViewController(self, animated: true)
+        
     }
 }

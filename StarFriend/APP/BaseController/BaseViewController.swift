@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  BaseViewController.swift
 //  SwiftTest
 //
 //  Created by chao luo on 2023/12/4.
@@ -10,13 +10,12 @@ import RxSwift
 import RxCocoa
 import SnapKit
 
-class ViewController: UIViewController {
+class BaseViewController: UIViewController {
     let disposeBag = DisposeBag()
-    
-    var hidesBottomBar: Bool = true
     
     lazy var backgroundView: UIImageView = {
         let view = UIImageView(image: UIImage(named: "view_background_2"))
+        view.isUserInteractionEnabled = true
         view.contentMode = .scaleAspectFill
         return view
     }()
@@ -27,13 +26,27 @@ class ViewController: UIViewController {
         button.frame.size = CGSize(width: 32, height: 32)
         return button
     }()
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         
+        hidesBottomBarWhenPushed = true
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        hidesBottomBarWhenPushed = hidesBottomBar
+        edgesForExtendedLayout = .all
+        extendedLayoutIncludesOpaqueBars = true
         
-        setNavigaitonTitleColor(.white)
+        setNavigationBarTranslucent(true)
+        setNavigaitonTitleColor(.black)
+        setNavigationBarBackground(effect: .regular)
+        removeNavigationBarShadowLine()
         
         view.insertSubview(backgroundView, at: 0)
         

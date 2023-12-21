@@ -52,13 +52,31 @@ enum TableViewEditingCommand {
     case moveUser(from: IndexPath, to: IndexPath)
 }
 
-class ChatViewController: ViewController, UITableViewDelegate {
+class ChatViewController: BaseViewController, UITableViewDelegate {
+    
+    let user: UserItem
+    
     lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .plain)
         return table
     }()
     
     let dataSource = ChatViewController.configureDataSource()
+    
+    init(user: UserItem) {
+        
+        self.user = user
+        
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,61 +94,61 @@ class ChatViewController: ViewController, UITableViewDelegate {
 
         self.navigationItem.rightBarButtonItem = self.editButtonItem
 
-        let superMan = UserItem()
-        let watMan = UserItem()
-
-        let loadFavoriteUsers = SendMessageAPI.sharedAPI
-            .getExampleUserResultSet()
-            .map(TableViewEditingCommand.setUsers)
-            .catchAndReturn(TableViewEditingCommand.setUsers(users: []))
-
-        let initialLoadCommand = Observable.just(TableViewEditingCommand.setFavoriteUsers(favoriteUsers: [superMan, watMan]))
-                .concat(loadFavoriteUsers)
-                .observe(on:MainScheduler.instance)
-
-        let uiFeedback: Feedback = bind(self) { this, state in
-            let subscriptions = [
-                state.map {
-                        [
-                            SectionModel(model: "Favorite Users", items: $0.favoriteUsers),
-                            SectionModel(model: "Normal Users", items: $0.users)
-                        ]
-                    }
-                    .bind(to: this.tableView.rx.items(dataSource: this.dataSource)),
-                this.tableView.rx.itemSelected
-                    .withLatestFrom(state) { i, latestState in
-                        let all = [latestState.favoriteUsers, latestState.users]
-                        return all[i.section][i.row]
-                    }
-                    .subscribe(onNext: { [weak this] user in
-                        this?.showDetailsForUser(user)
-                    }),
-            ]
-
-            let events: [Observable<TableViewEditingCommand>] = [
-
-                this.tableView.rx.itemDeleted.map(TableViewEditingCommand.deleteUser),
-                this.tableView .rx.itemMoved.map({ val in return TableViewEditingCommand.moveUser(from: val.0, to: val.1) })
-            ]
-
-            return Bindings(subscriptions: subscriptions, events: events)
-        }
-
-        let initialLoadFeedback: Feedback = { _ in initialLoadCommand }
-
-        Observable.system(
-            initialState: TableViewEditingCommandsViewModel(favoriteUsers: [], users: []),
-            reduce: TableViewEditingCommandsViewModel.executeCommand,
-            scheduler: MainScheduler.instance,
-            scheduledFeedback: uiFeedback, initialLoadFeedback
-        )
-            .subscribe()
-            .disposed(by: disposeBag)
-
-        // customization using delegate
-        // RxTableViewDelegateBridge will forward correct messages
-        tableView.rx.setDelegate(self)
-            .disposed(by: disposeBag)
+//        let superMan = UserItem()
+//        let watMan = UserItem()
+//
+//        let loadFavoriteUsers = SendMessageAPI.sharedAPI
+//            .getExampleUserResultSet()
+//            .map(TableViewEditingCommand.setUsers)
+//            .catchAndReturn(TableViewEditingCommand.setUsers(users: []))
+//
+//        let initialLoadCommand = Observable.just(TableViewEditingCommand.setFavoriteUsers(favoriteUsers: [superMan, watMan]))
+//                .concat(loadFavoriteUsers)
+//                .observe(on:MainScheduler.instance)
+//
+//        let uiFeedback: Feedback = bind(self) { this, state in
+//            let subscriptions = [
+//                state.map {
+//                        [
+//                            SectionModel(model: "Favorite Users", items: $0.favoriteUsers),
+//                            SectionModel(model: "Normal Users", items: $0.users)
+//                        ]
+//                    }
+//                    .bind(to: this.tableView.rx.items(dataSource: this.dataSource)),
+//                this.tableView.rx.itemSelected
+//                    .withLatestFrom(state) { i, latestState in
+//                        let all = [latestState.favoriteUsers, latestState.users]
+//                        return all[i.section][i.row]
+//                    }
+//                    .subscribe(onNext: { [weak this] user in
+//                        this?.showDetailsForUser(user)
+//                    }),
+//            ]
+//
+//            let events: [Observable<TableViewEditingCommand>] = [
+//
+//                this.tableView.rx.itemDeleted.map(TableViewEditingCommand.deleteUser),
+//                this.tableView .rx.itemMoved.map({ val in return TableViewEditingCommand.moveUser(from: val.0, to: val.1) })
+//            ]
+//
+//            return Bindings(subscriptions: subscriptions, events: events)
+//        }
+//
+//        let initialLoadFeedback: Feedback = { _ in initialLoadCommand }
+//
+//        Observable.system(
+//            initialState: TableViewEditingCommandsViewModel(favoriteUsers: [], users: []),
+//            reduce: TableViewEditingCommandsViewModel.executeCommand,
+//            scheduler: MainScheduler.instance,
+//            scheduledFeedback: uiFeedback, initialLoadFeedback
+//        )
+//            .subscribe()
+//            .disposed(by: disposeBag)
+//
+//        // customization using delegate
+//        // RxTableViewDelegateBridge will forward correct messages
+//        tableView.rx.setDelegate(self)
+//            .disposed(by: disposeBag)
         
     }
     

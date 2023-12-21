@@ -7,6 +7,6 @@
 
 import Foundation
 
-class SendMessageViewController: ViewController {
+class SendMessageViewController: BaseViewController {
     
 }

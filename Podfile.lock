@@ -5,6 +5,7 @@ PODS:
   - GRDB.swift/SQLCipher (6.23.0):
     - SQLCipher (>= 3.4.2)
   - GRDB.swift/standard (6.23.0)
+  - JXPhotoBrowser (3.1.4)
   - Kingfisher (7.10.1)
   - PromiseKit (8.1.1):
     - PromiseKit/CorePromise (= 8.1.1)
@@ -20,6 +21,9 @@ PODS:
     - RxSwift (= 6.6.0)
   - RxDataSources (5.0.0):
     - Differentiator (~> 5.0)
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxGesture (4.0.4):
     - RxCocoa (~> 6.0)
     - RxSwift (~> 6.0)
   - RxGRDB (3.0.0):
@@ -44,10 +48,12 @@ PODS:
   - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
+  - JXPhotoBrowser (~> 3.0)
   - Kingfisher
   - PromiseKit
   - RxCocoa (= 6.6.0)
   - RxDataSources (~> 5.0)
+  - RxGesture
   - RxGRDB
   - RxGRDB/SQLCipher
   - RxSwift (= 6.6.0)
@@ -59,10 +65,12 @@ SPEC REPOS:
   trunk:
     - Differentiator
     - GRDB.swift
+    - JXPhotoBrowser
     - Kingfisher
     - PromiseKit
     - RxCocoa
     - RxDataSources
+    - RxGesture
     - RxGRDB
     - RxRelay
     - RxSwift
@@ -74,10 +82,12 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   GRDB.swift: e819934eb2df28a6907f28d746eb3cf9c7c53b75
+  JXPhotoBrowser: 41ffa41252c8d5264f97ab3c1936a5cf935a58d7
   Kingfisher: bc5abe80a8e0144537ef1dd5a0b2621b04f7f439
   PromiseKit: d1be44b474e5acfa16adf007a1f49f104e10fead
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
+  RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
   RxGRDB: aa1fb609094c74d598fa65e2c6c376405cf431c4
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
@@ -86,6 +96,6 @@ SPEC CHECKSUMS:
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 647fc8259efbfec5198188f359d2403d8e9d38f2
+PODFILE CHECKSUM: 49abeac63c2f1aab62ee446f98a82598c0c88bb4
 
 COCOAPODS: 1.14.2

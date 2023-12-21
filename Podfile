@@ -12,8 +12,10 @@ target 'StarFriend' do
   pod 'RxGRDB/SQLCipher'
   pod 'SnapKit'
   pod 'SwiftyStoreKit' # 内购
+  pod "RxGesture"
   pod 'PromiseKit'
   pod 'Kingfisher'
+  pod 'JXPhotoBrowser', '~> 3.0'
 #  pod "LiquidLoader", '~> 1.2.0'
 #  pod 'Alamofire' # 网络
   pod 'Toast-Swift', '~> 5.0.1'
