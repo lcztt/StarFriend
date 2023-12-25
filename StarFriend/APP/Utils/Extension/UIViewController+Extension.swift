@@ -10,6 +10,39 @@ import UIKit
 
 // navigationbar
 extension UIViewController {
+    static func setNavigationBarDefaultAppearance() {
+        UINavigationBar.appearance().isTranslucent = true // 导航条背景是否透明
+        UINavigationBar.appearance().barTintColor = .clear //背景色，导航条背景色
+        UINavigationBar.appearance().tintColor = .white //前景色，按钮颜色
+        
+        if #available(iOS 13.0, *) {
+            let appearance = UINavigationBarAppearance()
+            appearance.configureWithOpaqueBackground()
+            
+            // set background color
+            appearance.backgroundColor = .clear
+            appearance.backgroundImage = UIImage(named: "")
+            
+            // set background effect
+            appearance.backgroundEffect = UIBlurEffect(style: .regular)
+            
+            // remove shadow line
+            appearance.shadowColor = .clear
+            appearance.shadowImage = UIImage(named: "")
+            
+            // set title text attribute
+            appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.hexVal(0xffffff),
+                                              NSAttributedString.Key.font: UIFont.size(16, font: .PingFangSC_Semibold)]
+            
+            UINavigationBar.appearance().standardAppearance = appearance
+            UINavigationBar.appearance().compactAppearance = appearance
+            UINavigationBar.appearance().scrollEdgeAppearance = appearance
+            if #available(iOS 15.0, *) {
+                UINavigationBar.appearance().compactScrollEdgeAppearance = appearance
+            }
+        }
+    }
+    
     // 配置导航栏标题颜色
     func setNavigaitonTitleColor(_ color: UIColor) {
         if #available(iOS 13.0, *) {
@@ -62,7 +95,8 @@ extension UIViewController {
     private func getNavigationBarAppearance() -> UINavigationBarAppearance {
         var appearance = navigationController?.navigationBar.standardAppearance
         if appearance == nil {
-            appearance = UINavigationBarAppearance()
+            appearance = UINavigationBarAppearance(barAppearance: UINavigationBar.appearance().standardAppearance)
+            appearance?.configureWithOpaqueBackground()
         }
         
         return appearance!
@@ -79,117 +113,8 @@ extension UIViewController {
             navigationItem.compactScrollEdgeAppearance = appearance
         }
     }
-    
-    func setDefaultNavigationBar() {
-        UINavigationBar.appearance().barTintColor = .white
-        UINavigationBar.appearance().tintColor = .white
-        UINavigationBar.appearance().isTranslucent = true
-        
-        if #available(iOS 13.0, *) {
-            let appearance = UINavigationBarAppearance()
-            appearance.configureWithOpaqueBackground()
-            appearance.backgroundColor = .clear
-            appearance.backgroundImage = UIImage(named: "")
-            appearance.backgroundEffect = UIBlurEffect(style: .regular)
-            appearance.shadowColor = .clear
-            appearance.shadowImage = UIImage(named: "")
-            UINavigationBar.appearance().standardAppearance = appearance
-            UINavigationBar.appearance().compactAppearance = appearance
-            UINavigationBar.appearance().scrollEdgeAppearance = appearance
-            if #available(iOS 15.0, *) {
-                UINavigationBar.appearance().compactScrollEdgeAppearance = appearance
-            }
-        }
-    }
 }
 
-// MARK: tabbar
-
-extension UITabBarController {
-    // 配置导航栏标题颜色
-    func setTabBarTitleColor(normal norColor: UIColor, selected selColor: UIColor) {
-        if #available(iOS 13.0, *) {
-            let appearance = getTabBarAppearance()
-            appearance.stackedLayoutAppearance.normal.titleTextAttributes[NSAttributedString.Key.foregroundColor] = norColor
-            appearance.stackedLayoutAppearance.selected.titleTextAttributes[NSAttributedString.Key.foregroundColor] = selColor
-            setTabBarAppearance(appearance)
-        }
-    }
-    
-    // 配置导航栏标题字体
-    func setTabBarTitleFont(normal norFont: UIFont, selected selFont: UIColor) {
-        if #available(iOS 13.0, *) {
-            let appearance = getTabBarAppearance()
-            appearance.stackedLayoutAppearance.normal.titleTextAttributes[NSAttributedString.Key.font] = norFont
-            appearance.stackedLayoutAppearance.selected.titleTextAttributes[NSAttributedString.Key.font] = selFont
-            setTabBarAppearance(appearance)
-        }
-    }
-    
-    // 设置 tabbar 背景
-    func setTabBarBarBackground(effect: UIBlurEffect.Style? = nil, color: UIColor? = nil, image: UIImage? = nil) {
-        if #available(iOS 13.0, *) {
-            var appearance = getTabBarAppearance()
-            appearance.backgroundColor = color
-            appearance.backgroundImage = image
-            if let effect = effect {
-                appearance.backgroundEffect = UIBlurEffect(style: effect)
-            } else {
-                appearance.backgroundEffect = nil
-            }
-            setTabBarAppearance(appearance)
-        }
-    }
-    
-    // 去掉导航栏下边的黑边
-    func removeTabbarShadowLine() {
-        if #available(iOS 13.0, *) {
-            let appearance = getTabBarAppearance()
-            appearance.shadowColor = UIColor.clear
-            appearance.shadowImage = nil
-            setTabBarAppearance(appearance)
-        }
-    }
-    
-    func setTabBarTranslucent(_ isTranslucent: Bool) {
-        tabBar.isTranslucent = isTranslucent
-    }
-    
-    private func getTabBarAppearance() -> UITabBarAppearance {
-        var appearance = tabBar.standardAppearance
-        return appearance
-    }
-    
-    private func setTabBarAppearance(_ appearance: UITabBarAppearance) {
-        if #available(iOS 13.0, *) {
-            tabBar.standardAppearance = appearance
-        }
-        
-        if #available(iOS 15.0, *) {
-            tabBar.scrollEdgeAppearance = appearance
-        }
-    }
-    
-    func setDefaultTabBar() {
-        UITabBar.appearance().barTintColor = .white
-        UITabBar.appearance().tintColor = .white
-        UITabBar.appearance().isTranslucent = true
-        
-        if #available(iOS 13.0, *) {
-            let appearance = UITabBarAppearance()
-            appearance.configureWithOpaqueBackground()
-            appearance.backgroundColor = .clear
-            appearance.backgroundImage = UIImage(named: "")
-            appearance.backgroundEffect = UIBlurEffect(style: .regular)
-            appearance.shadowColor = .clear
-            appearance.shadowImage = UIImage(named: "")
-            UITabBar.appearance().standardAppearance = appearance
-            if #available(iOS 15.0, *) {
-                UITabBar.appearance().scrollEdgeAppearance = appearance
-            }
-        }
-    }
-}
 
 // MARK: - pop gesture
 extension UIViewController {

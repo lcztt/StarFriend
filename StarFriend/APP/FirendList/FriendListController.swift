@@ -65,7 +65,8 @@ class FriendListController: BaseViewController {
                 
                 
                 cell.setUser(element)
-                return cell}
+                return cell
+            }
         )
         
         //绑定单元格数据

@@ -21,34 +21,22 @@ class TabViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setTabBarTranslucent(false)
-        setTabBarBarBackground()
-        setTabBarTitleColor(normal: .white, selected: .green)
-        removeTabbarShadowLine()
-        
         let findVC = FindFriendViewController(nibName: nil, bundle: nil)
         findVC.hidesBottomBarWhenPushed = false
-        findVC.title = "发现"
+        findVC.title = "FIND"
         let findNVC = BaseNavigationController(rootViewController: findVC)
         
         let friendVC = FriendListController(nibName: nil, bundle: nil)
         friendVC.hidesBottomBarWhenPushed = false
-        friendVC.title = "Friends"
+        friendVC.title = "FRIENDS"
         let friendnvc = BaseNavigationController(rootViewController: friendVC)
         
-        let iapVC = StoreViewController(nibName: nil, bundle: nil)
+        let iapVC = MineViewController(nibName: nil, bundle: nil)
         iapVC.hidesBottomBarWhenPushed = false
-        iapVC.title = "iap"
+        iapVC.title = "ME"
         let iapnvc = BaseNavigationController(rootViewController: iapVC)
         
         viewControllers = [findNVC, friendnvc, iapnvc]
-        tabBar.barTintColor = .clear
-        
-        findVC.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.lightGray], for: .normal)
-        findVC.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.white], for: .selected)
-        friendVC.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.lightGray], for: .normal)
-        friendVC.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.white], for: .selected)
-        iapVC.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.lightGray], for: .normal)
-        iapVC.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.foregroundColor:UIColor.white], for: .selected)
+        selectedIndex = 2
     }
 }

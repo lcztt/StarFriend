@@ -22,7 +22,7 @@ class BaseViewController: UIViewController {
     
     lazy var backButton = {
         let button = UIButton(frame: .zero)
-        button.setImage(UIImage(named: "icon_back_white"), for: .normal)
+        button.setImage(UIImage(named: "icon_back3"), for: .normal)
         button.frame.size = CGSize(width: 32, height: 32)
         return button
     }()
@@ -43,10 +43,7 @@ class BaseViewController: UIViewController {
         edgesForExtendedLayout = .all
         extendedLayoutIncludesOpaqueBars = true
         
-        setNavigationBarTranslucent(true)
-        setNavigaitonTitleColor(.black)
-        setNavigationBarBackground(effect: .regular)
-        removeNavigationBarShadowLine()
+//        setNavigationBarBackground(effect: .regular)
         
         view.insertSubview(backgroundView, at: 0)
         
@@ -55,7 +52,10 @@ class BaseViewController: UIViewController {
         }
         
         if navigationController?.viewControllers.count ?? 0 > 1 {
-            navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backButton)
+            let negativeSpacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
+            negativeSpacer.width = -16
+            let backbarbutton = UIBarButtonItem(customView: backButton)
+            navigationItem.leftBarButtonItem = backbarbutton
         }
         
         backButton.rx.tap.subscribe { [weak self] (element) in

@@ -83,6 +83,14 @@
 		43E3A1E22B3144AF0082050F /* CircularRevealAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E3A1E12B3144AF0082050F /* CircularRevealAnimator.swift */; };
 		43E3A1E42B314D950082050F /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E3A1E32B314D950082050F /* String+Extension.swift */; };
 		43E3A1E62B3152230082050F /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E3A1E52B3152230082050F /* UIFont+Extension.swift */; };
+		43F6FDBF2B348E2F0053AC61 /* UITabBarController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F6FDBE2B348E2F0053AC61 /* UITabBarController+Extensions.swift */; };
+		43F6FDC22B352CC50053AC61 /* my_avatar.png in Resources */ = {isa = PBXBuildFile; fileRef = 43F6FDC12B352CC50053AC61 /* my_avatar.png */; };
+		43F6FDC52B3533BD0053AC61 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F6FDC42B3533BD0053AC61 /* MineViewController.swift */; };
+		43F6FDC72B359D990053AC61 /* MineBaseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F6FDC62B359D990053AC61 /* MineBaseTableCell.swift */; };
+		43F6FDCB2B359DB70053AC61 /* MineGoldTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F6FDCA2B359DB70053AC61 /* MineGoldTableCell.swift */; };
+		43F6FDCD2B359DE70053AC61 /* MineInviteTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F6FDCC2B359DE70053AC61 /* MineInviteTableCell.swift */; };
+		43F6FDCF2B359DF60053AC61 /* MineSettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F6FDCE2B359DF60053AC61 /* MineSettingCell.swift */; };
+		43F6FDD22B35A0080053AC61 /* MineProfileTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F6FDD12B35A0080053AC61 /* MineProfileTableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -164,6 +172,14 @@
 		43E3A1E12B3144AF0082050F /* CircularRevealAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularRevealAnimator.swift; sourceTree = "<group>"; };
 		43E3A1E32B314D950082050F /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		43E3A1E52B3152230082050F /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		43F6FDBE2B348E2F0053AC61 /* UITabBarController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBarController+Extensions.swift"; sourceTree = "<group>"; };
+		43F6FDC12B352CC50053AC61 /* my_avatar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = my_avatar.png; sourceTree = "<group>"; };
+		43F6FDC42B3533BD0053AC61 /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		43F6FDC62B359D990053AC61 /* MineBaseTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineBaseTableCell.swift; sourceTree = "<group>"; };
+		43F6FDCA2B359DB70053AC61 /* MineGoldTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineGoldTableCell.swift; sourceTree = "<group>"; };
+		43F6FDCC2B359DE70053AC61 /* MineInviteTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineInviteTableCell.swift; sourceTree = "<group>"; };
+		43F6FDCE2B359DF60053AC61 /* MineSettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineSettingCell.swift; sourceTree = "<group>"; };
+		43F6FDD12B35A0080053AC61 /* MineProfileTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineProfileTableCell.swift; sourceTree = "<group>"; };
 		64DA2EA4824AFD16BB8B1F75 /* Pods_StarFriend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarFriend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D82CFBC2218EF290CAA07A4 /* Pods-StarFriend.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarFriend.debug.xcconfig"; path = "Target Support Files/Pods-StarFriend/Pods-StarFriend.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -192,6 +208,7 @@
 				43E3A1E52B3152230082050F /* UIFont+Extension.swift */,
 				4391E28C2B331F0E00123E80 /* Array+Extension.swift */,
 				4391E28E2B331F6F00123E80 /* Dictionary+Extension.swift */,
+				43F6FDBE2B348E2F0053AC61 /* UITabBarController+Extensions.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -268,6 +285,7 @@
 		4353A5122B29B572006C7CC4 /* APP */ = {
 			isa = PBXGroup;
 			children = (
+				43F6FDC32B3533950053AC61 /* Mine */,
 				43297B602B2BF70500A538D0 /* API */,
 				4353A5132B29B57C006C7CC4 /* BaseController */,
 				4353A5322B29B57C006C7CC4 /* Chat */,
@@ -377,6 +395,7 @@
 		43E3A1852B2C5B8D0082050F /* avatar */ = {
 			isa = PBXGroup;
 			children = (
+				43F6FDC02B352A420053AC61 /* self */,
 				43E3A1C02B2C5C340082050F /* data.json */,
 				43E3A1862B2C5B8D0082050F /* boy */,
 				43E3A1912B2C5B8D0082050F /* girl */,
@@ -423,6 +442,35 @@
 				43E3A1A22B2C5B8D0082050F /* girl_lili.jpg */,
 			);
 			path = girl;
+			sourceTree = "<group>";
+		};
+		43F6FDC02B352A420053AC61 /* self */ = {
+			isa = PBXGroup;
+			children = (
+				43F6FDC12B352CC50053AC61 /* my_avatar.png */,
+			);
+			path = self;
+			sourceTree = "<group>";
+		};
+		43F6FDC32B3533950053AC61 /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				43F6FDD02B359DFD0053AC61 /* Cell */,
+				43F6FDC42B3533BD0053AC61 /* MineViewController.swift */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		43F6FDD02B359DFD0053AC61 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				43F6FDC62B359D990053AC61 /* MineBaseTableCell.swift */,
+				43F6FDCA2B359DB70053AC61 /* MineGoldTableCell.swift */,
+				43F6FDCC2B359DE70053AC61 /* MineInviteTableCell.swift */,
+				43F6FDCE2B359DF60053AC61 /* MineSettingCell.swift */,
+				43F6FDD12B35A0080053AC61 /* MineProfileTableCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		76B9967183C0C2CF1FA6C19D /* Pods */ = {
@@ -527,6 +575,7 @@
 				43E3A1B12B2C5B8D0082050F /* girl_Amanda-1.jpg in Resources */,
 				43E3A1BD2B2C5B8D0082050F /* girl_Kennedy.jpg in Resources */,
 				43E3A1B02B2C5B8D0082050F /* girl_Amanda-3.jpg in Resources */,
+				43F6FDC22B352CC50053AC61 /* my_avatar.png in Resources */,
 				43E3A1B32B2C5B8D0082050F /* girl_Vickychad.jpg in Resources */,
 				43E3A1B42B2C5B8D0082050F /* girl_Elena.jpg in Resources */,
 				4353A5082B29B3A5006C7CC4 /* Assets.xcassets in Resources */,
@@ -587,6 +636,7 @@
 				4353A54C2B29B57C006C7CC4 /* IAPManager.swift in Sources */,
 				4353A54A2B29B57C006C7CC4 /* FriendListCell.swift in Sources */,
 				4353A5442B29B57C006C7CC4 /* UIViewController+Extension.swift in Sources */,
+				43F6FDCF2B359DF60053AC61 /* MineSettingCell.swift in Sources */,
 				4391E28D2B331F0E00123E80 /* Array+Extension.swift in Sources */,
 				43297B3C2B2A168200A538D0 /* UIColor+Extension.swift in Sources */,
 				43297B682B2C06D200A538D0 /* UserHomeCellRowModel.swift in Sources */,
@@ -609,6 +659,7 @@
 				43297B422B2A17F900A538D0 /* RadarView.swift in Sources */,
 				43189D9F2B341FC000A212E5 /* BaseNavigationController.swift in Sources */,
 				4353A5422B29B57C006C7CC4 /* Feedbacks.swift in Sources */,
+				43F6FDC52B3533BD0053AC61 /* MineViewController.swift in Sources */,
 				43297B402B2A17CE00A538D0 /* FindFriendViewController.swift in Sources */,
 				4353A5382B29B57C006C7CC4 /* BaseViewController.swift in Sources */,
 				43297B3A2B2A166B00A538D0 /* UserHomeViewController.swift in Sources */,
@@ -620,14 +671,19 @@
 				4353A5522B29B57C006C7CC4 /* SendMessageAPI.swift in Sources */,
 				43297B362B2A165400A538D0 /* UIView+Extension.swift in Sources */,
 				4353A53C2B29B57C006C7CC4 /* RxImagePickerDelegateProxy.swift in Sources */,
+				43F6FDD22B35A0080053AC61 /* MineProfileTableCell.swift in Sources */,
 				433E8A032B31834D002773DC /* UserHomeTableHeaderView.swift in Sources */,
+				43F6FDBF2B348E2F0053AC61 /* UITabBarController+Extensions.swift in Sources */,
 				43297B3E2B2A174200A538D0 /* RadarTargetView.swift in Sources */,
+				43F6FDCB2B359DB70053AC61 /* MineGoldTableCell.swift in Sources */,
+				43F6FDCD2B359DE70053AC61 /* MineInviteTableCell.swift in Sources */,
 				433E8A052B3197FF002773DC /* UserHomeSwitchCell.swift in Sources */,
 				4353A54D2B29B57C006C7CC4 /* AppleReceiptValidatorX.swift in Sources */,
 				4353A54F2B29B57C006C7CC4 /* ChatViewController.swift in Sources */,
 				43E3A1E62B3152230082050F /* UIFont+Extension.swift in Sources */,
 				43297B622B2BFB2E00A538D0 /* AutoScrollLabel.swift in Sources */,
 				433E8A072B3198F0002773DC /* UserHomeBaseCell.swift in Sources */,
+				43F6FDC72B359D990053AC61 /* MineBaseTableCell.swift in Sources */,
 				4353A5012B29B3A5006C7CC4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,6 +14,7 @@ final class UserData {
     
     var friendList: [UserItem] = []
     var randomList: [UserItem] = []
+    var me: UserItem = UserItem(data: [:])
     
     private init() {
         if let userData = UserDefaults.standard.string(forKey: userDataKey) {
@@ -38,7 +39,10 @@ extension UserData {
             randoms.append(obj.toDictionary())
         }
         
-        let dict = ["friend_list":friends, "random_list":randoms]
+        let dict = ["friend_list":friends,
+                    "random_list":randoms,
+                    "me_info": me.toDictionary()] as [String : Any]
+        
         if let dictStr = dict.jsonString() {
             UserDefaults.standard.setValue(dictStr, forKey: userDataKey)
             UserDefaults.standard.synchronize()
@@ -79,7 +83,8 @@ fileprivate extension UserData {
         
         // 处理解析后的 JSON 数据
         guard let jsonDict = jsonObject as? [String: Any],
-              let userList = jsonDict["user_list"] as? [[String: Any]] else {
+              let userList = jsonDict["user_list"] as? [[String: Any]],
+              let me_info = jsonDict["my_info"] as? [String: Any] else {
             print("Error parsing JSON Object")
             return
         }
@@ -98,12 +103,6 @@ fileprivate extension UserData {
             }
         }
         
-        let dict = ["friend_list":friends, "random_list":randoms]
-        if let dictStr = dict.jsonString() {
-            UserDefaults.standard.setValue(dictStr, forKey: userDataKey)
-            UserDefaults.standard.synchronize()
-        }
-        
         for obj in friends {
             self.friendList.append(UserItem(data: obj))
         }
@@ -111,6 +110,10 @@ fileprivate extension UserData {
         for obj in randoms {
             self.randomList.append(UserItem(data: obj))
         }
+        
+        me = UserItem(data: me_info)
+        
+        self.save()
     }
     
     func parseUserData(_ userData: String) {
@@ -130,7 +133,8 @@ fileprivate extension UserData {
             }
         }
         
+        if let me_info = saveData["me_info"] as? [String: Any] {
+            me = UserItem(data: me_info)
+        }
     }
-    
-    
 }

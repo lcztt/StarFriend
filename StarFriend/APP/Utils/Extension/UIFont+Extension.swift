@@ -19,7 +19,7 @@ extension UIFont {
         case PingFangSC_Thin = "PingFangSC-Thin" // 100
     }
 
-    static func size(_ size:CGFloat, font name: fontName = .PingFangSC_Light) -> UIFont {
+    static func size(_ size:CGFloat, font name: fontName = .PingFangSC_Medium) -> UIFont {
         let font: UIFont = UIFont(name: name.rawValue, size: size) ?? UIFont.systemFont(ofSize: size)
         return font
     }

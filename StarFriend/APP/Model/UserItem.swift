@@ -39,4 +39,10 @@ class UserItem: Codable {
         dict["profession_zh"] = profession_zh
         return dict
     }
+    
+    var isMe: Bool {
+        get {
+            uid == 88888888
+        }
+    }
 }
