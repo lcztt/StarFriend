@@ -33,8 +33,6 @@ class FindFriendViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.title = "Find Friend"
-        
         radarView.frame = view.bounds
         radarView.dataSource = self
         radarView.radius = view.frame.width * 0.5 - 10
@@ -74,10 +72,11 @@ extension FindFriendViewController {
         findButton.centerX = view.centerX
         findButton.centerY = (view.height + view.centerY + radarView.radius) * 0.5 - 40
         findButton.layer.cornerRadius = 27
-        findButton.layer.borderColor = UIColor.hexVal(0xcc236c).cgColor
-        findButton.layer.borderWidth = 0.5
+//        findButton.layer.borderColor = UIColor.hexVal(0xcc236c).cgColor
+//        findButton.layer.borderWidth = 0.5
+        findButton.backgroundColor = UIColor.hexVal(0x19AA5A, 0.9)
         findButton.titleLabel?.font = UIFont.size(18)
-        findButton.setTitleColor(UIColor.hexVal(0xcc236c), for: .normal)
+        findButton.setTitleColor(UIColor.white, for: .normal)
         findButton.rx.tap.subscribe {[weak self] button in
             guard let self = self else {
                 return

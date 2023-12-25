@@ -23,17 +23,17 @@ class TabViewController: UITabBarController {
         
         let findVC = FindFriendViewController(nibName: nil, bundle: nil)
         findVC.hidesBottomBarWhenPushed = false
-        findVC.title = "FIND"
+        findVC.title = "Find"
         let findNVC = BaseNavigationController(rootViewController: findVC)
         
         let friendVC = FriendListController(nibName: nil, bundle: nil)
         friendVC.hidesBottomBarWhenPushed = false
-        friendVC.title = "FRIENDS"
+        friendVC.title = "Friends"
         let friendnvc = BaseNavigationController(rootViewController: friendVC)
         
         let iapVC = MineViewController(nibName: nil, bundle: nil)
         iapVC.hidesBottomBarWhenPushed = false
-        iapVC.title = "ME"
+        iapVC.title = "Me"
         let iapnvc = BaseNavigationController(rootViewController: iapVC)
         
         viewControllers = [findNVC, friendnvc, iapnvc]

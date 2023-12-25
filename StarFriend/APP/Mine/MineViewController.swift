@@ -34,8 +34,6 @@ class MineViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "ME"
-        
         tableView.delegate = self
 //        tableView.contentInsetAdjustmentBehavior = .never
         tableView.rowHeight = UITableView.automaticDimension
@@ -58,6 +56,7 @@ class MineViewController: BaseViewController {
             switch dataSource[indexPath] {
             case .profile:
                 let cell = MineProfileTableCell.cellWithTable(tableView)
+                cell.setUserInfo(UserData.shared.me)
                 return cell
             case .gold:
                 let cell = MineGoldTableCell.cellWithTable(tableView)
@@ -78,8 +77,8 @@ class MineViewController: BaseViewController {
         
         let button = UIButton(type: .custom)
 //        button.setTitle("Report", for: .normal)
-        button.setImage(UIImage(named: "report"), for: .normal)
-        button.sizeToFit()
+        button.setImage(UIImage(named: "feedback"), for: .normal)
+        button.size = CGSize(width: 25, height: 25)
         button.rx.tap.subscribe { [weak self] (element) in
             let vc = ReportUserController(nibName: nil, bundle: nil)
             self?.navigationController?.pushViewController(vc, animated: true)
@@ -123,5 +122,10 @@ class MineViewController: BaseViewController {
 }
 
 extension MineViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            let vc = EditUserInfoViewController(nibName: nil, bundle: nil)
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }

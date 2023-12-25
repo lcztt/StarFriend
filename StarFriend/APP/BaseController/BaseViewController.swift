@@ -22,7 +22,7 @@ class BaseViewController: UIViewController {
     
     lazy var backButton = {
         let button = UIButton(frame: .zero)
-        button.setImage(UIImage(named: "icon_back3"), for: .normal)
+        button.setImage(UIImage(named: "back"), for: .normal)
         button.frame.size = CGSize(width: 32, height: 32)
         return button
     }()
@@ -74,12 +74,12 @@ class BaseViewController: UIViewController {
     }
     
     private func addStar() {
-        for _ in 0..<50 {
+        for _ in 0..<20 {
             // 创建小星星
             let starView = UIView()
             let starViewX = CGFloat(arc4random_uniform(UInt32(view.bounds.width)))
             let starViewY = CGFloat(arc4random_uniform(UInt32(view.bounds.height)))
-            let starViewWH = CGFloat(arc4random_uniform(3) + 2)
+            let starViewWH = CGFloat(arc4random_uniform(4) + 5)
             starView.frame = CGRect(x: starViewX, y: starViewY, width: starViewWH, height: starViewWH)
             starView.backgroundColor = UIColor.white
             starView.layer.shadowColor = UIColor.white.cgColor

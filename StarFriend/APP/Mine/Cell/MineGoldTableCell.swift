@@ -37,12 +37,12 @@ class MineGoldTableCell: MineBaseTableCell {
     
     lazy var rechargeButton: UIButton = {
         let button = UIButton(frame: .zero)
-        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(UIColor.hexVal(0x333333), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = UIFont.size(16)
         button.setTitle("Recharge", for: .normal)
-        button.backgroundColor = UIColor.random()
-        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        button.backgroundColor = UIColor.hexVal(0xffd001)
+//        button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         return button
     }()
     
@@ -89,6 +89,7 @@ class MineGoldTableCell: MineBaseTableCell {
         rechargeButton.snp.makeConstraints { make in
             make.right.equalToSuperview().inset(12)
             make.height.equalTo(40)
+            make.width.equalTo(110)
             make.centerY.equalToSuperview()
         }
     }

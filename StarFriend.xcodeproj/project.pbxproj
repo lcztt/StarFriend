@@ -51,6 +51,11 @@
 		4391E28A2B331D4C00123E80 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4391E2892B331D4C00123E80 /* UserData.swift */; };
 		4391E28D2B331F0E00123E80 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4391E28C2B331F0E00123E80 /* Array+Extension.swift */; };
 		4391E28F2B331F6F00123E80 /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4391E28E2B331F6F00123E80 /* Dictionary+Extension.swift */; };
+		43924A1D2B3969D300F4CD25 /* EditUserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43924A1C2B3969D300F4CD25 /* EditUserInfoViewController.swift */; };
+		43924A202B396ABC00F4CD25 /* EditHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43924A1F2B396ABC00F4CD25 /* EditHeaderCell.swift */; };
+		43924A232B396AFF00F4CD25 /* EditUserInfoBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43924A222B396AFF00F4CD25 /* EditUserInfoBaseCell.swift */; };
+		43924A252B396B2F00F4CD25 /* EditNickNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43924A242B396B2F00F4CD25 /* EditNickNameCell.swift */; };
+		43924A272B39839300F4CD25 /* EditUserInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43924A262B39839300F4CD25 /* EditUserInputViewController.swift */; };
 		43E3A1A42B2C5B8D0082050F /* boy_Aadil.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 43E3A1872B2C5B8D0082050F /* boy_Aadil.jpg */; };
 		43E3A1A52B2C5B8D0082050F /* boy_Zoom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 43E3A1882B2C5B8D0082050F /* boy_Zoom.jpg */; };
 		43E3A1A62B2C5B8D0082050F /* boy_Hamed.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 43E3A1892B2C5B8D0082050F /* boy_Hamed.jpg */; };
@@ -140,6 +145,11 @@
 		4391E2892B331D4C00123E80 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		4391E28C2B331F0E00123E80 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		4391E28E2B331F6F00123E80 /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
+		43924A1C2B3969D300F4CD25 /* EditUserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInfoViewController.swift; sourceTree = "<group>"; };
+		43924A1F2B396ABC00F4CD25 /* EditHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHeaderCell.swift; sourceTree = "<group>"; };
+		43924A222B396AFF00F4CD25 /* EditUserInfoBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInfoBaseCell.swift; sourceTree = "<group>"; };
+		43924A242B396B2F00F4CD25 /* EditNickNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNickNameCell.swift; sourceTree = "<group>"; };
+		43924A262B39839300F4CD25 /* EditUserInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInputViewController.swift; sourceTree = "<group>"; };
 		43E3A1872B2C5B8D0082050F /* boy_Aadil.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boy_Aadil.jpg; sourceTree = "<group>"; };
 		43E3A1882B2C5B8D0082050F /* boy_Zoom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boy_Zoom.jpg; sourceTree = "<group>"; };
 		43E3A1892B2C5B8D0082050F /* boy_Hamed.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boy_Hamed.jpg; sourceTree = "<group>"; };
@@ -285,6 +295,7 @@
 		4353A5122B29B572006C7CC4 /* APP */ = {
 			isa = PBXGroup;
 			children = (
+				43924A1E2B396A9400F4CD25 /* EditUserInfo */,
 				43F6FDC32B3533950053AC61 /* Mine */,
 				43297B602B2BF70500A538D0 /* API */,
 				4353A5132B29B57C006C7CC4 /* BaseController */,
@@ -390,6 +401,26 @@
 				43297B372B2A166B00A538D0 /* UserItem.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		43924A1E2B396A9400F4CD25 /* EditUserInfo */ = {
+			isa = PBXGroup;
+			children = (
+				43924A212B396AC100F4CD25 /* Cell */,
+				43924A1C2B3969D300F4CD25 /* EditUserInfoViewController.swift */,
+				43924A262B39839300F4CD25 /* EditUserInputViewController.swift */,
+			);
+			path = EditUserInfo;
+			sourceTree = "<group>";
+		};
+		43924A212B396AC100F4CD25 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				43924A1F2B396ABC00F4CD25 /* EditHeaderCell.swift */,
+				43924A222B396AFF00F4CD25 /* EditUserInfoBaseCell.swift */,
+				43924A242B396B2F00F4CD25 /* EditNickNameCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		43E3A1852B2C5B8D0082050F /* avatar */ = {
@@ -636,6 +667,7 @@
 				4353A54C2B29B57C006C7CC4 /* IAPManager.swift in Sources */,
 				4353A54A2B29B57C006C7CC4 /* FriendListCell.swift in Sources */,
 				4353A5442B29B57C006C7CC4 /* UIViewController+Extension.swift in Sources */,
+				43924A272B39839300F4CD25 /* EditUserInputViewController.swift in Sources */,
 				43F6FDCF2B359DF60053AC61 /* MineSettingCell.swift in Sources */,
 				4391E28D2B331F0E00123E80 /* Array+Extension.swift in Sources */,
 				43297B3C2B2A168200A538D0 /* UIColor+Extension.swift in Sources */,
@@ -646,6 +678,7 @@
 				43E3A1E42B314D950082050F /* String+Extension.swift in Sources */,
 				4353A5532B29B57C006C7CC4 /* ChatMessageCell.swift in Sources */,
 				43297B6A2B2C081000A538D0 /* UserProfileTableCell.swift in Sources */,
+				43924A252B396B2F00F4CD25 /* EditNickNameCell.swift in Sources */,
 				4391E28F2B331F6F00123E80 /* Dictionary+Extension.swift in Sources */,
 				4353A4FF2B29B3A5006C7CC4 /* AppDelegate.swift in Sources */,
 				43E3A1E22B3144AF0082050F /* CircularRevealAnimator.swift in Sources */,
@@ -661,8 +694,11 @@
 				4353A5422B29B57C006C7CC4 /* Feedbacks.swift in Sources */,
 				43F6FDC52B3533BD0053AC61 /* MineViewController.swift in Sources */,
 				43297B402B2A17CE00A538D0 /* FindFriendViewController.swift in Sources */,
+				43924A1D2B3969D300F4CD25 /* EditUserInfoViewController.swift in Sources */,
 				4353A5382B29B57C006C7CC4 /* BaseViewController.swift in Sources */,
+				43924A202B396ABC00F4CD25 /* EditHeaderCell.swift in Sources */,
 				43297B3A2B2A166B00A538D0 /* UserHomeViewController.swift in Sources */,
+				43924A232B396AFF00F4CD25 /* EditUserInfoBaseCell.swift in Sources */,
 				4353A54B2B29B57C006C7CC4 /* FriendListController.swift in Sources */,
 				43297B392B2A166B00A538D0 /* UserItem.swift in Sources */,
 				43189D9C2B33EB9F00A212E5 /* CustomImageView.swift in Sources */,

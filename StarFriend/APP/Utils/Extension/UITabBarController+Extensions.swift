@@ -12,8 +12,8 @@ import UIKit
 extension UITabBarController {
     static func setTabBarDefaultAppearance() {
         
-        let selectTitleColor = UIColor.green
-        let normalTitleColor = UIColor.white
+        let selectTitleColor = UIColor.hexVal(0x12a152)
+        let normalTitleColor = UIColor.hexVal(0x808080)
         
         UITabBar.appearance().barTintColor = .white
         UITabBar.appearance().tintColor = selectTitleColor

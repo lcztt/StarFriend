@@ -31,7 +31,7 @@ extension UIViewController {
             appearance.shadowImage = UIImage(named: "")
             
             // set title text attribute
-            appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.hexVal(0xffffff),
+            appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.hexVal(0xfafafa),
                                               NSAttributedString.Key.font: UIFont.size(16, font: .PingFangSC_Semibold)]
             
             UINavigationBar.appearance().standardAppearance = appearance
