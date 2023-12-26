@@ -82,7 +82,11 @@ class EditHeaderCell: EditUserInfoBaseCell {
     }
     
     func setUserData(_ user: UserItem) {
-        avatarView.image = UIImage(named: user.avatarUrl)
+        if let image = user.tempAvatar {
+            avatarView.image = image
+        } else {
+            avatarView.image = UIImage(named: user.avatarUrl)
+        }
         reviewLabel.isHidden = !user.isAvatarReview
     }
 }

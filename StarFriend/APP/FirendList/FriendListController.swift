@@ -36,6 +36,8 @@ class FriendListController: BaseViewController {
         return button
     }()
     
+    let dataList = PublishSubject<[SectionModel<String, UserItem>]>()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,11 +52,12 @@ class FriendListController: BaseViewController {
         }
         
         // 绑定数据源获取方法
-        let randomItems = refreshButton.rx.tap.asObservable()
-            .startWith(()) //加这个为了让一开始就能自动请求一次数据
-            .flatMapLatest(getFriendList)
-            .share(replay: 1)
-                
+//        userList =
+//        refreshButton.rx.tap.asObservable()
+//            .startWith(()) // 加这个为了让一开始就能自动请求一次数据
+//            .flatMapLatest(getFriendList)
+//            .share(replay: 1)
+        
         //创建数据源
         let dataSource = RxCollectionViewSectionedReloadDataSource
         <SectionModel<String, UserItem>>(
@@ -69,12 +72,7 @@ class FriendListController: BaseViewController {
             }
         )
         
-        //绑定单元格数据
-//        items
-//            .bind(to: collectionView.rx.items(dataSource: dataSource))
-//            .disposed(by: disposeBag)
-        
-        randomItems
+        dataList
             .bind(to: collectionView.rx.items(dataSource: dataSource))
             .disposed(by: disposeBag)
         
@@ -83,25 +81,27 @@ class FriendListController: BaseViewController {
             .subscribe(onNext: { [weak self] user in
                 print("选中的用户是\(user)")
                 let vc = UserHomeViewController(user: user)
+                vc.delegate = self
                 self?.navigationController?.pushViewController(vc, animated: true)
             }).disposed(by: disposeBag)
         
-//        Observable.zip(collectionView.rx.itemSelected, collectionView.rx.modelSelected(UserItem.self)).bind { [weak self] (indexPath, userItem) in
-//            print("选中的 indexPath:是\(indexPath)")
-//            print("选中的 user 是：\(userItem.nickname)")
-//        }.disposed(by: disposeBag)
+        reloadDataSource()
     }
     
     //获取随机数据
-    func getFriendList() -> Observable<[SectionModel<String, UserItem>]> {
+    func reloadDataSource() {
         print("正在请求数据......")
         
-        let items = UserData.shared.friendList
+        let items = UserData.shared.friendList.filter { user in
+            user.isBlock == false
+        }
         
-        let observable = Observable.just([SectionModel(model: "", items: items)])
+        dataList.onNext([SectionModel(model: "", items: items)])
         
-        return observable.delay(DispatchTimeInterval.seconds(0),
-                                scheduler: MainScheduler.instance)
+//        let observable = Observable.just([SectionModel(model: "", items: items)])
+        
+//        return observable.delay(DispatchTimeInterval.seconds(0),
+//                                scheduler: MainScheduler.instance)
     }
     
     override func viewSafeAreaInsetsDidChange() {
@@ -113,5 +113,12 @@ class FriendListController: BaseViewController {
             edge.bottom = tabBarController?.tabBar.height ?? 0
             make.edges.equalToSuperview().inset(edge)
         }
+    }
+}
+
+extension FriendListController: UserHomeViewControllerDelegate {
+    func userHomeController(_ vc: UserHomeViewController, didBlock user: UserItem) {
+        reloadDataSource()
+        navigationController?.popToViewController(self, animated: true)
     }
 }

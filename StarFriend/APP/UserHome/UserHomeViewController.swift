@@ -282,7 +282,13 @@ extension UserHomeViewController {
     }
     
     @objc func blockButtonHandler(_ sender: UIButton) {
-        delegate?.userHomeController(self, didBlock: user)
+        user.isBlock = true
+        UserData.shared.save()
+        view.makeToastActivity(.center)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.view.hideToastActivity()
+            self.delegate?.userHomeController(self, didBlock: self.user)
+        }
     }
     
     @objc func reportButtonHandler(_ sender: UIButton) {

@@ -7,6 +7,7 @@
 
 import UIKit
 import SwiftyStoreKit
+import Toast_Swift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -19,8 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        UIViewController.setNavigationBarDefaultAppearance()
-        TabViewController.setTabBarDefaultAppearance()
+        UICommonSetter()
                 
         let window = UIWindow(windowScene: windowScene)
         window.backgroundColor = UIColor.white
@@ -76,13 +76,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
 
 // common ui setter
 extension SceneDelegate {
     func UICommonSetter() {
-        UITabBar.appearance().barTintColor = .white
+        UIViewController.setNavigationBarDefaultAppearance()
+        TabViewController.setTabBarDefaultAppearance()
+        ToastManager.shared.style.titleAlignment = .center
     }
 }

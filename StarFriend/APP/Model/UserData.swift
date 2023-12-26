@@ -138,3 +138,10 @@ fileprivate extension UserData {
         }
     }
 }
+
+extension UserData {
+    static var professionList: [String] = ["Doctor","Nurse","Teacher","Engineer","Lawyer","Programmer",
+                                            "Accountant","Chef","Electrician","Police Officer","Firefighter","Scientist",
+                                            "Artist","Journalist","Actor/Actress","Dentist","Architect","Pilot",
+                                            "Plumber","Mechanic"]
+}

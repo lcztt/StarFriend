@@ -35,6 +35,10 @@ class ReportUserController: BaseViewController {
         textView.layer.masksToBounds = true
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.backgroundColor = UIColor.hexVal(0x666666, 0.9)
+        textView.contentInset = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
+        textView.tintColor = UIColor.hexVal(0x262626)
+        textView.textColor = UIColor.hexVal(0xfafafa)
+        textView.font = UIFont.size(14)
         view.addSubview(textView)
         
         imageTitle.text = "Please select the photo you want to upload："

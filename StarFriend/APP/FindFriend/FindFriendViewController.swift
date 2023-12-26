@@ -166,7 +166,6 @@ extension FindFriendViewController: RadarViewDataSource, RadarTargetViewDelegate
     
     func radarView(_ view: RadarView, targetViewFor index: Int) -> RadarTargetView {
         if let user = UserData.shared.getRandomUser() {
-            
             UserData.shared.addFriend(user)
             UserData.shared.save()
             

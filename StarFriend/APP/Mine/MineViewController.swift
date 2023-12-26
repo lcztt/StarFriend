@@ -11,6 +11,8 @@ import SnapKit
 import RxSwift
 import RxDataSources
 import RxCocoa
+import MessageUI
+import JFPopup
 
 enum MineVCCellType {
     case profile
@@ -60,9 +62,11 @@ class MineViewController: BaseViewController {
                 return cell
             case .gold:
                 let cell = MineGoldTableCell.cellWithTable(tableView)
+                cell.rechargeButton.addTarget(self, action: #selector(self.onRechargeButtonHander(_:)), for: .touchUpInside)
                 return cell
             case .inviteFriend:
                 let cell = MineInviteTableCell.cellWithTable(tableView)
+                cell.shareButton.addTarget(self, action: #selector(self.onInviteFriendHandler(_:)), for: .touchUpInside)
                 return cell
             case .setting:
                 let cell = MineSettingCell.cellWithTable(tableView)
@@ -119,6 +123,11 @@ class MineViewController: BaseViewController {
         
         print("viewDidAppear")
     }
+    
+    @objc func onRechargeButtonHander(_ sender: UIButton) {
+        let vc = StoreViewController(nibName: nil, bundle: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension MineViewController: UITableViewDelegate {
@@ -126,6 +135,54 @@ extension MineViewController: UITableViewDelegate {
         if indexPath.row == 0 {
             let vc = EditUserInfoViewController(nibName: nil, bundle: nil)
             navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+}
+
+extension MineViewController: MFMailComposeViewControllerDelegate {
+    @objc func onInviteFriendHandler(_ button: UIButton) {
+        openMail()
+    }
+    func openMail() {
+        self.popup.bottomSheet {
+            
+            let v = InviteSheetView(frame: CGRect(x: 0, y: 0, width: CGSize.jf.screenWidth(), height: 300))
+            v.mailButton.addTarget(self, action: #selector(onMailButtonHandler(_:)), for: .touchUpInside)
+            return v
+        }
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
+    
+    @objc func onMailButtonHandler(_ sender: UIButton) {
+        self.popup.dismissPopup()
+        
+        // 检查设备是否支持发送邮件
+        if MFMailComposeViewController.canSendMail() {
+            // 创建邮件视图控制器
+            let mailComposeVC = MFMailComposeViewController()
+            mailComposeVC.mailComposeDelegate = self // 设置代理
+            
+            // 设置邮件的主题、收件人、正文等
+            mailComposeVC.setSubject("Subject")
+            mailComposeVC.setToRecipients(["recipient@example.com"])
+            mailComposeVC.setMessageBody("Hello, this is the email body!", isHTML: false)
+            
+            // 显示邮件视图控制器
+            present(mailComposeVC, animated: true, completion: nil)
+        } else {
+            // 设备不支持发送邮件
+            
+            
+            let email = "ficowshen@hotmail.com"
+            if let url = URL(string: "mailto:\(email)") {
+                UIApplication.shared.open(url)
+            } else {
+//                fatalError("Invalid mailto URL!")
+            }
+            print("Device does not support sending emails.")
         }
     }
 }

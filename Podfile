@@ -20,6 +20,10 @@ target 'StarFriend' do
 #  pod 'Alamofire' # 网络
   pod 'Toast-Swift', '~> 5.0.1'
 #  pod 'SVProgressHUD'
+  pod 'BRPickerView'
+#  pod 'RxCoreLocation', '~> 1.5.1'
+  pod "Position", "~> 0.7.0"
+  pod 'JFPopup', '1.5.4'
 
   post_install do |installer|
     installer.generated_projects.each do |project|

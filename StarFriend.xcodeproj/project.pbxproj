@@ -56,6 +56,12 @@
 		43924A232B396AFF00F4CD25 /* EditUserInfoBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43924A222B396AFF00F4CD25 /* EditUserInfoBaseCell.swift */; };
 		43924A252B396B2F00F4CD25 /* EditNickNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43924A242B396B2F00F4CD25 /* EditNickNameCell.swift */; };
 		43924A272B39839300F4CD25 /* EditUserInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43924A262B39839300F4CD25 /* EditUserInputViewController.swift */; };
+		43924A2A2B39ACCF00F4CD25 /* SwiftLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 43924A292B39ACCF00F4CD25 /* SwiftLocation */; };
+		43973B4B2B39ADE300F73A96 /* SwiftLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 43973B4A2B39ADE300F73A96 /* SwiftLocation */; };
+		43973B4D2B3AA64B00F73A96 /* InviteSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43973B4C2B3AA64B00F73A96 /* InviteSheetView.swift */; };
+		43973B4F2B3AAFEE00F73A96 /* RechargeProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43973B4E2B3AAFEE00F73A96 /* RechargeProductModel.swift */; };
+		43973B542B3AB22100F73A96 /* StoreMyBalanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43973B532B3AB22000F73A96 /* StoreMyBalanceCell.swift */; };
+		43973B562B3AB22F00F73A96 /* StoreProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43973B552B3AB22F00F73A96 /* StoreProductCell.swift */; };
 		43E3A1A42B2C5B8D0082050F /* boy_Aadil.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 43E3A1872B2C5B8D0082050F /* boy_Aadil.jpg */; };
 		43E3A1A52B2C5B8D0082050F /* boy_Zoom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 43E3A1882B2C5B8D0082050F /* boy_Zoom.jpg */; };
 		43E3A1A62B2C5B8D0082050F /* boy_Hamed.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 43E3A1892B2C5B8D0082050F /* boy_Hamed.jpg */; };
@@ -150,6 +156,10 @@
 		43924A222B396AFF00F4CD25 /* EditUserInfoBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInfoBaseCell.swift; sourceTree = "<group>"; };
 		43924A242B396B2F00F4CD25 /* EditNickNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNickNameCell.swift; sourceTree = "<group>"; };
 		43924A262B39839300F4CD25 /* EditUserInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInputViewController.swift; sourceTree = "<group>"; };
+		43973B4C2B3AA64B00F73A96 /* InviteSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteSheetView.swift; sourceTree = "<group>"; };
+		43973B4E2B3AAFEE00F73A96 /* RechargeProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeProductModel.swift; sourceTree = "<group>"; };
+		43973B532B3AB22000F73A96 /* StoreMyBalanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMyBalanceCell.swift; sourceTree = "<group>"; };
+		43973B552B3AB22F00F73A96 /* StoreProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProductCell.swift; sourceTree = "<group>"; };
 		43E3A1872B2C5B8D0082050F /* boy_Aadil.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boy_Aadil.jpg; sourceTree = "<group>"; };
 		43E3A1882B2C5B8D0082050F /* boy_Zoom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boy_Zoom.jpg; sourceTree = "<group>"; };
 		43E3A1892B2C5B8D0082050F /* boy_Hamed.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boy_Hamed.jpg; sourceTree = "<group>"; };
@@ -200,6 +210,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B5249E62D9C0BA300127E9C /* Pods_StarFriend.framework in Frameworks */,
+				43973B4B2B39ADE300F73A96 /* SwiftLocation in Frameworks */,
+				43924A2A2B39ACCF00F4CD25 /* SwiftLocation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,8 +389,9 @@
 		4353A52D2B29B57C006C7CC4 /* IAP */ = {
 			isa = PBXGroup;
 			children = (
-				4353A52E2B29B57C006C7CC4 /* IAPManager.swift */,
-				4353A52F2B29B57C006C7CC4 /* AppleReceiptValidatorX.swift */,
+				43973B522B3AB20700F73A96 /* View */,
+				43973B512B3AB20000F73A96 /* Model */,
+				43973B502B3AB1F000F73A96 /* IAP */,
 				4353A5302B29B57C006C7CC4 /* StoreViewController.swift */,
 			);
 			path = IAP;
@@ -421,6 +434,32 @@
 				43924A242B396B2F00F4CD25 /* EditNickNameCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		43973B502B3AB1F000F73A96 /* IAP */ = {
+			isa = PBXGroup;
+			children = (
+				4353A52E2B29B57C006C7CC4 /* IAPManager.swift */,
+				4353A52F2B29B57C006C7CC4 /* AppleReceiptValidatorX.swift */,
+			);
+			path = IAP;
+			sourceTree = "<group>";
+		};
+		43973B512B3AB20000F73A96 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				43973B4E2B3AAFEE00F73A96 /* RechargeProductModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		43973B522B3AB20700F73A96 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				43973B532B3AB22000F73A96 /* StoreMyBalanceCell.swift */,
+				43973B552B3AB22F00F73A96 /* StoreProductCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		43E3A1852B2C5B8D0082050F /* avatar */ = {
@@ -488,6 +527,7 @@
 			children = (
 				43F6FDD02B359DFD0053AC61 /* Cell */,
 				43F6FDC42B3533BD0053AC61 /* MineViewController.swift */,
+				43973B4C2B3AA64B00F73A96 /* InviteSheetView.swift */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -539,6 +579,10 @@
 			dependencies = (
 			);
 			name = StarFriend;
+			packageProductDependencies = (
+				43924A292B39ACCF00F4CD25 /* SwiftLocation */,
+				43973B4A2B39ADE300F73A96 /* SwiftLocation */,
+			);
 			productName = StarFriend;
 			productReference = 4353A4FB2B29B3A5006C7CC4 /* StarFriend.app */;
 			productType = "com.apple.product-type.application";
@@ -567,6 +611,9 @@
 				Base,
 			);
 			mainGroup = 4353A4F22B29B3A5006C7CC4;
+			packageReferences = (
+				43973B492B39ADE300F73A96 /* XCRemoteSwiftPackageReference "SwiftLocation" */,
+			);
 			productRefGroup = 4353A4FC2B29B3A5006C7CC4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -665,7 +712,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4353A54C2B29B57C006C7CC4 /* IAPManager.swift in Sources */,
+				43973B4D2B3AA64B00F73A96 /* InviteSheetView.swift in Sources */,
 				4353A54A2B29B57C006C7CC4 /* FriendListCell.swift in Sources */,
+				43973B4F2B3AAFEE00F73A96 /* RechargeProductModel.swift in Sources */,
 				4353A5442B29B57C006C7CC4 /* UIViewController+Extension.swift in Sources */,
 				43924A272B39839300F4CD25 /* EditUserInputViewController.swift in Sources */,
 				43F6FDCF2B359DF60053AC61 /* MineSettingCell.swift in Sources */,
@@ -675,6 +724,7 @@
 				4353A54E2B29B57C006C7CC4 /* StoreViewController.swift in Sources */,
 				4353A53D2B29B57C006C7CC4 /* RadarIndicatorView.swift in Sources */,
 				4353A5552B29B5B4006C7CC4 /* TabViewController.swift in Sources */,
+				43973B562B3AB22F00F73A96 /* StoreProductCell.swift in Sources */,
 				43E3A1E42B314D950082050F /* String+Extension.swift in Sources */,
 				4353A5532B29B57C006C7CC4 /* ChatMessageCell.swift in Sources */,
 				43297B6A2B2C081000A538D0 /* UserProfileTableCell.swift in Sources */,
@@ -694,6 +744,7 @@
 				4353A5422B29B57C006C7CC4 /* Feedbacks.swift in Sources */,
 				43F6FDC52B3533BD0053AC61 /* MineViewController.swift in Sources */,
 				43297B402B2A17CE00A538D0 /* FindFriendViewController.swift in Sources */,
+				43973B542B3AB22100F73A96 /* StoreMyBalanceCell.swift in Sources */,
 				43924A1D2B3969D300F4CD25 /* EditUserInfoViewController.swift in Sources */,
 				4353A5382B29B57C006C7CC4 /* BaseViewController.swift in Sources */,
 				43924A202B396ABC00F4CD25 /* EditHeaderCell.swift in Sources */,
@@ -868,7 +919,9 @@
 				DEVELOPMENT_TEAM = L7L2847Q43;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StarFriend/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Starfriend;
 				INFOPLIST_KEY_NSCameraUsageDescription = "The app needs your permission to use the camera so that it can take pictures.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The APP requires your consent to obtain location information while using it";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "The app needs your permission to access the photo library.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -882,7 +935,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.friend.star.StarFriend;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vitas.chat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -903,7 +956,9 @@
 				DEVELOPMENT_TEAM = L7L2847Q43;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StarFriend/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Starfriend;
 				INFOPLIST_KEY_NSCameraUsageDescription = "The app needs your permission to use the camera so that it can take pictures.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The APP requires your consent to obtain location information while using it";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "The app needs your permission to access the photo library.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -917,7 +972,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.friend.star.StarFriend;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vitas.chat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -949,6 +1004,29 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		43973B492B39ADE300F73A96 /* XCRemoteSwiftPackageReference "SwiftLocation" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftLocation";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		43924A292B39ACCF00F4CD25 /* SwiftLocation */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftLocation;
+		};
+		43973B4A2B39ADE300F73A96 /* SwiftLocation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 43973B492B39ADE300F73A96 /* XCRemoteSwiftPackageReference "SwiftLocation" */;
+			productName = SwiftLocation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4353A4F32B29B3A5006C7CC4 /* Project object */;
 }

@@ -1,12 +1,28 @@
 PODS:
+  - BRPickerView (2.8.1):
+    - BRPickerView/AddressPickerView (= 2.8.1)
+    - BRPickerView/Base (= 2.8.1)
+    - BRPickerView/DatePickerView (= 2.8.1)
+    - BRPickerView/StringPickerView (= 2.8.1)
+  - BRPickerView/AddressPickerView (2.8.1):
+    - BRPickerView/Base
+  - BRPickerView/Base (2.8.1)
+  - BRPickerView/DatePickerView (2.8.1):
+    - BRPickerView/Base
+  - BRPickerView/StringPickerView (2.8.1):
+    - BRPickerView/Base
   - Differentiator (5.0.0)
   - GRDB.swift (6.23.0):
     - GRDB.swift/standard (= 6.23.0)
   - GRDB.swift/SQLCipher (6.23.0):
     - SQLCipher (>= 3.4.2)
   - GRDB.swift/standard (6.23.0)
+  - JFPopup (1.5.4):
+    - JRBaseKit (~> 1.1.1)
+  - JRBaseKit (1.1.2)
   - JXPhotoBrowser (3.1.4)
   - Kingfisher (7.10.1)
+  - Position (0.7.1)
   - PromiseKit (8.1.1):
     - PromiseKit/CorePromise (= 8.1.1)
     - PromiseKit/Foundation (= 8.1.1)
@@ -48,8 +64,11 @@ PODS:
   - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
+  - BRPickerView
+  - JFPopup (= 1.5.4)
   - JXPhotoBrowser (~> 3.0)
   - Kingfisher
+  - Position (~> 0.7.0)
   - PromiseKit
   - RxCocoa (= 6.6.0)
   - RxDataSources (~> 5.0)
@@ -63,10 +82,14 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - BRPickerView
     - Differentiator
     - GRDB.swift
+    - JFPopup
+    - JRBaseKit
     - JXPhotoBrowser
     - Kingfisher
+    - Position
     - PromiseKit
     - RxCocoa
     - RxDataSources
@@ -80,10 +103,14 @@ SPEC REPOS:
     - Toast-Swift
 
 SPEC CHECKSUMS:
+  BRPickerView: 2531a2d4d0fea0b57a1c738de215af0f88863a2f
   Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   GRDB.swift: e819934eb2df28a6907f28d746eb3cf9c7c53b75
+  JFPopup: c3ada13bbda3cfe85bd71228e20a0b622eab72af
+  JRBaseKit: 825cca458a73990f6019deaaaaff75840dea477f
   JXPhotoBrowser: 41ffa41252c8d5264f97ab3c1936a5cf935a58d7
   Kingfisher: bc5abe80a8e0144537ef1dd5a0b2621b04f7f439
+  Position: e60213a31dd920abe9ea375020d20c9a5eee3cc5
   PromiseKit: d1be44b474e5acfa16adf007a1f49f104e10fead
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
@@ -96,6 +123,6 @@ SPEC CHECKSUMS:
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 49abeac63c2f1aab62ee446f98a82598c0c88bb4
+PODFILE CHECKSUM: ea0a16d44ded3dc9568c262f7ecf13cb796e50b2
 
 COCOAPODS: 1.14.2

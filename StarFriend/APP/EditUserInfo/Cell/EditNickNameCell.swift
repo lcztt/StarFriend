@@ -44,7 +44,7 @@ class EditNickNameCell: EditUserInfoBaseCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        titleLabel.textColor = UIColor.hexVal(0xdbdbdb)
+        titleLabel.textColor = UIColor.hexVal(0xbfbfbf)
         titleLabel.font = UIFont.size(16)
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         cardView.addSubview(titleLabel)
