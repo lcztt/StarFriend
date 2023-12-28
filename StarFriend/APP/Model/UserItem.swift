@@ -27,6 +27,7 @@ class UserItem: Codable {
     var photoList: [String] = []
     
     init(data: [String: Any]) {
+        self.uid = data["uid"] as? Int ?? 0
         self.nickname = data["nickname"] as? String ?? ""
         self.avatarUrl = data["avatar"] as? String ?? ""
         self.location = data["location"] as? String ?? ""
@@ -44,6 +45,7 @@ class UserItem: Codable {
     
     func toDictionary() -> [String: Any] {
         var dict = [String: Any]()
+        dict["uid"] = uid
         dict["nickname"] = nickname
         dict["avatar"] = avatarUrl
         dict["location"] = location

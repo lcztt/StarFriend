@@ -66,6 +66,9 @@ class MineInviteTableCell: MineBaseTableCell {
         cardView.addSubview(titleLabel)
         cardView.addSubview(descLabel)
         cardView.addSubview(shareButton)
+//        cardView.snp.updateConstraints { make in
+//            make.bottom.equalToSuperview().inset(12)
+//        }
                 
         titleLabel.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(12)

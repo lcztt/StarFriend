@@ -26,14 +26,14 @@ extension UITabBarController {
             
             // remove background
             appearance.backgroundColor = .clear
-            appearance.backgroundImage = UIImage(named: "")
+            appearance.backgroundImage = nil//UIImage(named: "")
             
             // set background effect (none)
             appearance.backgroundEffect = nil //UIBlurEffect(style: .regular)
             
             // remove shadow line
             appearance.shadowColor = .clear
-            appearance.shadowImage = UIImage(named: "")
+            appearance.shadowImage = nil//UIImage(named: "")
             
             // set item title text attributes
             let itemAppearance = UITabBarItemAppearance()

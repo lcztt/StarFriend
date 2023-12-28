@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 import PromiseKit
+import JFPopup
 //import LiquidLoader
 
 
@@ -25,10 +26,27 @@ class FindFriendViewController: BaseViewController {
         let view = WaveAnimationButton(frame: .zero)
         return view
     }()
+    
+    static let dateFormatter = DateFormatter()
 
     var pointsArray: Array = [CGPoint]()
     
-    var todayFreeTime: Int = 5
+    var todayFreeTime: Int {
+        get {
+            let key = getCurrentDay()
+            if let count = UserDefaults.standard.object(forKey: key) as? Int {
+                return count
+            }
+            UserDefaults.standard.setValue(5, forKey: key)
+            UserDefaults.standard.synchronize()
+            return 5
+        }
+        set {
+            let key = getCurrentDay()
+            UserDefaults.standard.setValue(newValue, forKey: key)
+            UserDefaults.standard.synchronize()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,6 +81,14 @@ class FindFriendViewController: BaseViewController {
     override func viewDidDisappear(_ animated: Bool) {
         radarView.stop()
     }
+    
+    func getCurrentDay() -> String {
+        let currentDate = Date()
+        
+        FindFriendViewController.dateFormatter.dateFormat = "yyyy_MM_dd"
+        let formattedDate = FindFriendViewController.dateFormatter.string(from: currentDate)
+        return formattedDate
+    }
 }
 
 extension FindFriendViewController {
@@ -86,6 +112,11 @@ extension FindFriendViewController {
                 
                 if self.todayFreeTime <= 0 {
                     // MARK: 弹框提示内购
+                    if UserData.shared.me.gold > 20 {
+                        self.showUseGoldTips()
+                    } else {
+                        self.showByGoldTips()
+                    }
                     return
                 }
                 
@@ -96,6 +127,23 @@ extension FindFriendViewController {
             }
         }.disposed(by: disposeBag)
     }
+    
+    @objc func showUseGoldTips() {
+        self.popup.dialog {
+            let v = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+            v.backgroundColor = .red
+            return v
+        }
+    }
+    
+    @objc func showByGoldTips() {
+        self.popup.dialog {
+            let v = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
+            v.backgroundColor = .red
+            return v
+        }
+    }
+
     
     // MARK: 按钮点击
     private func handlerFindButtonClick() {
@@ -203,10 +251,7 @@ extension FindFriendViewController: RadarViewDataSource, RadarTargetViewDelegate
 
 extension FindFriendViewController: UserHomeViewControllerDelegate {
     func userHomeController(_ vc: UserHomeViewController, didBlock user: UserItem) {
-        
-        
-        
+                
         navigationController?.popToViewController(self, animated: true)
-        
     }
 }

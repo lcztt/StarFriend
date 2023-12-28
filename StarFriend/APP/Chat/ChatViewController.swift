@@ -10,58 +10,32 @@ import SnapKit
 import RxSwift
 import RxCocoa
 import RxDataSources
+import JFPopup
+import InputBarAccessoryView
 
-/**
-Another way to do "MVVM". There are different ideas what does MVVM mean depending on your background.
- It's kind of similar like FRP.
- 
- In the end, it doesn't really matter what jargon are you using.
- 
- This would be the ideal case, but it's really hard to model complex views this way
- because it's not possible to observe partial model changes.
-*/
-struct TableViewEditingCommandsViewModel {
-    let favoriteUsers: [UserItem]
-    let users: [UserItem]
-
-    static func executeCommand(state: TableViewEditingCommandsViewModel, _ command: TableViewEditingCommand) -> TableViewEditingCommandsViewModel {
-        switch command {
-        case let .setUsers(users):
-            return TableViewEditingCommandsViewModel(favoriteUsers: state.favoriteUsers, users: users)
-        case let .setFavoriteUsers(favoriteUsers):
-            return TableViewEditingCommandsViewModel(favoriteUsers: favoriteUsers, users: state.users)
-        case let .deleteUser(indexPath):
-            var all = [state.favoriteUsers, state.users]
-            all[indexPath.section].remove(at: indexPath.row)
-            return TableViewEditingCommandsViewModel(favoriteUsers: all[0], users: all[1])
-        case let .moveUser(from, to):
-            var all = [state.favoriteUsers, state.users]
-            let user = all[from.section][from.row]
-            all[from.section].remove(at: from.row)
-            all[to.section].insert(user, at: to.row)
-
-            return TableViewEditingCommandsViewModel(favoriteUsers: all[0], users: all[1])
-        }
-    }
-}
-
-enum TableViewEditingCommand {
-    case setUsers(users: [UserItem])
-    case setFavoriteUsers(favoriteUsers: [UserItem])
-    case deleteUser(indexPath: IndexPath)
-    case moveUser(from: IndexPath, to: IndexPath)
-}
-
-class ChatViewController: BaseViewController, UITableViewDelegate {
+class ChatViewController: BaseViewController {
     
     let user: UserItem
     
+    let inputBar: InputBarAccessoryView = InputBarAccessoryView()
+    
     lazy var tableView: UITableView = {
         let table = UITableView(frame: .zero, style: .plain)
+        table.separatorStyle = .none
         return table
     }()
     
-    let dataSource = ChatViewController.configureDataSource()
+    lazy var headerView: MessageTableHeaderView = {
+        let view = MessageTableHeaderView(frame: .zero)
+        return view
+    }()
+    
+    lazy var chatButton: UIButton = {
+        let button = UIButton(frame: .zero)
+        return button
+    }()
+    
+    var dataSource = [ChatMessageModel]()
     
     init(user: UserItem) {
         
@@ -80,130 +54,185 @@ class ChatViewController: BaseViewController, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        print("viewdidload")
+        
+        title = user.nickname
+        
+        let button = UIButton(type: .custom)
+        button.addTarget(self, action: #selector(onMoreButtonHandler(_:)), for: .touchUpInside)
+        button.setImage(UIImage(named: "item_more"), for: .normal)
+        let barItem = UIBarButtonItem(customView: button)
+        navigationItem.rightBarButtonItem = barItem
         
         tableView.backgroundColor = UIColor.clear
+        tableView.delegate = self
+        tableView.dataSource = self
         tableView.register(ChatMessageCell.self, forCellReuseIdentifier: "ChatMessageCell")
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 40
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(view.safeAreaInsets)
         }
         
-        typealias Feedback = (ObservableSchedulerContext<TableViewEditingCommandsViewModel>) -> Observable<TableViewEditingCommand>
-
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
-
-//        let superMan = UserItem()
-//        let watMan = UserItem()
-//
-//        let loadFavoriteUsers = SendMessageAPI.sharedAPI
-//            .getExampleUserResultSet()
-//            .map(TableViewEditingCommand.setUsers)
-//            .catchAndReturn(TableViewEditingCommand.setUsers(users: []))
-//
-//        let initialLoadCommand = Observable.just(TableViewEditingCommand.setFavoriteUsers(favoriteUsers: [superMan, watMan]))
-//                .concat(loadFavoriteUsers)
-//                .observe(on:MainScheduler.instance)
-//
-//        let uiFeedback: Feedback = bind(self) { this, state in
-//            let subscriptions = [
-//                state.map {
-//                        [
-//                            SectionModel(model: "Favorite Users", items: $0.favoriteUsers),
-//                            SectionModel(model: "Normal Users", items: $0.users)
-//                        ]
-//                    }
-//                    .bind(to: this.tableView.rx.items(dataSource: this.dataSource)),
-//                this.tableView.rx.itemSelected
-//                    .withLatestFrom(state) { i, latestState in
-//                        let all = [latestState.favoriteUsers, latestState.users]
-//                        return all[i.section][i.row]
-//                    }
-//                    .subscribe(onNext: { [weak this] user in
-//                        this?.showDetailsForUser(user)
-//                    }),
-//            ]
-//
-//            let events: [Observable<TableViewEditingCommand>] = [
-//
-//                this.tableView.rx.itemDeleted.map(TableViewEditingCommand.deleteUser),
-//                this.tableView .rx.itemMoved.map({ val in return TableViewEditingCommand.moveUser(from: val.0, to: val.1) })
-//            ]
-//
-//            return Bindings(subscriptions: subscriptions, events: events)
-//        }
-//
-//        let initialLoadFeedback: Feedback = { _ in initialLoadCommand }
-//
-//        Observable.system(
-//            initialState: TableViewEditingCommandsViewModel(favoriteUsers: [], users: []),
-//            reduce: TableViewEditingCommandsViewModel.executeCommand,
-//            scheduler: MainScheduler.instance,
-//            scheduledFeedback: uiFeedback, initialLoadFeedback
-//        )
-//            .subscribe()
-//            .disposed(by: disposeBag)
-//
-//        // customization using delegate
-//        // RxTableViewDelegateBridge will forward correct messages
-//        tableView.rx.setDelegate(self)
-//            .disposed(by: disposeBag)
+        tableView.tableHeaderView = headerView
         
+        inputBar.delegate = self
+        inputBar.inputTextView.keyboardType = .default
+//        inputBar.inputTextView.placeholderLabel.textAlignment = .right
+        inputBar.inputTextView.placeholder = "Sending..."
+        
+        dataSource = ChatMessageData.loadMessageFor(user)
+        tableView.reloadData()
     }
     
-    override func setEditing(_ editing: Bool, animated: Bool) {
-        super.setEditing(editing, animated: animated)
-        tableView.isEditing = editing
-    }
-
-    // MARK: Table view delegate ;)
-
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let title = dataSource[section]
-
-        let label = UILabel(frame: CGRect.zero)
-        // hacky I know :)
-        label.text = "  \(title)"
-        label.textColor = UIColor.white
-        label.backgroundColor = UIColor.darkGray
-        label.alpha = 0.9
-
-        return label
-    }
-
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        40
-    }
-
-    // MARK: Navigation
-
-    private func showDetailsForUser(_ user: UserItem) {
-        
-        let vc = SendMessageViewController(nibName: nil, bundle: nil)
-//        viewController.user = user
-        self.navigationController?.pushViewController(vc, animated: true)
+    override var inputAccessoryView: UIView? {
+        return inputBar
     }
     
-    // MARK: Work over Variable
-    static func configureDataSource() -> RxTableViewSectionedReloadDataSource<SectionModel<String, UserItem>> {
-        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, UserItem>>(
-            configureCell: { (_, tv, ip, user: UserItem) in
-                let cell = tv.dequeueReusableCell(withIdentifier: "ChatMessageCell")!
-                cell.textLabel?.text = user.nickname + " " + user.location
-                return cell
-            },
-            titleForHeaderInSection: { dataSource, sectionIndex in
-                return dataSource[sectionIndex].model
-            },
-            canEditRowAtIndexPath: { (ds, ip) in
-                return true
-            },
-            canMoveRowAtIndexPath: { _, _ in
-                return true
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
+    
+    override func viewSafeAreaInsetsDidChange() {
+        super.viewSafeAreaInsetsDidChange()
+        
+        let safeInsets = view.safeAreaInsets
+        tableView.snp.updateConstraints { make in
+            make.edges.equalToSuperview().inset(safeInsets)
+        }
+    }
+    
+    @objc private func onMoreButtonHandler(_ sender: UIButton) {
+        self.popup.actionSheet {
+            [
+                JFPopupAction(with: "Report", subTitle: nil, clickActionCallBack: { [weak self] in
+                    let vc = ReportUserController(nibName: nil, bundle: nil)
+                    self?.navigationController?.pushViewController(vc, animated: true)
+                }),
+                JFPopupAction(with: "Delete", subTitle: nil, clickActionCallBack: { [weak self] in
+                    self!.user.isBlock = true
+                    ChatMessageData.deleteChat(self!.user)
+                    UserData.shared.save()
+                    self!.view.makeToastActivity(.center)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        self!.view.hideToastActivity()
+                        self?.navigationController?.popToRootViewController(animated: true)
+//                        self?.delegate?.userHomeController(self, didBlock: self.user)
+                    }
+                })
+            ]
+        }
+    }
+    
+    func sendMessage(_ content: String) {
+        let messageModel = ChatMessageModel([:])
+        messageModel.content = content
+        messageModel.fromUid = UserData.shared.me.uid
+        messageModel.toUid = user.uid
+        messageModel.fromUser = UserData.shared.me
+        messageModel.time = getCurrentTime()
+        
+        dataSource.append(messageModel)
+        ChatMessageData.saveMessage(dataSource, for: user)
+        
+        let indexPath = IndexPath(row: dataSource.count - 1, section: 0)
+        tableView.insertRows(at: [indexPath], with: .fade)
+        tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+    }
+    
+    func getCurrentTime() -> String {
+        let currentDate = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        let formattedDate = dateFormatter.string(from: currentDate)
+        return formattedDate
+    }
+}
+
+extension ChatViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = ChatMessageCell(frame: .zero)
+        let message = dataSource[indexPath.row]
+        cell.setupMessage(message)
+        return cell
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.isDragging {
+            if inputBar.inputTextView.isFirstResponder {
+                inputBar.inputTextView.resignFirstResponder()
             }
-        )
-
-        return dataSource
+        }
     }
+}
+
+extension ChatViewController: InputBarAccessoryViewDelegate {
+    
+    // MARK: - InputBarAccessoryViewDelegate
+    
+    func inputBar(_ inputBar: InputBarAccessoryView, didPressSendButtonWith text: String) {
+        
+        // Here we can parse for which substrings were autocompleted
+        
+        if let content = inputBar.inputTextView.text {
+            sendMessage(content)
+        }
+//
+//        let attributedText = inputBar.inputTextView.attributedText!
+//        let range = NSRange(location: 0, length: attributedText.length)
+//        attributedText.enumerateAttribute(.autocompleted, in: range, options: []) { (attributes, range, stop) in
+//            
+//            let substring = attributedText.attributedSubstring(from: range)
+//            let context = substring.attribute(.autocompletedContext, at: 0, effectiveRange: nil)
+//            print("Autocompleted: `", substring, "` with context: ", context ?? [])
+//        }
+
+        inputBar.inputTextView.text = String()
+        inputBar.invalidatePlugins()
+
+        // Send button activity animation
+        inputBar.sendButton.startAnimating()
+//        inputBar.inputTextView.placeholder = "Sending..."
+        DispatchQueue.global(qos: .default).async {
+            // fake send request task
+            sleep(1)
+            DispatchQueue.main.async { [weak self] in
+                inputBar.sendButton.stopAnimating()
+                inputBar.inputTextView.placeholder = "Say something..."
+//                self?.conversation.messages.append(SampleData.Message(user: SampleData.shared.currentUser, text: text))
+//                let indexPath = IndexPath(row: (self?.conversation.messages.count ?? 1) - 1, section: 0)
+//                self?.tableView.insertRows(at: [indexPath], with: .automatic)
+//                self?.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+            }
+        }
+    }
+    
+    func inputBar(_ inputBar: InputBarAccessoryView, didChangeIntrinsicContentTo size: CGSize) {
+        // Adjust content insets
+//        print(size)
+        tableView.contentInset.bottom = size.height + 300 // keyboard size estimate
+    }
+    
+    @objc func inputBar(_ inputBar: InputBarAccessoryView, textViewTextDidChangeTo text: String) {
+        
+//        guard autocompleteManager.currentSession != nil, autocompleteManager.currentSession?.prefix == "#" else { return }
+//        // Load some data asyncronously for the given session.prefix
+//        DispatchQueue.global(qos: .default).async {
+//            // fake background loading task
+//            var array: [AutocompleteCompletion] = []
+//            for _ in 1...10 {
+//                array.append(AutocompleteCompletion(text: Lorem.word()))
+//            }
+//            sleep(1)
+//            DispatchQueue.main.async { [weak self] in
+//                self?.asyncCompletions = array
+//                self?.autocompleteManager.reloadData()
+//            }
+//        }
+    }
+    
 }

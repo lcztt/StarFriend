@@ -13,12 +13,15 @@ import RxDataSources
 import RxCocoa
 import MessageUI
 import JFPopup
+import SafariServices
 
 enum MineVCCellType {
     case profile
     case gold
     case inviteFriend
-    case setting
+    case privacy
+    case support
+    case aboutApp
 }
 
 class MineViewController: BaseViewController {
@@ -41,17 +44,22 @@ class MineViewController: BaseViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.separatorStyle = .none
         tableView.estimatedRowHeight = 100
+        tableView.delegate = self
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(UIEdgeInsets.zero)
         }
+        
+//        tableView.tableFooterView = MineTableFooterView(frame: .zero)
         
         // 初始化数据
         let sections = Observable.just([SectionModel(model: "",
                                                      items: [MineVCCellType.profile,
                                                              .gold,
                                                              .inviteFriend,
-                                                             .setting])])
+                                                             .privacy,
+                                                             .support,
+                                                             .aboutApp])])
         
         // 创建数据源
         let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, MineVCCellType>> { dataSource, tableView, indexPath, item in
@@ -68,8 +76,16 @@ class MineViewController: BaseViewController {
                 let cell = MineInviteTableCell.cellWithTable(tableView)
                 cell.shareButton.addTarget(self, action: #selector(self.onInviteFriendHandler(_:)), for: .touchUpInside)
                 return cell
-            case .setting:
+            case .privacy:
                 let cell = MineSettingCell.cellWithTable(tableView)
+                cell.setData(.privacy)
+                return cell
+            case .support:
+                let cell = MineSettingCell.cellWithTable(tableView)
+                cell.setData(.support)
+                return cell
+            case .aboutApp:
+                let cell = MineAboutAppCell.cellWithTable(tableView)
                 return cell
             }
         }
@@ -130,10 +146,25 @@ class MineViewController: BaseViewController {
     }
 }
 
-extension MineViewController: UITableViewDelegate {
+extension MineViewController: UITableViewDelegate, SFSafariViewControllerDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             let vc = EditUserInfoViewController(nibName: nil, bundle: nil)
+            navigationController?.pushViewController(vc, animated: true)
+        } else if indexPath.row == 3 {
+            if let url = URL(string: "https://talented-route-e6f.notion.site/Privacy-Agreement-ea0589c90a784785ada7425f9ab0004a") {
+                let safariViewController = SFSafariViewController(url: url)
+                safariViewController.delegate = self
+                present(safariViewController, animated: true, completion: nil)
+            }
+        } else if indexPath.row == 4 {
+            if let url = URL(string: "https://talented-route-e6f.notion.site/Technical-Support-ac716b3d2c394bb594f4e04d791e9558") {
+                let safariViewController = SFSafariViewController(url: url)
+                safariViewController.delegate = self
+                present(safariViewController, animated: true, completion: nil)
+            }
+        } else if indexPath.row == 5 {
+            let vc = AboutAppController(nibName: nil, bundle: nil)
             navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -143,6 +174,7 @@ extension MineViewController: MFMailComposeViewControllerDelegate {
     @objc func onInviteFriendHandler(_ button: UIButton) {
         openMail()
     }
+    
     func openMail() {
         self.popup.bottomSheet {
             
@@ -166,9 +198,9 @@ extension MineViewController: MFMailComposeViewControllerDelegate {
             mailComposeVC.mailComposeDelegate = self // 设置代理
             
             // 设置邮件的主题、收件人、正文等
-            mailComposeVC.setSubject("Subject")
-            mailComposeVC.setToRecipients(["recipient@example.com"])
-            mailComposeVC.setMessageBody("Hello, this is the email body!", isHTML: false)
+            mailComposeVC.setSubject("")
+            mailComposeVC.setToRecipients([""])
+            mailComposeVC.setMessageBody("", isHTML: false)
             
             // 显示邮件视图控制器
             present(mailComposeVC, animated: true, completion: nil)
@@ -176,7 +208,7 @@ extension MineViewController: MFMailComposeViewControllerDelegate {
             // 设备不支持发送邮件
             
             
-            let email = "ficowshen@hotmail.com"
+            let email = ""
             if let url = URL(string: "mailto:\(email)") {
                 UIApplication.shared.open(url)
             } else {

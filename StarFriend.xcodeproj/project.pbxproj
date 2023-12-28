@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0B5249E62D9C0BA300127E9C /* Pods_StarFriend.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64DA2EA4824AFD16BB8B1F75 /* Pods_StarFriend.framework */; };
+		4301E74F2B3AF92E0073F46F /* ChatMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4301E74E2B3AF92E0073F46F /* ChatMessageModel.swift */; };
+		4301E7512B3AF93B0073F46F /* ChatMessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4301E7502B3AF93B0073F46F /* ChatMessageData.swift */; };
+		4301E7532B3AFC850073F46F /* MessageTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4301E7522B3AFC850073F46F /* MessageTableHeaderView.swift */; };
 		43189D9C2B33EB9F00A212E5 /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43189D9B2B33EB9F00A212E5 /* CustomImageView.swift */; };
 		43189D9F2B341FC000A212E5 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43189D9E2B341FC000A212E5 /* BaseNavigationController.swift */; };
 		43297B362B2A165400A538D0 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43297B352B2A165400A538D0 /* UIView+Extension.swift */; };
@@ -44,10 +47,16 @@
 		4353A54D2B29B57C006C7CC4 /* AppleReceiptValidatorX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A52F2B29B57C006C7CC4 /* AppleReceiptValidatorX.swift */; };
 		4353A54E2B29B57C006C7CC4 /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A5302B29B57C006C7CC4 /* StoreViewController.swift */; };
 		4353A54F2B29B57C006C7CC4 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A5332B29B57C006C7CC4 /* ChatViewController.swift */; };
-		4353A5512B29B57C006C7CC4 /* SendMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A5352B29B57C006C7CC4 /* SendMessageViewController.swift */; };
 		4353A5522B29B57C006C7CC4 /* SendMessageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A5362B29B57C006C7CC4 /* SendMessageAPI.swift */; };
 		4353A5532B29B57C006C7CC4 /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A5372B29B57C006C7CC4 /* ChatMessageCell.swift */; };
 		4353A5552B29B5B4006C7CC4 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A5542B29B5B4006C7CC4 /* TabViewController.swift */; };
+		435447272B3B1D2A00390D0C /* InputBarAccessoryView in Frameworks */ = {isa = PBXBuildFile; productRef = 435447262B3B1D2A00390D0C /* InputBarAccessoryView */; };
+		435447292B3C6A7600390D0C /* UseGoldTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435447282B3C6A7600390D0C /* UseGoldTipsView.swift */; };
+		4354472B2B3C6A8600390D0C /* ByGoldTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4354472A2B3C6A8600390D0C /* ByGoldTipsView.swift */; };
+		4354472D2B3D5D8600390D0C /* MineTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4354472C2B3D5D8600390D0C /* MineTableFooterView.swift */; };
+		4354472F2B3D878F00390D0C /* MyCustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4354472E2B3D878F00390D0C /* MyCustomTabBar.swift */; };
+		4385F40F2B3DB7E5005CE3F2 /* MineAboutAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4385F40E2B3DB7E5005CE3F2 /* MineAboutAppCell.swift */; };
+		4385F4112B3DBC27005CE3F2 /* AboutAppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4385F4102B3DBC27005CE3F2 /* AboutAppController.swift */; };
 		4391E28A2B331D4C00123E80 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4391E2892B331D4C00123E80 /* UserData.swift */; };
 		4391E28D2B331F0E00123E80 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4391E28C2B331F0E00123E80 /* Array+Extension.swift */; };
 		4391E28F2B331F6F00123E80 /* Dictionary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4391E28E2B331F6F00123E80 /* Dictionary+Extension.swift */; };
@@ -106,6 +115,9 @@
 
 /* Begin PBXFileReference section */
 		3821741135C545AF73DB5E6E /* Pods-StarFriend.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarFriend.release.xcconfig"; path = "Target Support Files/Pods-StarFriend/Pods-StarFriend.release.xcconfig"; sourceTree = "<group>"; };
+		4301E74E2B3AF92E0073F46F /* ChatMessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageModel.swift; sourceTree = "<group>"; };
+		4301E7502B3AF93B0073F46F /* ChatMessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageData.swift; sourceTree = "<group>"; };
+		4301E7522B3AFC850073F46F /* MessageTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableHeaderView.swift; sourceTree = "<group>"; };
 		43189D9B2B33EB9F00A212E5 /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		43189D9E2B341FC000A212E5 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		43297B352B2A165400A538D0 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -144,10 +156,15 @@
 		4353A52F2B29B57C006C7CC4 /* AppleReceiptValidatorX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleReceiptValidatorX.swift; sourceTree = "<group>"; };
 		4353A5302B29B57C006C7CC4 /* StoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
 		4353A5332B29B57C006C7CC4 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		4353A5352B29B57C006C7CC4 /* SendMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMessageViewController.swift; sourceTree = "<group>"; };
 		4353A5362B29B57C006C7CC4 /* SendMessageAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMessageAPI.swift; sourceTree = "<group>"; };
 		4353A5372B29B57C006C7CC4 /* ChatMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageCell.swift; sourceTree = "<group>"; };
 		4353A5542B29B5B4006C7CC4 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		435447282B3C6A7600390D0C /* UseGoldTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseGoldTipsView.swift; sourceTree = "<group>"; };
+		4354472A2B3C6A8600390D0C /* ByGoldTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByGoldTipsView.swift; sourceTree = "<group>"; };
+		4354472C2B3D5D8600390D0C /* MineTableFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineTableFooterView.swift; sourceTree = "<group>"; };
+		4354472E2B3D878F00390D0C /* MyCustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomTabBar.swift; sourceTree = "<group>"; };
+		4385F40E2B3DB7E5005CE3F2 /* MineAboutAppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineAboutAppCell.swift; sourceTree = "<group>"; };
+		4385F4102B3DBC27005CE3F2 /* AboutAppController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAppController.swift; sourceTree = "<group>"; };
 		4391E2892B331D4C00123E80 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		4391E28C2B331F0E00123E80 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		4391E28E2B331F6F00123E80 /* Dictionary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Extension.swift"; sourceTree = "<group>"; };
@@ -210,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B5249E62D9C0BA300127E9C /* Pods_StarFriend.framework in Frameworks */,
+				435447272B3B1D2A00390D0C /* InputBarAccessoryView in Frameworks */,
 				43973B4B2B39ADE300F73A96 /* SwiftLocation in Frameworks */,
 				43924A2A2B39ACCF00F4CD25 /* SwiftLocation in Frameworks */,
 			);
@@ -218,6 +236,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4301E74A2B3AF9020073F46F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4353A5372B29B57C006C7CC4 /* ChatMessageCell.swift */,
+				4301E7522B3AFC850073F46F /* MessageTableHeaderView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4301E74B2B3AF9080073F46F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4301E74E2B3AF92E0073F46F /* ChatMessageModel.swift */,
+				4301E7502B3AF93B0073F46F /* ChatMessageData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		43189D9D2B33ED9400A212E5 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,6 +362,7 @@
 		4353A5132B29B57C006C7CC4 /* BaseController */ = {
 			isa = PBXGroup;
 			children = (
+				4354472E2B3D878F00390D0C /* MyCustomTabBar.swift */,
 				43189D9E2B341FC000A212E5 /* BaseNavigationController.swift */,
 				4353A5542B29B5B4006C7CC4 /* TabViewController.swift */,
 				4353A5142B29B57C006C7CC4 /* BaseViewController.swift */,
@@ -358,6 +395,8 @@
 				4353A51C2B29B57C006C7CC4 /* RadarIndicatorView.swift */,
 				43297B412B2A17F900A538D0 /* RadarView.swift */,
 				43297B3D2B2A174200A538D0 /* RadarTargetView.swift */,
+				435447282B3C6A7600390D0C /* UseGoldTipsView.swift */,
+				4354472A2B3C6A8600390D0C /* ByGoldTipsView.swift */,
 			);
 			path = RadarView;
 			sourceTree = "<group>";
@@ -400,9 +439,9 @@
 		4353A5322B29B57C006C7CC4 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				4301E74B2B3AF9080073F46F /* Model */,
+				4301E74A2B3AF9020073F46F /* View */,
 				4353A5332B29B57C006C7CC4 /* ChatViewController.swift */,
-				4353A5352B29B57C006C7CC4 /* SendMessageViewController.swift */,
-				4353A5372B29B57C006C7CC4 /* ChatMessageCell.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -528,6 +567,7 @@
 				43F6FDD02B359DFD0053AC61 /* Cell */,
 				43F6FDC42B3533BD0053AC61 /* MineViewController.swift */,
 				43973B4C2B3AA64B00F73A96 /* InviteSheetView.swift */,
+				4385F4102B3DBC27005CE3F2 /* AboutAppController.swift */,
 			);
 			path = Mine;
 			sourceTree = "<group>";
@@ -540,6 +580,8 @@
 				43F6FDCC2B359DE70053AC61 /* MineInviteTableCell.swift */,
 				43F6FDCE2B359DF60053AC61 /* MineSettingCell.swift */,
 				43F6FDD12B35A0080053AC61 /* MineProfileTableCell.swift */,
+				4354472C2B3D5D8600390D0C /* MineTableFooterView.swift */,
+				4385F40E2B3DB7E5005CE3F2 /* MineAboutAppCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -582,6 +624,7 @@
 			packageProductDependencies = (
 				43924A292B39ACCF00F4CD25 /* SwiftLocation */,
 				43973B4A2B39ADE300F73A96 /* SwiftLocation */,
+				435447262B3B1D2A00390D0C /* InputBarAccessoryView */,
 			);
 			productName = StarFriend;
 			productReference = 4353A4FB2B29B3A5006C7CC4 /* StarFriend.app */;
@@ -613,6 +656,7 @@
 			mainGroup = 4353A4F22B29B3A5006C7CC4;
 			packageReferences = (
 				43973B492B39ADE300F73A96 /* XCRemoteSwiftPackageReference "SwiftLocation" */,
+				435447252B3B1D2A00390D0C /* XCRemoteSwiftPackageReference "InputBarAccessoryView" */,
 			);
 			productRefGroup = 4353A4FC2B29B3A5006C7CC4 /* Products */;
 			projectDirPath = "";
@@ -715,30 +759,37 @@
 				43973B4D2B3AA64B00F73A96 /* InviteSheetView.swift in Sources */,
 				4353A54A2B29B57C006C7CC4 /* FriendListCell.swift in Sources */,
 				43973B4F2B3AAFEE00F73A96 /* RechargeProductModel.swift in Sources */,
+				4354472B2B3C6A8600390D0C /* ByGoldTipsView.swift in Sources */,
 				4353A5442B29B57C006C7CC4 /* UIViewController+Extension.swift in Sources */,
+				4385F40F2B3DB7E5005CE3F2 /* MineAboutAppCell.swift in Sources */,
 				43924A272B39839300F4CD25 /* EditUserInputViewController.swift in Sources */,
 				43F6FDCF2B359DF60053AC61 /* MineSettingCell.swift in Sources */,
 				4391E28D2B331F0E00123E80 /* Array+Extension.swift in Sources */,
+				4301E7532B3AFC850073F46F /* MessageTableHeaderView.swift in Sources */,
 				43297B3C2B2A168200A538D0 /* UIColor+Extension.swift in Sources */,
 				43297B682B2C06D200A538D0 /* UserHomeCellRowModel.swift in Sources */,
 				4353A54E2B29B57C006C7CC4 /* StoreViewController.swift in Sources */,
 				4353A53D2B29B57C006C7CC4 /* RadarIndicatorView.swift in Sources */,
 				4353A5552B29B5B4006C7CC4 /* TabViewController.swift in Sources */,
+				4301E74F2B3AF92E0073F46F /* ChatMessageModel.swift in Sources */,
 				43973B562B3AB22F00F73A96 /* StoreProductCell.swift in Sources */,
 				43E3A1E42B314D950082050F /* String+Extension.swift in Sources */,
+				4301E7512B3AF93B0073F46F /* ChatMessageData.swift in Sources */,
 				4353A5532B29B57C006C7CC4 /* ChatMessageCell.swift in Sources */,
 				43297B6A2B2C081000A538D0 /* UserProfileTableCell.swift in Sources */,
+				4354472D2B3D5D8600390D0C /* MineTableFooterView.swift in Sources */,
 				43924A252B396B2F00F4CD25 /* EditNickNameCell.swift in Sources */,
 				4391E28F2B331F6F00123E80 /* Dictionary+Extension.swift in Sources */,
+				4385F4112B3DBC27005CE3F2 /* AboutAppController.swift in Sources */,
 				4353A4FF2B29B3A5006C7CC4 /* AppDelegate.swift in Sources */,
 				43E3A1E22B3144AF0082050F /* CircularRevealAnimator.swift in Sources */,
 				4353A53B2B29B57C006C7CC4 /* UIImagePickerController+Rx.swift in Sources */,
 				43297B642B2BFB4400A538D0 /* NoticeView.swift in Sources */,
-				4353A5512B29B57C006C7CC4 /* SendMessageViewController.swift in Sources */,
 				4353A53A2B29B57C006C7CC4 /* ReportUserController.swift in Sources */,
 				4391E28A2B331D4C00123E80 /* UserData.swift in Sources */,
 				43E3A1E02B3144620082050F /* WaveAnimationButton.swift in Sources */,
 				4353A5492B29B57C006C7CC4 /* NumberSectionView.swift in Sources */,
+				435447292B3C6A7600390D0C /* UseGoldTipsView.swift in Sources */,
 				43297B422B2A17F900A538D0 /* RadarView.swift in Sources */,
 				43189D9F2B341FC000A212E5 /* BaseNavigationController.swift in Sources */,
 				4353A5422B29B57C006C7CC4 /* Feedbacks.swift in Sources */,
@@ -772,6 +823,7 @@
 				433E8A072B3198F0002773DC /* UserHomeBaseCell.swift in Sources */,
 				43F6FDC72B359D990053AC61 /* MineBaseTableCell.swift in Sources */,
 				4353A5012B29B3A5006C7CC4 /* SceneDelegate.swift in Sources */,
+				4354472F2B3D878F00390D0C /* MyCustomTabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -915,7 +967,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.0.0.1;
 				DEVELOPMENT_TEAM = L7L2847Q43;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StarFriend/Info.plist;
@@ -934,7 +986,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vitas.chat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -952,7 +1004,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 1.0.0.1;
 				DEVELOPMENT_TEAM = L7L2847Q43;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StarFriend/Info.plist;
@@ -971,7 +1023,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.vitas.chat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1006,6 +1058,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		435447252B3B1D2A00390D0C /* XCRemoteSwiftPackageReference "InputBarAccessoryView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nathantannar4/InputBarAccessoryView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.0;
+			};
+		};
 		43973B492B39ADE300F73A96 /* XCRemoteSwiftPackageReference "SwiftLocation" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/malcommac/SwiftLocation";
@@ -1017,6 +1077,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		435447262B3B1D2A00390D0C /* InputBarAccessoryView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 435447252B3B1D2A00390D0C /* XCRemoteSwiftPackageReference "InputBarAccessoryView" */;
+			productName = InputBarAccessoryView;
+		};
 		43924A292B39ACCF00F4CD25 /* SwiftLocation */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwiftLocation;

@@ -7,7 +7,7 @@
 
 import Foundation
 
-let userDataKey = "user_data5_key"
+let userDataKey = "user_data6_key"
 
 final class UserData {
     static let shared: UserData = UserData()

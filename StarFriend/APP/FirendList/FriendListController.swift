@@ -41,8 +41,8 @@ class FriendListController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let barbutton = UIBarButtonItem(customView: refreshButton)
-//        navigationItem.rightBarButtonItem = barbutton
+        //        let barbutton = UIBarButtonItem(customView: refreshButton)
+        //        navigationItem.rightBarButtonItem = barbutton
         
         collectionView.backgroundColor = UIColor.clear
         collectionView.register(FriendListCell.self, forCellWithReuseIdentifier: "UserCardCell")
@@ -52,11 +52,11 @@ class FriendListController: BaseViewController {
         }
         
         // 绑定数据源获取方法
-//        userList =
-//        refreshButton.rx.tap.asObservable()
-//            .startWith(()) // 加这个为了让一开始就能自动请求一次数据
-//            .flatMapLatest(getFriendList)
-//            .share(replay: 1)
+        //        userList =
+        //        refreshButton.rx.tap.asObservable()
+        //            .startWith(()) // 加这个为了让一开始就能自动请求一次数据
+        //            .flatMapLatest(getFriendList)
+        //            .share(replay: 1)
         
         //创建数据源
         let dataSource = RxCollectionViewSectionedReloadDataSource
@@ -84,6 +84,10 @@ class FriendListController: BaseViewController {
                 vc.delegate = self
                 self?.navigationController?.pushViewController(vc, animated: true)
             }).disposed(by: disposeBag)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         reloadDataSource()
     }
@@ -97,11 +101,6 @@ class FriendListController: BaseViewController {
         }
         
         dataList.onNext([SectionModel(model: "", items: items)])
-        
-//        let observable = Observable.just([SectionModel(model: "", items: items)])
-        
-//        return observable.delay(DispatchTimeInterval.seconds(0),
-//                                scheduler: MainScheduler.instance)
     }
     
     override func viewSafeAreaInsetsDidChange() {

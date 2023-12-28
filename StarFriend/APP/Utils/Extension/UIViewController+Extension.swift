@@ -21,14 +21,14 @@ extension UIViewController {
             
             // set background color
             appearance.backgroundColor = .clear
-            appearance.backgroundImage = UIImage(named: "")
+            appearance.backgroundImage = nil//UIImage(named: "")
             
             // set background effect
             appearance.backgroundEffect = UIBlurEffect(style: .regular)
             
             // remove shadow line
             appearance.shadowColor = .clear
-            appearance.shadowImage = UIImage(named: "")
+            appearance.shadowImage = nil//UIImage(named: "")
             
             // set title text attribute
             appearance.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.hexVal(0xfafafa),

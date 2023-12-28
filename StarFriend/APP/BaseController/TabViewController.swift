@@ -18,25 +18,43 @@ class TabViewController: UITabBarController {
 //        return view
 //    }()
     
+    lazy var customTabbar: MyCustomTabBar = {
+        let tabbar = MyCustomTabBar()
+        return tabbar
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 使用自定义的标签栏
+        setValue(customTabbar, forKey: "tabBar")
         
         let findVC = FindFriendViewController(nibName: nil, bundle: nil)
         findVC.hidesBottomBarWhenPushed = false
         findVC.title = "Find"
         let findNVC = BaseNavigationController(rootViewController: findVC)
+        findNVC.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "find_nol"), selectedImage: UIImage(named: "find_sel"))
         
         let friendVC = FriendListController(nibName: nil, bundle: nil)
         friendVC.hidesBottomBarWhenPushed = false
         friendVC.title = "Friends"
         let friendnvc = BaseNavigationController(rootViewController: friendVC)
+        friendnvc.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "friend_nol"), selectedImage: UIImage(named: "friend_sel"))
         
-        let iapVC = MineViewController(nibName: nil, bundle: nil)
-        iapVC.hidesBottomBarWhenPushed = false
-        iapVC.title = "Me"
-        let iapnvc = BaseNavigationController(rootViewController: iapVC)
+        let mineVC = MineViewController(nibName: nil, bundle: nil)
+        mineVC.hidesBottomBarWhenPushed = false
+        mineVC.title = "Me"
+        let mineNVC = BaseNavigationController(rootViewController: mineVC)
+        mineNVC.tabBarItem = UITabBarItem(title: "", image: UIImage(named: "mine_nol"), selectedImage: UIImage(named: "mine_sel"))
         
-        viewControllers = [findNVC, friendnvc, iapnvc]
-        selectedIndex = 2
+        viewControllers = [findNVC, friendnvc, mineNVC]
+        selectedIndex = 1
+    }
+    
+    override func viewSafeAreaInsetsDidChange() {
+        super.viewSafeAreaInsetsDidChange()
+        
+        let safeInsets = view.safeAreaInsets
+        customTabbar.TabbarMarginBottom = safeInsets.bottom > 0 ? safeInsets.bottom : 20
     }
 }
