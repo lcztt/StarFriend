@@ -27,6 +27,16 @@ class FindFriendViewController: BaseViewController {
         return view
     }()
     
+    lazy var starShip: UIImageView = {
+        let view = UIImageView(image: UIImage(named: "star_ship5"))
+        return view
+    }()
+    
+    lazy var bottomStarShip: UIImageView = {
+        let view = UIImageView(image: UIImage(named: "star_ship6"))
+        return view
+    }()
+    
     static let dateFormatter = DateFormatter()
 
     var pointsArray: Array = [CGPoint]()
@@ -56,7 +66,7 @@ class FindFriendViewController: BaseViewController {
         radarView.radius = view.frame.width * 0.5 - 10
         view.addSubview(radarView)
         
-        tipLabel.backgroundColor = UIColor.hexVal(0x233552)
+//        tipLabel.backgroundColor = UIColor.hexVal(0x233552)
         tipLabel.alpha = 0.7
         tipLabel.textAlignment = .center
         view.addSubview(tipLabel)
@@ -68,8 +78,36 @@ class FindFriendViewController: BaseViewController {
         
         addFindButton()
         
+        view.addSubview(starShip)
+        starShip.snp.makeConstraints { make in
+            make.size.equalTo(30)
+            make.left.equalToSuperview().inset(30)
+            make.centerY.equalToSuperview().offset( -view.width * 0.5 - 40)
+        }
+        
+        view.addSubview(bottomStarShip)
+        bottomStarShip.snp.makeConstraints { make in
+            make.size.equalTo(40)
+            make.right.equalToSuperview().inset(30)
+            make.centerY.equalToSuperview().offset( view.width * 0.5 + 40)
+        }
+        
         findButton.isSelected = false
         handlerFindButtonClick()
+    }
+    
+    override func viewSafeAreaInsetsDidChange() {
+        super.viewSafeAreaInsetsDidChange()
+        
+        let safeinsets = view.safeAreaInsets
+        
+        starShip.snp.updateConstraints { make in
+            make.centerY.equalToSuperview().offset( -view.width * 0.5 - 40)
+        }
+        
+        bottomStarShip.snp.updateConstraints { make in
+            make.centerY.equalToSuperview().offset( view.width * 0.5 + 0)
+        }
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -129,29 +167,42 @@ extension FindFriendViewController {
     }
     
     @objc func showUseGoldTips() {
-        self.popup.dialog {
-            let v = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
-            v.backgroundColor = .red
+        self.popup.dialog(bgColor: UIColor.clear, container: {
+            let v = UseGoldTipsView(frame: CGRect(x: 0, y: 0, width: 250, height: 200))
+            v.closeHandler = {[weak self] () in
+                self?.popup.dismissPopup()
+            }
+            v.okHandler = {[weak self] in
+                self?.popup.dismissPopup()
+                self?.findButton.isSelected = true
+                self?.handlerFindButtonClick()
+            }
             return v
-        }
+        })
     }
     
     @objc func showByGoldTips() {
-        self.popup.dialog {
-            let v = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 200))
-            v.backgroundColor = .red
+        self.popup.dialog(bgColor: UIColor.clear, container: {
+            let v = ByGoldTipsView(frame: CGRect(x: 0, y: 0, width: 250, height: 240))
+            v.closeHandler = {[weak self] in
+                self?.popup.dismissPopup()
+            }
+            v.okHandler = {[weak self] in
+                self?.popup.dismissPopup()
+                let vc = StoreViewController(nibName: nil, bundle: nil)
+                self?.navigationController?.pushViewController(vc, animated: true)
+            }
             return v
-        }
+        })
     }
 
-    
     // MARK: 按钮点击
-    private func handlerFindButtonClick() {
+    fileprivate func handlerFindButtonClick() {
         
         let attr = NSMutableAttributedString(string: "")
         
         attr.append(NSAttributedString(string: "Today free times: ",
-                                       attributes: [NSAttributedString.Key.font: UIFont.size(22, font: .PingFangSC_Light),
+                                       attributes: [NSAttributedString.Key.font: UIFont.size(22, font: .PingFangSC_Medium),
                                                     NSAttributedString.Key.foregroundColor: UIColor.white]))
         
         attr.append(NSAttributedString(string: "\(self.todayFreeTime)",
@@ -163,14 +214,17 @@ extension FindFriendViewController {
         tipLabel.setNeedsDisplay()
         
         if findButton.isSelected {
-            findButton.setTitle("Signal searching", for: .normal)
+            findButton.setTitle("Searching friend", for: .normal)
+            
             self.pointsArray.removeAll()
             self.radarView.showTarget()
             startUpdatingRadar()
             findButton.isEnabled = false
+            findButton.backgroundColor = UIColor.hexVal(0x808080, 0.9)
         } else {
-            findButton.setTitle("Turn on signal search", for: .normal)
+            findButton.setTitle("Read for search friend", for: .normal)
             findButton.isEnabled = true
+            findButton.backgroundColor = UIColor.hexVal(0x19AA5A, 0.9)
         }
     }
 }
@@ -230,6 +284,7 @@ extension FindFriendViewController: RadarViewDataSource, RadarTargetViewDelegate
         
         let view = RadarTargetView(image: nil)
         view.isHidden = true
+        
         return view
     }
     
