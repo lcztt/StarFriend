@@ -71,6 +71,7 @@
 		43973B4F2B3AAFEE00F73A96 /* RechargeProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43973B4E2B3AAFEE00F73A96 /* RechargeProductModel.swift */; };
 		43973B542B3AB22100F73A96 /* StoreMyBalanceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43973B532B3AB22000F73A96 /* StoreMyBalanceCell.swift */; };
 		43973B562B3AB22F00F73A96 /* StoreProductCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43973B552B3AB22F00F73A96 /* StoreProductCell.swift */; };
+		43D36F012B3F137600B76D72 /* StoreTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D36F002B3F137600B76D72 /* StoreTableFooterView.swift */; };
 		43E3A1A42B2C5B8D0082050F /* boy_Aadil.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 43E3A1872B2C5B8D0082050F /* boy_Aadil.jpg */; };
 		43E3A1A52B2C5B8D0082050F /* boy_Zoom.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 43E3A1882B2C5B8D0082050F /* boy_Zoom.jpg */; };
 		43E3A1A62B2C5B8D0082050F /* boy_Hamed.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 43E3A1892B2C5B8D0082050F /* boy_Hamed.jpg */; };
@@ -177,6 +178,7 @@
 		43973B4E2B3AAFEE00F73A96 /* RechargeProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeProductModel.swift; sourceTree = "<group>"; };
 		43973B532B3AB22000F73A96 /* StoreMyBalanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMyBalanceCell.swift; sourceTree = "<group>"; };
 		43973B552B3AB22F00F73A96 /* StoreProductCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProductCell.swift; sourceTree = "<group>"; };
+		43D36F002B3F137600B76D72 /* StoreTableFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreTableFooterView.swift; sourceTree = "<group>"; };
 		43E3A1872B2C5B8D0082050F /* boy_Aadil.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boy_Aadil.jpg; sourceTree = "<group>"; };
 		43E3A1882B2C5B8D0082050F /* boy_Zoom.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boy_Zoom.jpg; sourceTree = "<group>"; };
 		43E3A1892B2C5B8D0082050F /* boy_Hamed.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = boy_Hamed.jpg; sourceTree = "<group>"; };
@@ -497,6 +499,7 @@
 			children = (
 				43973B532B3AB22000F73A96 /* StoreMyBalanceCell.swift */,
 				43973B552B3AB22F00F73A96 /* StoreProductCell.swift */,
+				43D36F002B3F137600B76D72 /* StoreTableFooterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -759,6 +762,7 @@
 				43973B4D2B3AA64B00F73A96 /* InviteSheetView.swift in Sources */,
 				4353A54A2B29B57C006C7CC4 /* FriendListCell.swift in Sources */,
 				43973B4F2B3AAFEE00F73A96 /* RechargeProductModel.swift in Sources */,
+				43D36F012B3F137600B76D72 /* StoreTableFooterView.swift in Sources */,
 				4354472B2B3C6A8600390D0C /* ByGoldTipsView.swift in Sources */,
 				4353A5442B29B57C006C7CC4 /* UIViewController+Extension.swift in Sources */,
 				4385F40F2B3DB7E5005CE3F2 /* MineAboutAppCell.swift in Sources */,

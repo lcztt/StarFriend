@@ -39,6 +39,7 @@ class StoreViewController: BaseViewController {
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(UIEdgeInsets.zero)
         }
+        tableView.tableFooterView = StoreTableFooterView(frame: CGRect(x: 0, y: 0, width: view.width, height: 100))
         
         tableView.reloadData()
         
