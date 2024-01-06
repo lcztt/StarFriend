@@ -34,7 +34,7 @@ extension UIColor {
     /// example: "#1A2B3E","0x1A2B3E","1A2B3E"
     public static func hexStr(_ hex: String, _ alpha: CGFloat = 1) -> UIColor? {
         
-        var hexColor = hex.trimmingCharacters(in: .whitespacesAndNewlines)
+        var hexColor = hex.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         if hexColor.hasPrefix("0x") {
             let startIndex = hexColor.index(hexColor.startIndex, offsetBy: 2)
             hexColor = String(hexColor[startIndex...])

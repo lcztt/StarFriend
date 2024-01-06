@@ -150,7 +150,7 @@ extension FindFriendViewController {
                 
                 if self.todayFreeTime <= 0 {
                     // MARK: 弹框提示内购
-                    if UserData.shared.me.gold > 20 {
+                    if UserData.shared.me.gold > UserData.onceGold {
                         self.showUseGoldTips()
                     } else {
                         self.showByGoldTips()
@@ -168,11 +168,15 @@ extension FindFriendViewController {
     
     @objc func showUseGoldTips() {
         self.popup.dialog(bgColor: UIColor.clear, container: {
-            let v = UseGoldTipsView(frame: CGRect(x: 0, y: 0, width: 250, height: 200))
+            let v = UseGoldTipsView(frame: CGRect(x: 0, y: 0, width: 280, height: 230))
             v.closeHandler = {[weak self] () in
                 self?.popup.dismissPopup()
             }
             v.okHandler = {[weak self] in
+                
+                UserData.shared.me.gold -= UserData.onceGold
+                UserData.shared.save()
+                
                 self?.popup.dismissPopup()
                 self?.findButton.isSelected = true
                 self?.handlerFindButtonClick()

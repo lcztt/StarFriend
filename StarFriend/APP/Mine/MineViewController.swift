@@ -52,6 +52,16 @@ class MineViewController: BaseViewController {
         
 //        tableView.tableFooterView = MineTableFooterView(frame: .zero)
         
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(named: "feedback"), for: .normal)
+        button.size = CGSize(width: 25, height: 25)
+        button.rx.tap.subscribe { [weak self] (element) in
+            let vc = ReportUserController(nibName: nil, bundle: nil)
+            self?.navigationController?.pushViewController(vc, animated: true)
+        }.disposed(by: disposeBag)
+        let rightBar = UIBarButtonItem(customView: button)
+        navigationItem.rightBarButtonItem = rightBar
+        
         // 初始化数据
         let sections = Observable.just([SectionModel(model: "",
                                                      items: [MineVCCellType.profile,
@@ -70,6 +80,7 @@ class MineViewController: BaseViewController {
                 return cell
             case .gold:
                 let cell = MineGoldTableCell.cellWithTable(tableView)
+                cell.setUserInfo(UserData.shared.me)
                 cell.rechargeButton.addTarget(self, action: #selector(self.onRechargeButtonHander(_:)), for: .touchUpInside)
                 return cell
             case .inviteFriend:
@@ -92,25 +103,13 @@ class MineViewController: BaseViewController {
         
         //绑定单元格数据
         sections.bind(to: tableView.rx.items(dataSource:dataSource)).disposed(by: disposeBag)
-                
-        print("viewDidLoad")
-        
-        let button = UIButton(type: .custom)
-//        button.setTitle("Report", for: .normal)
-        button.setImage(UIImage(named: "feedback"), for: .normal)
-        button.size = CGSize(width: 25, height: 25)
-        button.rx.tap.subscribe { [weak self] (element) in
-            let vc = ReportUserController(nibName: nil, bundle: nil)
-            self?.navigationController?.pushViewController(vc, animated: true)
-        }.disposed(by: disposeBag)
-        let rightBar = UIBarButtonItem(customView: button)
-        navigationItem.rightBarButtonItem = rightBar
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         print("viewWillAppear")
+        tableView.reloadData()
     }
     
     override func viewSafeAreaInsetsDidChange() {

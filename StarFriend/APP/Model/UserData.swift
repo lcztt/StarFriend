@@ -12,6 +12,9 @@ let userDataKey = "user_data6_key"
 final class UserData {
     static let shared: UserData = UserData()
     
+    // 每次消耗的金币数
+    static let onceGold: Int = 200
+    
     var friendList: [UserItem] = []
     var randomList: [UserItem] = []
     var me: UserItem = UserItem(data: [:])

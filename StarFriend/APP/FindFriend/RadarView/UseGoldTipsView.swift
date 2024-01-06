@@ -48,7 +48,7 @@ class UseGoldTipsView: UIView {
         view.textColor = UIColor.hexVal(0xfafafa)
         view.font = UIFont.size(14)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.text = "This will cost you 200 coins. Are you sure you want to continue?"
+        view.text = "Today's free times have been used up, and it will cost \(UserData.onceGold) gold coins to continue. Are you sure you want to continue?"
         view.numberOfLines = 0
         return view
     }()

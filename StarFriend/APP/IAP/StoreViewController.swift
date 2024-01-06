@@ -125,8 +125,7 @@ extension StoreViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = StoreProductCell.cellWithTable(tableView)
         cell.setupProduct(model)
         cell.onChargeButtonHandler = {[weak self] (product) in
-//            self?.onBuyBtnClick(product)
-            self?.getProductInfo(product.id)
+            self?.onBuyBtnClick(product)
         }
         
         return cell
@@ -146,6 +145,9 @@ extension StoreViewController {
                 print("Purchase Success: \(purchase.productId)")
                 
                 UserData.shared.me.gold += product.goldNum
+                UserData.shared.save()
+                self.tableView.reloadData()
+                
                 // 购买校验，暂时关闭
 //                let receipt = AppleReceiptValidatorX(service: .production)
 //                SwiftyStoreKit.verifyReceipt(using: receipt) { (result) in
@@ -181,6 +183,7 @@ extension StoreViewController {
         }
     }
     
+    /*
     func getProductInfo(_ productID: String) {
         
         // 根据用户选择的商品ID，从苹果服务器获取商品信息
@@ -223,5 +226,5 @@ extension StoreViewController {
                 }
             }
         }
-    }
+    }*/
 }
