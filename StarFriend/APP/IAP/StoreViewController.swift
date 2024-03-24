@@ -66,28 +66,28 @@ class StoreViewController: BaseViewController {
         dataSource.append(model)
         
         model = RechargeProductModel()
-        model.id = "id_gold_01"
+        model.id = "com.starfriend.gold.120"
         model.name = "120 golds"
         model.goldNum = 120
         model.money = "$2.89"
         dataSource.append(model)
         
         model = RechargeProductModel()
-        model.id = "id_gold_01"
+        model.id = "com.starfriend.gold.1200"
         model.name = "1200 golds"
         model.goldNum = 1200
         model.money = "$14.99"
         dataSource.append(model)
         
         model = RechargeProductModel()
-        model.id = "id_gold_01"
+        model.id = "com.starfriend.gold.2600"
         model.name = "2600 golds"
         model.goldNum = 2600
         model.money = "$36.99"
         dataSource.append(model)
         
         model = RechargeProductModel()
-        model.id = "id_gold_01"
+        model.id = "com.starfriend.gold.6500"
         model.name = "6500 golds"
         model.goldNum = 6500
         model.money = "$88.99"
