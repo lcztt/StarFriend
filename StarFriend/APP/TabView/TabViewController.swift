@@ -29,7 +29,7 @@ class TabViewController: UITabBarController {
         // 使用自定义的标签栏
         setValue(customTabbar, forKey: "tabBar")
         
-        let findVC = FindFriendViewController(nibName: nil, bundle: nil)
+        let findVC = MapViewController(nibName: nil, bundle: nil)// FindFriendViewController(nibName: nil, bundle: nil)
         findVC.hidesBottomBarWhenPushed = false
         findVC.title = "Find"
         let findNVC = BaseNavigationController(rootViewController: findVC)

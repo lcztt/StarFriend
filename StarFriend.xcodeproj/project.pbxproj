@@ -66,6 +66,10 @@
 		43924A252B396B2F00F4CD25 /* EditNickNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43924A242B396B2F00F4CD25 /* EditNickNameCell.swift */; };
 		43924A272B39839300F4CD25 /* EditUserInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43924A262B39839300F4CD25 /* EditUserInputViewController.swift */; };
 		43924A2A2B39ACCF00F4CD25 /* SwiftLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 43924A292B39ACCF00F4CD25 /* SwiftLocation */; };
+		439652382BB067F8007E9F9F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439652372BB067F8007E9F9F /* MapViewController.swift */; };
+		4396523B2BB10D9A007E9F9F /* MapSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396523A2BB10D9A007E9F9F /* MapSearchViewController.swift */; };
+		4396523D2BB10DCF007E9F9F /* MapHidingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396523C2BB10DCF007E9F9F /* MapHidingViewController.swift */; };
+		4396523F2BB16E89007E9F9F /* MapHidingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396523E2BB16E89007E9F9F /* MapHidingCollectionViewCell.swift */; };
 		43973B4B2B39ADE300F73A96 /* SwiftLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 43973B4A2B39ADE300F73A96 /* SwiftLocation */; };
 		43973B4D2B3AA64B00F73A96 /* InviteSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43973B4C2B3AA64B00F73A96 /* InviteSheetView.swift */; };
 		43973B4F2B3AAFEE00F73A96 /* RechargeProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43973B4E2B3AAFEE00F73A96 /* RechargeProductModel.swift */; };
@@ -173,6 +177,10 @@
 		43924A222B396AFF00F4CD25 /* EditUserInfoBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInfoBaseCell.swift; sourceTree = "<group>"; };
 		43924A242B396B2F00F4CD25 /* EditNickNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNickNameCell.swift; sourceTree = "<group>"; };
 		43924A262B39839300F4CD25 /* EditUserInputViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserInputViewController.swift; sourceTree = "<group>"; };
+		439652372BB067F8007E9F9F /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		4396523A2BB10D9A007E9F9F /* MapSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchViewController.swift; sourceTree = "<group>"; };
+		4396523C2BB10DCF007E9F9F /* MapHidingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHidingViewController.swift; sourceTree = "<group>"; };
+		4396523E2BB16E89007E9F9F /* MapHidingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHidingCollectionViewCell.swift; sourceTree = "<group>"; };
 		43973B4C2B3AA64B00F73A96 /* InviteSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteSheetView.swift; sourceTree = "<group>"; };
 		43973B4E2B3AAFEE00F73A96 /* RechargeProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeProductModel.swift; sourceTree = "<group>"; };
 		43973B532B3AB22000F73A96 /* StoreMyBalanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMyBalanceCell.swift; sourceTree = "<group>"; };
@@ -345,16 +353,18 @@
 		4353A5122B29B572006C7CC4 /* APP */ = {
 			isa = PBXGroup;
 			children = (
-				43924A1E2B396A9400F4CD25 /* EditUserInfo */,
-				43F6FDC32B3533950053AC61 /* Mine */,
 				43297B602B2BF70500A538D0 /* API */,
 				4353A5132B29B57C006C7CC4 /* BaseController */,
 				4353A5322B29B57C006C7CC4 /* Chat */,
+				43924A1E2B396A9400F4CD25 /* EditUserInfo */,
 				4353A51A2B29B57C006C7CC4 /* FindFriend */,
 				4353A5272B29B57C006C7CC4 /* FirendList */,
 				4353A52D2B29B57C006C7CC4 /* IAP */,
+				439652362BB067E6007E9F9F /* Map */,
+				43F6FDC32B3533950053AC61 /* Mine */,
 				4391E2882B331D4000123E80 /* Model */,
 				4353A5162B29B57C006C7CC4 /* Report */,
+				439652392BB06919007E9F9F /* TabView */,
 				43297B462B2B33ED00A538D0 /* UserHome */,
 				4353A5212B29B57C006C7CC4 /* Utils */,
 			);
@@ -364,9 +374,7 @@
 		4353A5132B29B57C006C7CC4 /* BaseController */ = {
 			isa = PBXGroup;
 			children = (
-				4354472E2B3D878F00390D0C /* MyCustomTabBar.swift */,
 				43189D9E2B341FC000A212E5 /* BaseNavigationController.swift */,
-				4353A5542B29B5B4006C7CC4 /* TabViewController.swift */,
 				4353A5142B29B57C006C7CC4 /* BaseViewController.swift */,
 			);
 			path = BaseController;
@@ -475,6 +483,26 @@
 				43924A242B396B2F00F4CD25 /* EditNickNameCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		439652362BB067E6007E9F9F /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				439652372BB067F8007E9F9F /* MapViewController.swift */,
+				4396523A2BB10D9A007E9F9F /* MapSearchViewController.swift */,
+				4396523C2BB10DCF007E9F9F /* MapHidingViewController.swift */,
+				4396523E2BB16E89007E9F9F /* MapHidingCollectionViewCell.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		439652392BB06919007E9F9F /* TabView */ = {
+			isa = PBXGroup;
+			children = (
+				4354472E2B3D878F00390D0C /* MyCustomTabBar.swift */,
+				4353A5542B29B5B4006C7CC4 /* TabViewController.swift */,
+			);
+			path = TabView;
 			sourceTree = "<group>";
 		};
 		43973B502B3AB1F000F73A96 /* IAP */ = {
@@ -789,6 +817,7 @@
 				43E3A1E22B3144AF0082050F /* CircularRevealAnimator.swift in Sources */,
 				4353A53B2B29B57C006C7CC4 /* UIImagePickerController+Rx.swift in Sources */,
 				43297B642B2BFB4400A538D0 /* NoticeView.swift in Sources */,
+				4396523D2BB10DCF007E9F9F /* MapHidingViewController.swift in Sources */,
 				4353A53A2B29B57C006C7CC4 /* ReportUserController.swift in Sources */,
 				4391E28A2B331D4C00123E80 /* UserData.swift in Sources */,
 				43E3A1E02B3144620082050F /* WaveAnimationButton.swift in Sources */,
@@ -797,9 +826,12 @@
 				43297B422B2A17F900A538D0 /* RadarView.swift in Sources */,
 				43189D9F2B341FC000A212E5 /* BaseNavigationController.swift in Sources */,
 				4353A5422B29B57C006C7CC4 /* Feedbacks.swift in Sources */,
+				4396523F2BB16E89007E9F9F /* MapHidingCollectionViewCell.swift in Sources */,
+				439652382BB067F8007E9F9F /* MapViewController.swift in Sources */,
 				43F6FDC52B3533BD0053AC61 /* MineViewController.swift in Sources */,
 				43297B402B2A17CE00A538D0 /* FindFriendViewController.swift in Sources */,
 				43973B542B3AB22100F73A96 /* StoreMyBalanceCell.swift in Sources */,
+				4396523B2BB10D9A007E9F9F /* MapSearchViewController.swift in Sources */,
 				43924A1D2B3969D300F4CD25 /* EditUserInfoViewController.swift in Sources */,
 				4353A5382B29B57C006C7CC4 /* BaseViewController.swift in Sources */,
 				43924A202B396ABC00F4CD25 /* EditHeaderCell.swift in Sources */,
@@ -977,6 +1009,7 @@
 				INFOPLIST_FILE = StarFriend/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Starfriend;
 				INFOPLIST_KEY_NSCameraUsageDescription = "The app needs your permission to use the camera so that it can take pictures.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "The APP requires your consent to obtain location information while using it";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The APP requires your consent to obtain location information while using it";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "The app needs your permission to access the photo library.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1014,6 +1047,7 @@
 				INFOPLIST_FILE = StarFriend/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Starfriend;
 				INFOPLIST_KEY_NSCameraUsageDescription = "The app needs your permission to use the camera so that it can take pictures.";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "The APP requires your consent to obtain location information while using it";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The APP requires your consent to obtain location information while using it";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "The app needs your permission to access the photo library.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

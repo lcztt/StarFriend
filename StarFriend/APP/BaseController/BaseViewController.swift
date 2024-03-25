@@ -45,11 +45,7 @@ class BaseViewController: UIViewController {
         
 //        setNavigationBarBackground(effect: .regular)
         
-        view.insertSubview(backgroundView, at: 0)
-        
-        backgroundView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(0)
-        }
+        view.backgroundColor = UIColor.hexVal(0xf7f7f7)
         
         if navigationController?.viewControllers.count ?? 0 > 1 {
             let negativeSpacer = UIBarButtonItem(barButtonSystemItem: .fixedSpace, target: nil, action: nil)
@@ -62,7 +58,7 @@ class BaseViewController: UIViewController {
             self?.navigationController?.popViewController(animated: true)
         }.disposed(by: disposeBag)
         
-        addStar()
+        addBackgroundView()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -73,7 +69,14 @@ class BaseViewController: UIViewController {
         return false
     }
     
-    private func addStar() {
+    private func addBackgroundView() {
+        
+        view.insertSubview(backgroundView, at: 0)
+        
+        backgroundView.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(0)
+        }
+        
         for _ in 0..<20 {
             // 创建小星星
             let starView = UIView()
