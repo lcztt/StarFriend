@@ -35,7 +35,8 @@ class MapHidingViewController: BaseViewController {
     }()
     
     lazy private var locationIcon: UIImageView = {
-        let view = UIImageView(image: UIImage(named: ""))
+        let view = UIImageView(image: UIImage(named: "location_fill"))
+        view.backgroundColor = UIColor.random()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -78,7 +79,6 @@ class MapHidingViewController: BaseViewController {
         // Ghost mode has been activated; you will no longer send or receive geolocation information. Click the button on the right to re-enable.
         // Select some friends to change the content visible to them.
         //
-        
 
         view.addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in
@@ -101,31 +101,34 @@ class MapHidingViewController: BaseViewController {
         view.addSubview(locationIcon)
         locationIcon.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(12)
-            make.top.equalTo(descLabel.snp.bottom).inset(24)
+            make.top.equalTo(descLabel.snp.bottom).offset(24)
             make.size.equalTo(8)
         }
 
         view.addSubview(locationLabel)
         locationLabel.snp.makeConstraints { make in
-            make.left.equalTo(locationIcon.snp.right).inset(8)
+            make.left.equalTo(locationIcon.snp.right).offset(8)
             make.centerY.equalTo(locationIcon)
         }
 
-//        view.addSubview(locationDescLabel)
-//        locationDescLabel.snp.makeConstraints { make in
-//            make.left.right.equalToSuperview().inset(12)
-//            make.top.equalTo(locationLabel.snp.bottom).inset(12)
-//        }
-//        
-//        view.addSubview(collectionView)
-//        collectionView.snp.makeConstraints { make in
-//            make.left.right.bottom.equalToSuperview()
-//            make.top.equalTo(locationDescLabel.snp.bottom).offset(12)
-//        }
+        view.addSubview(locationDescLabel)
+        locationDescLabel.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(12)
+            make.top.equalTo(locationLabel.snp.bottom).offset(12)
+        }
+        
+        view.addSubview(collectionView)
+        collectionView.snp.makeConstraints { make in
+            make.left.right.bottom.equalToSuperview()
+            make.top.equalTo(locationDescLabel.snp.bottom).offset(12)
+        }
         
         let result = UserDefaults.standard.bool(forKey: "hideLocationSwitchKey")
         switchView.setOn(result, animated: false)
         switchHandle()
+        
+        dataSource = UserData.shared.friendList
+        collectionView.reloadData()
     }
     
     override func viewSafeAreaInsetsDidChange() {

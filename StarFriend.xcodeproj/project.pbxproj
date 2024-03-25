@@ -181,6 +181,7 @@
 		4396523A2BB10D9A007E9F9F /* MapSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapSearchViewController.swift; sourceTree = "<group>"; };
 		4396523C2BB10DCF007E9F9F /* MapHidingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHidingViewController.swift; sourceTree = "<group>"; };
 		4396523E2BB16E89007E9F9F /* MapHidingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHidingCollectionViewCell.swift; sourceTree = "<group>"; };
+		439652402BB1B900007E9F9F /* color.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = color.json; sourceTree = "<group>"; };
 		43973B4C2B3AA64B00F73A96 /* InviteSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteSheetView.swift; sourceTree = "<group>"; };
 		43973B4E2B3AAFEE00F73A96 /* RechargeProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeProductModel.swift; sourceTree = "<group>"; };
 		43973B532B3AB22000F73A96 /* StoreMyBalanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMyBalanceCell.swift; sourceTree = "<group>"; };
@@ -346,6 +347,7 @@
 				4353A5092B29B3A5006C7CC4 /* LaunchScreen.storyboard */,
 				4353A50C2B29B3A5006C7CC4 /* Info.plist */,
 				43E3A1852B2C5B8D0082050F /* avatar */,
+				439652402BB1B900007E9F9F /* color.json */,
 			);
 			path = StarFriend;
 			sourceTree = "<group>";
