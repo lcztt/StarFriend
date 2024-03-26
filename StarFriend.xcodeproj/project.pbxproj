@@ -70,6 +70,15 @@
 		4396523B2BB10D9A007E9F9F /* MapSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396523A2BB10D9A007E9F9F /* MapSearchViewController.swift */; };
 		4396523D2BB10DCF007E9F9F /* MapHidingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396523C2BB10DCF007E9F9F /* MapHidingViewController.swift */; };
 		4396523F2BB16E89007E9F9F /* MapHidingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396523E2BB16E89007E9F9F /* MapHidingCollectionViewCell.swift */; };
+		439652422BB274D5007E9F9F /* MyCustomAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439652412BB274D5007E9F9F /* MyCustomAnnotation.swift */; };
+		4396524D2BB2BD50007E9F9F /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4396524C2BB2BD45007E9F9F /* libc++.tbd */; };
+		4396524F2BB2BD5B007E9F9F /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4396524E2BB2BD56007E9F9F /* libz.tbd */; };
+		439652512BB2BD84007E9F9F /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439652502BB2BD84007E9F9F /* GLKit.framework */; };
+		439652532BB2BD97007E9F9F /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439652522BB2BD97007E9F9F /* CoreTelephony.framework */; };
+		439652552BB2BDA5007E9F9F /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439652542BB2BDA5007E9F9F /* ExternalAccessory.framework */; };
+		439652572BB2BDC5007E9F9F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439652562BB2BDC5007E9F9F /* Security.framework */; };
+		439652592BB2BDCC007E9F9F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439652582BB2BDCC007E9F9F /* SystemConfiguration.framework */; };
+		4396525D2BB307FA007E9F9F /* MyCustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396525C2BB307FA007E9F9F /* MyCustomAnnotationView.swift */; };
 		43973B4B2B39ADE300F73A96 /* SwiftLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 43973B4A2B39ADE300F73A96 /* SwiftLocation */; };
 		43973B4D2B3AA64B00F73A96 /* InviteSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43973B4C2B3AA64B00F73A96 /* InviteSheetView.swift */; };
 		43973B4F2B3AAFEE00F73A96 /* RechargeProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43973B4E2B3AAFEE00F73A96 /* RechargeProductModel.swift */; };
@@ -182,6 +191,16 @@
 		4396523C2BB10DCF007E9F9F /* MapHidingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHidingViewController.swift; sourceTree = "<group>"; };
 		4396523E2BB16E89007E9F9F /* MapHidingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapHidingCollectionViewCell.swift; sourceTree = "<group>"; };
 		439652402BB1B900007E9F9F /* color.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = color.json; sourceTree = "<group>"; };
+		439652412BB274D5007E9F9F /* MyCustomAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomAnnotation.swift; sourceTree = "<group>"; };
+		4396524C2BB2BD45007E9F9F /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		4396524E2BB2BD56007E9F9F /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		439652502BB2BD84007E9F9F /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		439652522BB2BD97007E9F9F /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		439652542BB2BDA5007E9F9F /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		439652562BB2BDC5007E9F9F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		439652582BB2BDCC007E9F9F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4396525B2BB2C75A007E9F9F /* StarFriend_Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarFriend_Bridge.h; sourceTree = "<group>"; };
+		4396525C2BB307FA007E9F9F /* MyCustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomAnnotationView.swift; sourceTree = "<group>"; };
 		43973B4C2B3AA64B00F73A96 /* InviteSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteSheetView.swift; sourceTree = "<group>"; };
 		43973B4E2B3AAFEE00F73A96 /* RechargeProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeProductModel.swift; sourceTree = "<group>"; };
 		43973B532B3AB22000F73A96 /* StoreMyBalanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMyBalanceCell.swift; sourceTree = "<group>"; };
@@ -238,9 +257,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B5249E62D9C0BA300127E9C /* Pods_StarFriend.framework in Frameworks */,
+				439652592BB2BDCC007E9F9F /* SystemConfiguration.framework in Frameworks */,
+				439652512BB2BD84007E9F9F /* GLKit.framework in Frameworks */,
+				439652572BB2BDC5007E9F9F /* Security.framework in Frameworks */,
+				439652532BB2BD97007E9F9F /* CoreTelephony.framework in Frameworks */,
 				435447272B3B1D2A00390D0C /* InputBarAccessoryView in Frameworks */,
 				43973B4B2B39ADE300F73A96 /* SwiftLocation in Frameworks */,
+				4396524D2BB2BD50007E9F9F /* libc++.tbd in Frameworks */,
 				43924A2A2B39ACCF00F4CD25 /* SwiftLocation in Frameworks */,
+				4396524F2BB2BD5B007E9F9F /* libz.tbd in Frameworks */,
+				439652552BB2BDA5007E9F9F /* ExternalAccessory.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +371,7 @@
 				4353A5002B29B3A5006C7CC4 /* SceneDelegate.swift */,
 				4353A5072B29B3A5006C7CC4 /* Assets.xcassets */,
 				4353A5092B29B3A5006C7CC4 /* LaunchScreen.storyboard */,
+				4396525B2BB2C75A007E9F9F /* StarFriend_Bridge.h */,
 				4353A50C2B29B3A5006C7CC4 /* Info.plist */,
 				43E3A1852B2C5B8D0082050F /* avatar */,
 				439652402BB1B900007E9F9F /* color.json */,
@@ -494,6 +521,8 @@
 				4396523A2BB10D9A007E9F9F /* MapSearchViewController.swift */,
 				4396523C2BB10DCF007E9F9F /* MapHidingViewController.swift */,
 				4396523E2BB16E89007E9F9F /* MapHidingCollectionViewCell.swift */,
+				439652412BB274D5007E9F9F /* MyCustomAnnotation.swift */,
+				4396525C2BB307FA007E9F9F /* MyCustomAnnotationView.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -631,6 +660,13 @@
 		7D84320B89CE1D36C8137C2B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				439652582BB2BDCC007E9F9F /* SystemConfiguration.framework */,
+				439652562BB2BDC5007E9F9F /* Security.framework */,
+				439652542BB2BDA5007E9F9F /* ExternalAccessory.framework */,
+				439652522BB2BD97007E9F9F /* CoreTelephony.framework */,
+				439652502BB2BD84007E9F9F /* GLKit.framework */,
+				4396524E2BB2BD56007E9F9F /* libz.tbd */,
+				4396524C2BB2BD45007E9F9F /* libc++.tbd */,
 				64DA2EA4824AFD16BB8B1F75 /* Pods_StarFriend.framework */,
 			);
 			name = Frameworks;
@@ -648,6 +684,7 @@
 				4353A4F82B29B3A5006C7CC4 /* Frameworks */,
 				4353A4F92B29B3A5006C7CC4 /* Resources */,
 				E360C59F322F2C6BBFE20C13 /* [CP] Embed Pods Frameworks */,
+				7CD34FC08089C0E19104B078 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -764,6 +801,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		7CD34FC08089C0E19104B078 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StarFriend/Pods-StarFriend-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-StarFriend/Pods-StarFriend-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-StarFriend/Pods-StarFriend-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E360C59F322F2C6BBFE20C13 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -814,6 +868,7 @@
 				4354472D2B3D5D8600390D0C /* MineTableFooterView.swift in Sources */,
 				43924A252B396B2F00F4CD25 /* EditNickNameCell.swift in Sources */,
 				4391E28F2B331F6F00123E80 /* Dictionary+Extension.swift in Sources */,
+				439652422BB274D5007E9F9F /* MyCustomAnnotation.swift in Sources */,
 				4385F4112B3DBC27005CE3F2 /* AboutAppController.swift in Sources */,
 				4353A4FF2B29B3A5006C7CC4 /* AppDelegate.swift in Sources */,
 				43E3A1E22B3144AF0082050F /* CircularRevealAnimator.swift in Sources */,
@@ -837,6 +892,7 @@
 				43924A1D2B3969D300F4CD25 /* EditUserInfoViewController.swift in Sources */,
 				4353A5382B29B57C006C7CC4 /* BaseViewController.swift in Sources */,
 				43924A202B396ABC00F4CD25 /* EditHeaderCell.swift in Sources */,
+				4396525D2BB307FA007E9F9F /* MyCustomAnnotationView.swift in Sources */,
 				43297B3A2B2A166B00A538D0 /* UserHomeViewController.swift in Sources */,
 				43924A232B396AFF00F4CD25 /* EditUserInfoBaseCell.swift in Sources */,
 				4353A54B2B29B57C006C7CC4 /* FriendListController.swift in Sources */,
@@ -1007,6 +1063,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.0.1;
 				DEVELOPMENT_TEAM = L7L2847Q43;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/StarFriend/APP/Frameworks",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StarFriend/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Starfriend;
@@ -1031,6 +1091,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/StarFriend/StarFriend_Bridge.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1045,6 +1106,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.0.1;
 				DEVELOPMENT_TEAM = L7L2847Q43;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/StarFriend/APP/Frameworks",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = StarFriend/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Starfriend;
@@ -1069,6 +1134,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/StarFriend/StarFriend_Bridge.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

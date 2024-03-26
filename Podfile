@@ -24,6 +24,10 @@ target 'StarFriend' do
 #  pod 'RxCoreLocation', '~> 1.5.1'
   pod "Position", "~> 0.7.0"
   pod 'JFPopup', '1.5.4'
+  
+#  pod 'AMap2DMap'
+  pod 'AMap3DMap'
+  pod 'AMapLocation'
 
   post_install do |installer|
     installer.generated_projects.each do |project|

@@ -8,6 +8,8 @@
 import UIKit
 import SwiftyStoreKit
 import Toast_Swift
+import AMapFoundationKit
+import MAMapKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -21,6 +23,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         UICommonSetter()
+        
+        AMapServices.shared().apiKey = "cde2e1cd79376e1880be566ce4566f01"
+        
+        // 需要在首次启动时设置弹窗
+        MAMapView.updatePrivacyShow(AMapPrivacyShowStatus.didShow, privacyInfo: AMapPrivacyInfoStatus.didContain)
+        MAMapView.updatePrivacyAgree(.didAgree)
                 
         let window = UIWindow(windowScene: windowScene)
         window.backgroundColor = UIColor.white
