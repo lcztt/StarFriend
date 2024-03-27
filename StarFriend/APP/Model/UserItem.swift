@@ -23,7 +23,7 @@ class UserItem: Codable {
     var isDescReview: Bool = false
     var gold: Int = 0
     var isBlock: Bool = false
-    
+    var isLocationSel: Bool = false
     var photoList: [String] = []
     
     init(data: [String: Any]) {

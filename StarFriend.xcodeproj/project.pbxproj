@@ -79,6 +79,7 @@
 		439652572BB2BDC5007E9F9F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439652562BB2BDC5007E9F9F /* Security.framework */; };
 		439652592BB2BDCC007E9F9F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439652582BB2BDCC007E9F9F /* SystemConfiguration.framework */; };
 		4396525D2BB307FA007E9F9F /* MyCustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396525C2BB307FA007E9F9F /* MyCustomAnnotationView.swift */; };
+		439652602BB311B0007E9F9F /* SHSearchBar in Frameworks */ = {isa = PBXBuildFile; productRef = 4396525F2BB311B0007E9F9F /* SHSearchBar */; };
 		43973B4B2B39ADE300F73A96 /* SwiftLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 43973B4A2B39ADE300F73A96 /* SwiftLocation */; };
 		43973B4D2B3AA64B00F73A96 /* InviteSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43973B4C2B3AA64B00F73A96 /* InviteSheetView.swift */; };
 		43973B4F2B3AAFEE00F73A96 /* RechargeProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43973B4E2B3AAFEE00F73A96 /* RechargeProductModel.swift */; };
@@ -265,6 +266,7 @@
 				43973B4B2B39ADE300F73A96 /* SwiftLocation in Frameworks */,
 				4396524D2BB2BD50007E9F9F /* libc++.tbd in Frameworks */,
 				43924A2A2B39ACCF00F4CD25 /* SwiftLocation in Frameworks */,
+				439652602BB311B0007E9F9F /* SHSearchBar in Frameworks */,
 				4396524F2BB2BD5B007E9F9F /* libz.tbd in Frameworks */,
 				439652552BB2BDA5007E9F9F /* ExternalAccessory.framework in Frameworks */,
 			);
@@ -695,6 +697,7 @@
 				43924A292B39ACCF00F4CD25 /* SwiftLocation */,
 				43973B4A2B39ADE300F73A96 /* SwiftLocation */,
 				435447262B3B1D2A00390D0C /* InputBarAccessoryView */,
+				4396525F2BB311B0007E9F9F /* SHSearchBar */,
 			);
 			productName = StarFriend;
 			productReference = 4353A4FB2B29B3A5006C7CC4 /* StarFriend.app */;
@@ -727,6 +730,7 @@
 			packageReferences = (
 				43973B492B39ADE300F73A96 /* XCRemoteSwiftPackageReference "SwiftLocation" */,
 				435447252B3B1D2A00390D0C /* XCRemoteSwiftPackageReference "InputBarAccessoryView" */,
+				4396525E2BB311B0007E9F9F /* XCRemoteSwiftPackageReference "SHSearchBar" */,
 			);
 			productRefGroup = 4353A4FC2B29B3A5006C7CC4 /* Products */;
 			projectDirPath = "";
@@ -1172,6 +1176,14 @@
 				minimumVersion = 6.3.0;
 			};
 		};
+		4396525E2BB311B0007E9F9F /* XCRemoteSwiftPackageReference "SHSearchBar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Blackjacx/SHSearchBar";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
 		43973B492B39ADE300F73A96 /* XCRemoteSwiftPackageReference "SwiftLocation" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/malcommac/SwiftLocation";
@@ -1191,6 +1203,11 @@
 		43924A292B39ACCF00F4CD25 /* SwiftLocation */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwiftLocation;
+		};
+		4396525F2BB311B0007E9F9F /* SHSearchBar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4396525E2BB311B0007E9F9F /* XCRemoteSwiftPackageReference "SHSearchBar" */;
+			productName = SHSearchBar;
 		};
 		43973B4A2B39ADE300F73A96 /* SwiftLocation */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -13,27 +13,25 @@ class MyCustomAnnotationView: MKAnnotationView {
     override init(annotation: (any MKAnnotation)?, reuseIdentifier: String?) {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         
+        var myFrame = frame
+        myFrame.size.width = 40
+        myFrame.size.height = 40
+        frame = myFrame
         
-    }
-    - (instancetype)initWithAnnotation:(id<MKAnnotation>)annotation reuseIdentifier:(NSString *)reuseIdentifier {
-        self = [super initWithAnnotation:annotation reuseIdentifier:reuseIdentifier];
-        if (self) {
-            CGRect myFrame = self.frame;
-            myFrame.size.width = 40;
-            myFrame.size.height = 40;
-            self.frame = myFrame;
-            
-            self.backgroundColor = [UIColor blueColor];
-            self.opaque = NO;
-        }
-        return self;
+        backgroundColor = UIColor.blue
+        self.isOpaque = false
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
         // Drawing code
-    }
+    }*/
     
 
 }

@@ -27,7 +27,7 @@ class MapViewController: BaseViewController {
 //        view.showsTraffic = true     // 交通
 //        view.showsScale = true       // 比例尺
         // 带方向的追踪
-        view.userTrackingMode = .follow
+//        view.userTrackingMode = .follow
         view.delegate = self
         return view
     }()
@@ -51,13 +51,13 @@ class MapViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        AMapServices.shared().enableHTTPS = true
+//        self.navigationController?.setNavigationBarHidden(true, animated: false)
         
-        mapView.frame = view.bounds
+//        AMapServices.shared().enableHTTPS = true
         view.addSubview(mapView)
-//        mapView.snp.makeConstraints { make in
-//            make.edges.equalToSuperview()
-//        }
+        mapView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
         
         searchButton.layer.masksToBounds = true
         searchButton.layer.cornerRadius = 22
@@ -82,13 +82,19 @@ class MapViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         updateSelfLocation()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     @objc func searchHandler(_ button: UIButton) {
         let vc = MapSearchViewController(nibName: nil, bundle: nil)
-        navigationController?.pushViewController(vc, animated: true)
+        present(vc, animated: true)
+//        navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func hidingHandler(_ button: UIButton) {
@@ -99,7 +105,7 @@ class MapViewController: BaseViewController {
     override func viewSafeAreaInsetsDidChange() {
         super.viewSafeAreaInsetsDidChange()
         
-        var edge = view.safeAreaInsets
+        let edge = view.safeAreaInsets
         
         searchButton.snp.updateConstraints { make in
             make.top.equalToSuperview().inset(edge.top + 20)
@@ -132,7 +138,7 @@ extension MapViewController: MKMapViewDelegate {
         // 设置用户的位置一直在地图的中心点
         // 缺陷 : 默认情况下不会放大地图的显示区域,需要手动放大
         let coordinate = userLocation.coordinate
-        mapView.setCenter(coordinate, animated: true)
+//        mapView.setCenter(coordinate, animated: true)
         
         // 要求: 点击屏幕,添加大头针
         // 1.尝试使用MKUserLocation创建大头针
@@ -144,7 +150,7 @@ extension MapViewController: MKMapViewDelegate {
         // 4.设置子标题
         annotation.subtitle = "我是子标题☺️"
         // 5.添加大头针到地图上
-        mapView.addAnnotation(annotation)
+//        mapView.addAnnotation(annotation)
         
         // span: 区域的跨度
         // 在地图上,东西经各180°,显示的区域跨度为0~360°之间
@@ -153,7 +159,7 @@ extension MapViewController: MKMapViewDelegate {
         let span = MKCoordinateSpan(latitudeDelta: 0.006, longitudeDelta: 0.004)
         // region: 区域
         // center: 地图的中心点(经度和纬度)
-        let region = MKCoordinateRegion(center: coordinate, span: span)
+//        let region = MKCoordinateRegion(center: coordinate, span: span)
 //        mapView.setRegion(region, animated: true)
     }
     
@@ -174,7 +180,7 @@ extension MapViewController: MKMapViewDelegate {
         var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
         
         if annotationView == nil {
-            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView = MyCustomAnnotationView(annotation: annotation, reuseIdentifier: identifier)
             annotationView!.canShowCallout = true
         } else {
             annotationView!.annotation = annotation
@@ -208,17 +214,19 @@ extension MapViewController {
                 // 4.设置子标题
                 annotation.subtitle = "我是子标题☺️"
                 // 5.添加大头针到地图上
-//                self.mapView.addAnnotation(annotation)
+                self.mapView.removeAnnotations(self.mapView.annotations)
+                self.mapView.addAnnotation(annotation)
                 
+                self.mapView.setCenter(location.coordinate, animated: true)
                 // span: 区域的跨度
                 // 在地图上,东西经各180°,显示的区域跨度为0~360°之间
                 // 南北纬各90°,显示的区域跨度为0~180°
                 // 结论: 区域跨度设置的越小,那么看到的内容就越清晰
-//                let span = MKCoordinateSpan(latitudeDelta: 0.006, longitudeDelta: 0.004)
+                let span = MKCoordinateSpan(latitudeDelta: 0.006, longitudeDelta: 0.004)
 //                // region: 区域
 //                // center: 地图的中心点(经度和纬度)
-//                let region = MKCoordinateRegion(center: location.coordinate, span: span)
-//                self.mapView.setRegion(region, animated: true)
+                let region = MKCoordinateRegion(center: location.coordinate, span: span)
+                self.mapView.setRegion(region, animated: true)
             }
         } else if Position.shared.locationServicesStatus == .notDetermined {
             // request permissions based on the type of location support required.

@@ -11,32 +11,35 @@ class MapHidingViewController: BaseViewController {
     
     lazy private var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.text = "Ghost Mode"
-        label.font = UIFont.size(16)
-        label.textColor = UIColor.hexVal(0x333333)
+        label.text = "Stealth Mode"
+        label.font = UIFont.size(18, font: .PingFangSC_Medium)
+        label.textColor = UIColor.hexVal(0xf7f7f7)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     lazy private var descLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.font = UIFont.size(12)
+        label.font = UIFont.size(15)
         label.numberOfLines = 0
-        label.textColor = UIColor.hexVal(0x666666)
+        label.textColor = UIColor.hexVal(0xDBDBDB)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     lazy private var switchView: UISwitch = {
-        let view = UISwitch(frame: CGRect(x: 0, y: 0, width: 60, height: 44))
+        let view = UISwitch(frame: .zero)
         view.addTarget(self, action: #selector(switchHandle), for: .touchUpInside)
         view.translatesAutoresizingMaskIntoConstraints = false
+//        view.onTintColor = UIColor.hexVal(0x4b4b4b)
+//        view.layer.cornerRadius = 22
+        view.layer.masksToBounds = true
         return view
     }()
     
     lazy private var locationIcon: UIImageView = {
         let view = UIImageView(image: UIImage(named: "location_fill"))
-        view.backgroundColor = UIColor.random()
+//        view.backgroundColor = UIColor.random()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -44,8 +47,8 @@ class MapHidingViewController: BaseViewController {
     lazy private var locationLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.text = "Hide location"
-        label.font = UIFont.size(13, font: .PingFangSC_Regular)
-        label.textColor = UIColor.hexVal(0x333333)
+        label.font = UIFont.size(16, font: .PingFangSC_Medium)
+        label.textColor = UIColor.hexVal(0xf7f7f7)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -53,8 +56,8 @@ class MapHidingViewController: BaseViewController {
     lazy private var locationDescLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.text = "Friends who are set to \"Hide\" will not be able to see your real-time updated geolocation information."
-        label.font = UIFont.size(12)
-        label.textColor = UIColor.hexVal(0x666666)
+        label.font = UIFont.size(15)
+        label.textColor = UIColor.hexVal(0xDBDBDB)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -72,11 +75,12 @@ class MapHidingViewController: BaseViewController {
     }()
     
     private var dataSource: Array<UserItem> = []
+    private var selectedUids: Array<Int> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Ghost mode has been activated; you will no longer send or receive geolocation information. Click the button on the right to re-enable.
+        // Stealth mode has been activated; you will no longer send or receive geolocation information. Click the button on the right to re-enable.
         // Select some friends to change the content visible to them.
         //
 
@@ -86,6 +90,11 @@ class MapHidingViewController: BaseViewController {
             make.top.equalToSuperview().inset(12)
         }
         
+        switchView.tintColor = UIColor.hexVal(0x4b4b4b)
+        switchView.layer.cornerRadius = switchView.frame.height / 2.0
+        switchView.backgroundColor = UIColor.hexVal(0x4b4b4b)
+        switchView.clipsToBounds = true
+
         view.addSubview(switchView)
         switchView.snp.makeConstraints { make in
             make.centerY.equalTo(titleLabel)
@@ -102,7 +111,7 @@ class MapHidingViewController: BaseViewController {
         locationIcon.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(12)
             make.top.equalTo(descLabel.snp.bottom).offset(24)
-            make.size.equalTo(8)
+            make.size.equalTo(16)
         }
 
         view.addSubview(locationLabel)
@@ -128,7 +137,22 @@ class MapHidingViewController: BaseViewController {
         switchHandle()
         
         dataSource = UserData.shared.friendList
+        selectedUids = getSelectUID()
+        
+        selectedUids.forEach { uid in
+            dataSource.forEach { user in
+                if user.uid == uid {
+                    user.isLocationSel = true
+                }
+            }
+        }
+        
         collectionView.reloadData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        saveSelectUID()
     }
     
     override func viewSafeAreaInsetsDidChange() {
@@ -154,7 +178,7 @@ class MapHidingViewController: BaseViewController {
         UserDefaults.standard.set(switchView.isOn, forKey: "hideLocationSwitchKey")
         
         if switchView.isOn {
-            descLabel.text = "Ghost mode has been activated; you will no longer send or receive geolocation information. Click the button on the right to re-enable."
+            descLabel.text = "Stealth mode has been activated; you will no longer send or receive geolocation information. Click the button on the right to re-enable."
             locationIcon.isHidden = true
             locationLabel.isHidden = true
             locationDescLabel.isHidden = true
@@ -171,11 +195,33 @@ class MapHidingViewController: BaseViewController {
 
 extension MapHidingViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let user = dataSource[indexPath.item]
+        
+        if user.isLocationSel {
+            if let index = selectedUids.firstIndex(where: { uid in
+                uid == user.uid
+            }) {
+                selectedUids.remove(at: index)
+                print("remove:\(user.uid)")
+            }
+        } else {
+            selectedUids.append(user.uid)
+            print("add:\(user.uid)")
+        }
+        
+        user.isLocationSel = !user.isLocationSel
+//        let cell = collectionView(collectionView, cellForItemAt: indexPath) as! MapHidingCollectionViewCell
+//        cell.reloadInputViews()
+        collectionView.reloadData()
         
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.width / 4, height: 60)
+        let margin: CGFloat = 12
+        let column: CGFloat = 4
+        let width: CGFloat = (collectionView.width - margin * (column + 1)) / column
+        let height = width + 30
+        return CGSize(width: width, height: height)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
@@ -201,5 +247,21 @@ extension MapHidingViewController: UICollectionViewDataSource {
         let user = dataSource[indexPath.row]
         cell.user = user
         return cell
+    }
+}
+
+extension MapHidingViewController {
+    func getSelectUID() -> Array<Int> {
+        let arr = UserDefaults.standard.array(forKey: "select_location_block_user_id_key")
+        if let list = arr as? Array<Int> {
+            return list
+        }
+        
+        return []
+    }
+    
+    func saveSelectUID() {
+        UserDefaults.standard.setValue(selectedUids, forKey: "select_location_block_user_id_key")
+        UserDefaults.standard.synchronize()
     }
 }
