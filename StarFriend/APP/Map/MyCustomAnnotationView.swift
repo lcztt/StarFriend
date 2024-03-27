@@ -17,16 +17,16 @@ class MyCustomAnnotationView: MKAnnotationView {
         super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
         
         var myFrame = frame
-        myFrame.size.width = 44
-        myFrame.size.height = 44
+        myFrame.size.width = 54
+        myFrame.size.height = 54
         frame = myFrame
         
-        backgroundColor = UIColor.blue
+        backgroundColor = UIColor.clear
         self.isOpaque = false
         
-        avatar.layer.borderWidth = 1
+        avatar.layer.borderWidth = 2
         avatar.layer.borderColor = UIColor.hexVal(0xfafafa).cgColor
-        avatar.layer.cornerRadius = 22
+        avatar.layer.cornerRadius = 27
         avatar.layer.masksToBounds = true
         addSubview(avatar)
         avatar.snp.makeConstraints { make in

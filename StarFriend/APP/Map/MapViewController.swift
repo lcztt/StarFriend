@@ -142,6 +142,7 @@ class MapViewController: BaseViewController {
             tipsView.isHidden = true
             startLocation()
         } else {
+            self.mapView.removeAnnotations(self.mapView.annotations)
             shadowView.isHidden = false
             tipsView.isHidden = false
         }
