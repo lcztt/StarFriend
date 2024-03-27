@@ -24,7 +24,7 @@ class EditUserInfoViewController: BaseViewController {
         return table
     }()
         
-    let dataSource: [EditCellType] = [.avatar, .nickname, .location, .profession, .desc]
+    var dataSource: [EditCellType] = [.avatar, .nickname, .location, .profession, .desc]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +40,12 @@ class EditUserInfoViewController: BaseViewController {
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(0)
         }
+        
+        SocialQuestionData.allQuests.forEach { question in
+            dataSource.append(.question(question))
+        }
+        
+        tableView.reloadData()
     }
     
     override func viewSafeAreaInsetsDidChange() {
@@ -128,6 +134,10 @@ extension EditUserInfoViewController: UITableViewDataSource, UITableViewDelegate
             let cell = EditNickNameCell.cellWithTable(tableView)
             cell.setUserInfo(UserData.shared.me, with: .desc)
             return cell
+        case .question(let question):
+            let cell = EditUserQuestionTableViewCell.cellWithTable(tableView)
+            cell.question = question
+            return cell
         }
     }
     
@@ -169,6 +179,13 @@ extension EditUserInfoViewController: UITableViewDataSource, UITableViewDelegate
                 self.tableView.reloadData()
             }
             self.navigationController?.pushViewController(vc, animated: true)
+        case .question(let question):
+            let vc = FillAnswerViewController(question: question)
+            vc.onChange = { () in
+                self.tableView.reloadData()
+            }
+            self.navigationController?.pushViewController(vc, animated: true)
+            
         }
     }
     

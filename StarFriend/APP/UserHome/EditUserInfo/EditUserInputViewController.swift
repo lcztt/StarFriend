@@ -13,7 +13,7 @@ import Toast_Swift
 typealias EditBlock = () -> Void
 
 class EditUserInputViewController: BaseViewController {
-    var editType: EditCellType
+    var cellType: EditCellType
     var user: UserItem
     
     var onChange: EditBlock? = nil
@@ -30,8 +30,7 @@ class EditUserInputViewController: BaseViewController {
         let button = UIButton(frame: .zero)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Save", for: .normal)
-        button.layer.cornerRadius = 8
-        button.layer.masksToBounds = true
+        
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont.size(16)
         button.backgroundColor = UIColor.hexVal(0x19AA5A, 0.9)
@@ -40,7 +39,7 @@ class EditUserInputViewController: BaseViewController {
     
     init(editType: EditCellType, user: UserItem) {
         
-        self.editType = editType
+        self.cellType = editType
         self.user = user
         
         super.init(nibName: nil, bundle: nil)
@@ -58,17 +57,23 @@ class EditUserInputViewController: BaseViewController {
         super.viewDidLoad()
         
         var textViewHeight = 0
-        if editType == .nickname {
+        switch cellType {
+        
+        case .nickname:
             textView.text = user.nickname
             textViewHeight = 44
             textView.font = UIFont.size(16)
             textView.contentInset = UIEdgeInsets(top: 3, left: 6, bottom: 3, right: 6)
-        } else if editType == .desc {
+        
+        case .desc:
             textView.text = user.desc
             textViewHeight = 120
             textView.font = UIFont.size(14)
             textView.contentInset = UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6)
+        default:
+            break
         }
+        
         
 //        textView.layer.cornerRadius = 8
 //        textView.layer.masksToBounds = true
@@ -81,9 +86,11 @@ class EditUserInputViewController: BaseViewController {
             make.height.equalTo(textViewHeight)
         }
         
+        button.layer.cornerRadius = 22
+        button.layer.masksToBounds = true
         view.addSubview(button)
         button.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(80)
+            make.left.right.equalToSuperview().inset(40)
             make.height.equalTo(44)
             make.top.equalTo(textView.snp.bottom).offset(50)
         }
@@ -102,8 +109,9 @@ class EditUserInputViewController: BaseViewController {
     
     @objc private func onButtonHandler(_ sender: UIButton) {
         
+        switch cellType {
         
-        if editType == .nickname {
+        case .nickname:
             if textView.text == user.nickname {
                 return
             }
@@ -116,7 +124,8 @@ class EditUserInputViewController: BaseViewController {
             user.nickname = textView.text
             user.isNicknameReview = true
             UserData.shared.save()
-        } else if editType == .desc {
+            
+        case .desc:
             if textView.text == user.desc {
                 return
             }
@@ -129,7 +138,10 @@ class EditUserInputViewController: BaseViewController {
             user.desc = textView.text
             user.isDescReview = true
             UserData.shared.save()
+        default:
+            break
         }
+        
         
         if let block = onChange {
             block()

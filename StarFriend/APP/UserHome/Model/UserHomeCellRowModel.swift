@@ -11,6 +11,7 @@ struct UserHomeCellRowModel {
     enum CellType {
         case switchCell
         case userInfoCell
+        case question(UserQuestWrapper)
     }
     
     var type: CellType

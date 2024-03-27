@@ -25,6 +25,7 @@ class UserItem: Codable {
     var isBlock: Bool = false
     var isLocationSel: Bool = false
     var photoList: [String] = []
+    var questionAnswer: [Int] = []
     
     init(data: [String: Any]) {
         self.uid = data["uid"] as? Int ?? 0
@@ -41,6 +42,10 @@ class UserItem: Codable {
         self.avatarUrlNew = data["avatarUrlNew"] as? String ?? ""
         self.gold = data["gold"] as? Int ?? 0
         self.isBlock = data["isBlock"] as? Bool ?? false
+        
+        SocialQuestionData.allQuests.forEach { _ in
+            questionAnswer.append((0..<9).randomElement()!)
+        }
     }
     
     func toDictionary() -> [String: Any] {
@@ -88,4 +93,31 @@ class UserItem: Codable {
     }
 }
 
+struct UserQuestWrapper: Identifiable, Hashable {
+    var id: Int = 0
+    var question: String
+    var answer: String
+}
 
+extension UserItem {
+    func getQuestionList() -> [UserQuestWrapper] {
+        var result: [UserQuestWrapper] = []
+        
+        for (index, questionItem) in SocialQuestionData.allQuests.enumerated() {
+            let question = questionItem.question_en
+            var answer = ""
+            if SocialQuestionData.allAnswers.count > index, questionAnswer.count > index {
+                let answerList = SocialQuestionData.allAnswers[index]
+                let answerIdx = questionAnswer[index]
+                if answerList.answer.count > answerIdx {
+                    answer = answerList.answer[answerIdx]
+                }
+            }
+            
+            let item = UserQuestWrapper(id: index, question: question, answer: answer)
+            result.append(item)
+        }
+        
+        return result
+    }
+}

@@ -132,6 +132,10 @@ class UserHomeViewController: BaseViewController {
         self.user = user
         
         super.init(nibName: nil, bundle: nil)
+        
+        user.getQuestionList().forEach { model in
+            dataSource.append(UserHomeCellRowModel(type: .question(model)))
+        }
     }
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
@@ -243,13 +247,18 @@ extension UserHomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let item = dataSource[indexPath.row]
-        if item.type == .switchCell {
+        switch item.type {
+        case .switchCell:
             let cell = UserHomeSwitchCell.cellWith(tableView)
             cell.setupUserData(user)
             return cell
-        } else if item.type == .userInfoCell {
+        case .userInfoCell:
             let cell = UserProfileTableCell.cellWith(tableView)
             cell.setupUserData(user)
+            return cell
+        case .question(let model):
+            let cell = UserQuestionTableViewCell.cellWithTable(tableView)
+            cell.question = model
             return cell
         }
         
@@ -259,10 +268,13 @@ extension UserHomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let item = dataSource[indexPath.row]
         
-        if item.type == .switchCell {
+        switch item.type {
+        case .switchCell:
             return UserHomeSwitchCell.cellHeightWith(user)
-        } else if item.type == .userInfoCell {
-            return UserProfileTableCell.cellHeightWith(user)
+        case .userInfoCell:
+            return UITableView.automaticDimension
+        case .question(_):
+            return UITableView.automaticDimension
         }
         
         return 0

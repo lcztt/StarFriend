@@ -11,13 +11,6 @@ import SnapKit
 
 class UserProfileTableCell: UserHomeBaseCell {
     
-    override class func cellHeightWith(_ user: UserItem) -> CGFloat {
-        let descHeight = user.desc.height(for: UIFont.size(20),
-                                          size: CGSize(width: UIScreen.width - 12 * 4,
-                                                       height: CGFloat.greatestFiniteMagnitude))
-        return 12 + 160 + descHeight
-    }
-
     static func cellWith(_ table: UITableView) -> UserProfileTableCell {
         var cell = table.dequeueReusableCell(withIdentifier: "UserProfileTableCell")
         if cell == nil {
@@ -29,31 +22,31 @@ class UserProfileTableCell: UserHomeBaseCell {
     
     lazy var nameLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.textColor = .white
-        label.font = UIFont.size(28)
+        label.textColor = UIColor.hexVal(0xfafafa)
+        label.font = UIFont.titleSize(18)
         return label
     }()
     
     lazy var locationLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.textColor = .white
-        label.font = UIFont.size(20)
+        label.textColor = UIColor.hexVal(0xfafafa)
+        label.font = UIFont.textSize(16)
         return label
     }()
     
     lazy var professionLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.textColor = .white
-        label.font = UIFont.size(20)
+        label.textColor = UIColor.hexVal(0xfafafa)
+        label.font = UIFont.textSize(16)
         return label
     }()
     
     lazy var descLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.textColor = .white
+        label.textColor = UIColor.hexVal(0xfafafa)
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-        label.font = UIFont.size(20)
+        label.font = UIFont.textSize(16)
         return label
     }()
     
@@ -61,37 +54,35 @@ class UserProfileTableCell: UserHomeBaseCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         cardView.addSubview(nameLabel)
+        nameLabel.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(12)
+            make.top.equalToSuperview().inset(20)
+        }
+        
         cardView.addSubview(locationLabel)
+        locationLabel.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(12)
+            make.top.equalTo(nameLabel.snp.bottom).offset(12)
+        }
+        
         cardView.addSubview(professionLabel)
+        professionLabel.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(12)
+            make.top.equalTo(locationLabel.snp.bottom).offset(12)
+        }
+        
         cardView.addSubview(descLabel)
+        descLabel.snp.makeConstraints { make in
+            make.left.right.equalToSuperview().inset(12)
+            make.top.equalTo(professionLabel.snp.bottom).offset(12)
+            make.bottom.equalToSuperview().inset(20)
+        }
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        
-        nameLabel.sizeToFit()
-        nameLabel.origin = CGPointMake(12, 20)
-        
-        locationLabel.sizeToFit()
-        locationLabel.left = 12
-        locationLabel.top = nameLabel.bottom + 8
-        
-        professionLabel.sizeToFit()
-        professionLabel.left = 12
-        professionLabel.top = locationLabel.bottom + 8
-        
-        if let text = descLabel.text {
-            descLabel.size = text.size(for: UIFont.size(20),
-                                       size: CGSize(width: width - 12 * 4,
-                                                    height: CGFloat.greatestFiniteMagnitude))
-            descLabel.left = 12
-            descLabel.top = professionLabel.bottom + 12
-        }
-    }
     
     override func setupUserData(_ user: UserItem) {
         super.setupUserData(user)

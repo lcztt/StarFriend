@@ -80,6 +80,12 @@
 		439652592BB2BDCC007E9F9F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439652582BB2BDCC007E9F9F /* SystemConfiguration.framework */; };
 		4396525D2BB307FA007E9F9F /* MyCustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396525C2BB307FA007E9F9F /* MyCustomAnnotationView.swift */; };
 		439652602BB311B0007E9F9F /* SHSearchBar in Frameworks */ = {isa = PBXBuildFile; productRef = 4396525F2BB311B0007E9F9F /* SHSearchBar */; };
+		439652622BB3F2FC007E9F9F /* SocialQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439652612BB3F2FC007E9F9F /* SocialQuestion.swift */; };
+		439652642BB3F339007E9F9F /* FillAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439652632BB3F339007E9F9F /* FillAnswerViewController.swift */; };
+		439652662BB3F8C2007E9F9F /* FillAnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439652652BB3F8C2007E9F9F /* FillAnswerTableViewCell.swift */; };
+		439652682BB40A50007E9F9F /* EditUserQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439652672BB40A50007E9F9F /* EditUserQuestionTableViewCell.swift */; };
+		4396526A2BB41C9C007E9F9F /* UserQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439652692BB41C9C007E9F9F /* UserQuestionTableViewCell.swift */; };
+		4396526D2BB425F7007E9F9F /* BubbleTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396526C2BB425F7007E9F9F /* BubbleTipsView.swift */; };
 		43973B4B2B39ADE300F73A96 /* SwiftLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 43973B4A2B39ADE300F73A96 /* SwiftLocation */; };
 		43973B4D2B3AA64B00F73A96 /* InviteSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43973B4C2B3AA64B00F73A96 /* InviteSheetView.swift */; };
 		43973B4F2B3AAFEE00F73A96 /* RechargeProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43973B4E2B3AAFEE00F73A96 /* RechargeProductModel.swift */; };
@@ -202,6 +208,12 @@
 		439652582BB2BDCC007E9F9F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4396525B2BB2C75A007E9F9F /* StarFriend_Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarFriend_Bridge.h; sourceTree = "<group>"; };
 		4396525C2BB307FA007E9F9F /* MyCustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomAnnotationView.swift; sourceTree = "<group>"; };
+		439652612BB3F2FC007E9F9F /* SocialQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocialQuestion.swift; path = ../../../../SwiftUISocial/SwiftUISocial/Sources/ViewModels/SocialQuestion.swift; sourceTree = "<group>"; };
+		439652632BB3F339007E9F9F /* FillAnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillAnswerViewController.swift; sourceTree = "<group>"; };
+		439652652BB3F8C2007E9F9F /* FillAnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillAnswerTableViewCell.swift; sourceTree = "<group>"; };
+		439652672BB40A50007E9F9F /* EditUserQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserQuestionTableViewCell.swift; sourceTree = "<group>"; };
+		439652692BB41C9C007E9F9F /* UserQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQuestionTableViewCell.swift; sourceTree = "<group>"; };
+		4396526C2BB425F7007E9F9F /* BubbleTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTipsView.swift; sourceTree = "<group>"; };
 		43973B4C2B3AA64B00F73A96 /* InviteSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteSheetView.swift; sourceTree = "<group>"; };
 		43973B4E2B3AAFEE00F73A96 /* RechargeProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeProductModel.swift; sourceTree = "<group>"; };
 		43973B532B3AB22000F73A96 /* StoreMyBalanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMyBalanceCell.swift; sourceTree = "<group>"; };
@@ -313,6 +325,7 @@
 		43297B462B2B33ED00A538D0 /* UserHome */ = {
 			isa = PBXGroup;
 			children = (
+				43924A1E2B396A9400F4CD25 /* EditUserInfo */,
 				43297B382B2A166B00A538D0 /* UserHomeViewController.swift */,
 				433E8A092B319900002773DC /* Model */,
 				433E8A082B3198F4002773DC /* View */,
@@ -335,6 +348,7 @@
 				43297B692B2C081000A538D0 /* UserProfileTableCell.swift */,
 				433E8A042B3197FF002773DC /* UserHomeSwitchCell.swift */,
 				433E8A022B31834C002773DC /* UserHomeTableHeaderView.swift */,
+				439652692BB41C9C007E9F9F /* UserQuestionTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -387,7 +401,6 @@
 				43297B602B2BF70500A538D0 /* API */,
 				4353A5132B29B57C006C7CC4 /* BaseController */,
 				4353A5322B29B57C006C7CC4 /* Chat */,
-				43924A1E2B396A9400F4CD25 /* EditUserInfo */,
 				4353A51A2B29B57C006C7CC4 /* FindFriend */,
 				4353A5272B29B57C006C7CC4 /* FirendList */,
 				4353A52D2B29B57C006C7CC4 /* IAP */,
@@ -512,6 +525,7 @@
 				43924A1F2B396ABC00F4CD25 /* EditHeaderCell.swift */,
 				43924A222B396AFF00F4CD25 /* EditUserInfoBaseCell.swift */,
 				43924A242B396B2F00F4CD25 /* EditNickNameCell.swift */,
+				439652672BB40A50007E9F9F /* EditUserQuestionTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -519,12 +533,16 @@
 		439652362BB067E6007E9F9F /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				4396526B2BB425CD007E9F9F /* TipsBubble */,
+				439652612BB3F2FC007E9F9F /* SocialQuestion.swift */,
 				439652372BB067F8007E9F9F /* MapViewController.swift */,
 				4396523A2BB10D9A007E9F9F /* MapSearchViewController.swift */,
 				4396523C2BB10DCF007E9F9F /* MapHidingViewController.swift */,
 				4396523E2BB16E89007E9F9F /* MapHidingCollectionViewCell.swift */,
 				439652412BB274D5007E9F9F /* MyCustomAnnotation.swift */,
 				4396525C2BB307FA007E9F9F /* MyCustomAnnotationView.swift */,
+				439652632BB3F339007E9F9F /* FillAnswerViewController.swift */,
+				439652652BB3F8C2007E9F9F /* FillAnswerTableViewCell.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -536,6 +554,14 @@
 				4353A5542B29B5B4006C7CC4 /* TabViewController.swift */,
 			);
 			path = TabView;
+			sourceTree = "<group>";
+		};
+		4396526B2BB425CD007E9F9F /* TipsBubble */ = {
+			isa = PBXGroup;
+			children = (
+				4396526C2BB425F7007E9F9F /* BubbleTipsView.swift */,
+			);
+			path = TipsBubble;
 			sourceTree = "<group>";
 		};
 		43973B502B3AB1F000F73A96 /* IAP */ = {
@@ -884,6 +910,7 @@
 				43E3A1E02B3144620082050F /* WaveAnimationButton.swift in Sources */,
 				4353A5492B29B57C006C7CC4 /* NumberSectionView.swift in Sources */,
 				435447292B3C6A7600390D0C /* UseGoldTipsView.swift in Sources */,
+				4396526D2BB425F7007E9F9F /* BubbleTipsView.swift in Sources */,
 				43297B422B2A17F900A538D0 /* RadarView.swift in Sources */,
 				43189D9F2B341FC000A212E5 /* BaseNavigationController.swift in Sources */,
 				4353A5422B29B57C006C7CC4 /* Feedbacks.swift in Sources */,
@@ -892,22 +919,26 @@
 				43F6FDC52B3533BD0053AC61 /* MineViewController.swift in Sources */,
 				43297B402B2A17CE00A538D0 /* FindFriendViewController.swift in Sources */,
 				43973B542B3AB22100F73A96 /* StoreMyBalanceCell.swift in Sources */,
+				439652682BB40A50007E9F9F /* EditUserQuestionTableViewCell.swift in Sources */,
 				4396523B2BB10D9A007E9F9F /* MapSearchViewController.swift in Sources */,
 				43924A1D2B3969D300F4CD25 /* EditUserInfoViewController.swift in Sources */,
 				4353A5382B29B57C006C7CC4 /* BaseViewController.swift in Sources */,
 				43924A202B396ABC00F4CD25 /* EditHeaderCell.swift in Sources */,
+				439652622BB3F2FC007E9F9F /* SocialQuestion.swift in Sources */,
 				4396525D2BB307FA007E9F9F /* MyCustomAnnotationView.swift in Sources */,
 				43297B3A2B2A166B00A538D0 /* UserHomeViewController.swift in Sources */,
 				43924A232B396AFF00F4CD25 /* EditUserInfoBaseCell.swift in Sources */,
 				4353A54B2B29B57C006C7CC4 /* FriendListController.swift in Sources */,
 				43297B392B2A166B00A538D0 /* UserItem.swift in Sources */,
 				43189D9C2B33EB9F00A212E5 /* CustomImageView.swift in Sources */,
+				439652642BB3F339007E9F9F /* FillAnswerViewController.swift in Sources */,
 				4353A5462B29B57C006C7CC4 /* UIScreen+Extension.swift in Sources */,
 				4353A5452B29B57C006C7CC4 /* Observable+Extensions.swift in Sources */,
 				4353A5522B29B57C006C7CC4 /* SendMessageAPI.swift in Sources */,
 				43297B362B2A165400A538D0 /* UIView+Extension.swift in Sources */,
 				4353A53C2B29B57C006C7CC4 /* RxImagePickerDelegateProxy.swift in Sources */,
 				43F6FDD22B35A0080053AC61 /* MineProfileTableCell.swift in Sources */,
+				4396526A2BB41C9C007E9F9F /* UserQuestionTableViewCell.swift in Sources */,
 				433E8A032B31834D002773DC /* UserHomeTableHeaderView.swift in Sources */,
 				43F6FDBF2B348E2F0053AC61 /* UITabBarController+Extensions.swift in Sources */,
 				43297B3E2B2A174200A538D0 /* RadarTargetView.swift in Sources */,
@@ -920,6 +951,7 @@
 				43297B622B2BFB2E00A538D0 /* AutoScrollLabel.swift in Sources */,
 				433E8A072B3198F0002773DC /* UserHomeBaseCell.swift in Sources */,
 				43F6FDC72B359D990053AC61 /* MineBaseTableCell.swift in Sources */,
+				439652662BB3F8C2007E9F9F /* FillAnswerTableViewCell.swift in Sources */,
 				4353A5012B29B3A5006C7CC4 /* SceneDelegate.swift in Sources */,
 				4354472F2B3D878F00390D0C /* MyCustomTabBar.swift in Sources */,
 			);

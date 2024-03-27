@@ -14,6 +14,7 @@ enum EditCellType {
     case location
     case profession
     case desc // reviewing
+    case question(SocialQuestion)
 }
 
 class EditNickNameCell: EditUserInfoBaseCell {
