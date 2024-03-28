@@ -1,9 +1,4 @@
 PODS:
-  - AMap3DMap (10.0.600):
-    - AMapFoundation (>= 1.8.0)
-  - AMapFoundation (1.8.2)
-  - AMapLocation (2.10.0):
-    - AMapFoundation (>= 1.8.0)
   - BRPickerView (2.8.1):
     - BRPickerView/AddressPickerView (= 2.8.1)
     - BRPickerView/Base (= 2.8.1)
@@ -69,8 +64,6 @@ PODS:
   - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
-  - AMap3DMap
-  - AMapLocation
   - BRPickerView
   - JFPopup (= 1.5.4)
   - JXPhotoBrowser (~> 3.0)
@@ -89,9 +82,6 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
-    - AMap3DMap
-    - AMapFoundation
-    - AMapLocation
     - BRPickerView
     - Differentiator
     - GRDB.swift
@@ -113,9 +103,6 @@ SPEC REPOS:
     - Toast-Swift
 
 SPEC CHECKSUMS:
-  AMap3DMap: d104a679c2bad573c908e0ddadf26bc399678b24
-  AMapFoundation: 9885c48fc3a78fdfb84a0299a2293e56ea3c9fec
-  AMapLocation: 5248aec2455ebb5d104b367813c946430a2ee033
   BRPickerView: 2531a2d4d0fea0b57a1c738de215af0f88863a2f
   Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   GRDB.swift: e819934eb2df28a6907f28d746eb3cf9c7c53b75
@@ -136,6 +123,6 @@ SPEC CHECKSUMS:
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 0f06d4f0fbc876217e6621526da86c222c59637b
+PODFILE CHECKSUM: 745f1a2f540114764a478f046eed2dc067164667
 
 COCOAPODS: 1.14.3
