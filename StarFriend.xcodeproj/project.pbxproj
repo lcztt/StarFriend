@@ -80,12 +80,12 @@
 		439652592BB2BDCC007E9F9F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 439652582BB2BDCC007E9F9F /* SystemConfiguration.framework */; };
 		4396525D2BB307FA007E9F9F /* MyCustomAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396525C2BB307FA007E9F9F /* MyCustomAnnotationView.swift */; };
 		439652602BB311B0007E9F9F /* SHSearchBar in Frameworks */ = {isa = PBXBuildFile; productRef = 4396525F2BB311B0007E9F9F /* SHSearchBar */; };
-		439652622BB3F2FC007E9F9F /* SocialQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439652612BB3F2FC007E9F9F /* SocialQuestion.swift */; };
 		439652642BB3F339007E9F9F /* FillAnswerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439652632BB3F339007E9F9F /* FillAnswerViewController.swift */; };
 		439652662BB3F8C2007E9F9F /* FillAnswerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439652652BB3F8C2007E9F9F /* FillAnswerTableViewCell.swift */; };
 		439652682BB40A50007E9F9F /* EditUserQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439652672BB40A50007E9F9F /* EditUserQuestionTableViewCell.swift */; };
 		4396526A2BB41C9C007E9F9F /* UserQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439652692BB41C9C007E9F9F /* UserQuestionTableViewCell.swift */; };
 		4396526D2BB425F7007E9F9F /* BubbleTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396526C2BB425F7007E9F9F /* BubbleTipsView.swift */; };
+		4396526F2BB54525007E9F9F /* SocialQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396526E2BB54525007E9F9F /* SocialQuestion.swift */; };
 		43973B4B2B39ADE300F73A96 /* SwiftLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 43973B4A2B39ADE300F73A96 /* SwiftLocation */; };
 		43973B4D2B3AA64B00F73A96 /* InviteSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43973B4C2B3AA64B00F73A96 /* InviteSheetView.swift */; };
 		43973B4F2B3AAFEE00F73A96 /* RechargeProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43973B4E2B3AAFEE00F73A96 /* RechargeProductModel.swift */; };
@@ -208,12 +208,12 @@
 		439652582BB2BDCC007E9F9F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4396525B2BB2C75A007E9F9F /* StarFriend_Bridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarFriend_Bridge.h; sourceTree = "<group>"; };
 		4396525C2BB307FA007E9F9F /* MyCustomAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCustomAnnotationView.swift; sourceTree = "<group>"; };
-		439652612BB3F2FC007E9F9F /* SocialQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SocialQuestion.swift; path = ../../../../SwiftUISocial/SwiftUISocial/Sources/ViewModels/SocialQuestion.swift; sourceTree = "<group>"; };
 		439652632BB3F339007E9F9F /* FillAnswerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillAnswerViewController.swift; sourceTree = "<group>"; };
 		439652652BB3F8C2007E9F9F /* FillAnswerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillAnswerTableViewCell.swift; sourceTree = "<group>"; };
 		439652672BB40A50007E9F9F /* EditUserQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditUserQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		439652692BB41C9C007E9F9F /* UserQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		4396526C2BB425F7007E9F9F /* BubbleTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTipsView.swift; sourceTree = "<group>"; };
+		4396526E2BB54525007E9F9F /* SocialQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialQuestion.swift; sourceTree = "<group>"; };
 		43973B4C2B3AA64B00F73A96 /* InviteSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteSheetView.swift; sourceTree = "<group>"; };
 		43973B4E2B3AAFEE00F73A96 /* RechargeProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeProductModel.swift; sourceTree = "<group>"; };
 		43973B532B3AB22000F73A96 /* StoreMyBalanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMyBalanceCell.swift; sourceTree = "<group>"; };
@@ -533,8 +533,8 @@
 		439652362BB067E6007E9F9F /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				4396526E2BB54525007E9F9F /* SocialQuestion.swift */,
 				4396526B2BB425CD007E9F9F /* TipsBubble */,
-				439652612BB3F2FC007E9F9F /* SocialQuestion.swift */,
 				439652372BB067F8007E9F9F /* MapViewController.swift */,
 				4396523A2BB10D9A007E9F9F /* MapSearchViewController.swift */,
 				4396523C2BB10DCF007E9F9F /* MapHidingViewController.swift */,
@@ -870,6 +870,7 @@
 				43297B682B2C06D200A538D0 /* UserHomeCellRowModel.swift in Sources */,
 				4353A54E2B29B57C006C7CC4 /* StoreViewController.swift in Sources */,
 				4353A53D2B29B57C006C7CC4 /* RadarIndicatorView.swift in Sources */,
+				4396526F2BB54525007E9F9F /* SocialQuestion.swift in Sources */,
 				4353A5552B29B5B4006C7CC4 /* TabViewController.swift in Sources */,
 				4301E74F2B3AF92E0073F46F /* ChatMessageModel.swift in Sources */,
 				43973B562B3AB22F00F73A96 /* StoreProductCell.swift in Sources */,
@@ -906,7 +907,6 @@
 				43924A1D2B3969D300F4CD25 /* EditUserInfoViewController.swift in Sources */,
 				4353A5382B29B57C006C7CC4 /* BaseViewController.swift in Sources */,
 				43924A202B396ABC00F4CD25 /* EditHeaderCell.swift in Sources */,
-				439652622BB3F2FC007E9F9F /* SocialQuestion.swift in Sources */,
 				4396525D2BB307FA007E9F9F /* MyCustomAnnotationView.swift in Sources */,
 				43297B3A2B2A166B00A538D0 /* UserHomeViewController.swift in Sources */,
 				43924A232B396AFF00F4CD25 /* EditUserInfoBaseCell.swift in Sources */,
