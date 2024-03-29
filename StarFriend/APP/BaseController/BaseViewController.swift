@@ -57,7 +57,7 @@ class BaseViewController: UIViewController {
         backButton.addTarget(self, action: #selector(backButtonHandler(_:)), for: .touchUpInside)
         
         
-        addBackgroundView()
+//        addBackgroundView()
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

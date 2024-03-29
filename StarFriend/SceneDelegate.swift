@@ -37,7 +37,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.backgroundColor = UIColor.white
         self.window = window
         
-        window.rootViewController = TabViewController()
+        if SigninAccountManager.shared.hasSignin {
+            window.rootViewController = TabViewController()
+        } else {
+            let vc = WelcomeViewController(nibName: nil, bundle: nil)
+            let nvc = UINavigationController(rootViewController: vc)
+            window.rootViewController = nvc
+        }
+        
         window.makeKeyAndVisible()
         
 //        RxImagePickerDelegateProxy.register { RxImagePickerDelegateProxy(imagePicker: $0) }
