@@ -98,25 +98,13 @@ extension EditUserInfoViewController: UITableViewDataSource, UITableViewDelegate
         case .avatar:
             let cell = EditHeaderCell.cellWithTable(tableView)
             cell.setUserData(UserData.shared.me)
-            cell.avatarView.rx.tapGesture().when(.recognized).flatMapLatest { [weak self] _ in
-                return UIImagePickerController.rx.createWithParent(self) { picker in
-                    picker.sourceType = .photoLibrary
-                    picker.allowsEditing = false
-                }
-                .flatMap {
-                    $0.rx.didFinishPickingMediaWithInfo
-                }
-                .take(1)
+            cell.onTapAvatar = { [weak self] in
+                let vc = UIImagePickerController(nibName: nil, bundle: nil)
+                vc.sourceType = .photoLibrary
+                vc.allowsEditing = false
+                vc.delegate = self
+                self?.present(vc, animated: true)
             }
-            .map {[weak self] info in
-                let image = info[.originalImage] as? UIImage
-                if let image = image {
-                    self?.writeImageFile(image)
-                }
-                return image
-            }
-            .bind(to: cell.avatarView.rx.image)
-            .disposed(by: disposeBag)
             return cell
         case .nickname:
             let cell = EditNickNameCell.cellWithTable(tableView)
@@ -260,5 +248,19 @@ extension EditUserInfoViewController: UITableViewDataSource, UITableViewDelegate
                 }
             }
         }
+    }
+}
+
+extension EditUserInfoViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        let image = info[.originalImage] as? UIImage
+        if let image = image {
+            writeImageFile(image)
+        }
+//        return image
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
     }
 }

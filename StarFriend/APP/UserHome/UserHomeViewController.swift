@@ -9,9 +9,9 @@ import Foundation
 import UIKit
 import SnapKit
 import JXPhotoBrowser
-import RxSwift
-import RxCocoa
-import RxGesture
+// import RxSwift
+// import RxCocoa
+// import RxGesture
 
 protocol UserHomeViewControllerDelegate: AnyObject {
     func userHomeController(_ vc: UserHomeViewController, didBlock user: UserItem)
@@ -156,9 +156,12 @@ class UserHomeViewController: BaseViewController {
         view.backgroundColor = .clear
         
         self.headerView.imageView.image = UIImage(named: user.avatarUrl)
-        headerView.rx.tapGesture().when(.recognized).subscribe(onNext: {[weak self] element in
-            self?.showAvatar()
-        }).disposed(by: disposeBag)
+//        headerView.rx.tapGesture().when(.recognized).subscribe(onNext: {[weak self] element in
+//            self?.
+//        }).disposed(by: disposeBag)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(onTapAvatar))
+        headerView.addGestureRecognizer(tap)
+        
         tableView.clipsToBounds = true
 //        tableView.contentInsetAdjustmentBehavior = .never
         tableView.tableHeaderView = self.headerView
@@ -197,6 +200,10 @@ class UserHomeViewController: BaseViewController {
         chatButton.bottom = UIScreen.height - view.safeAreaInsets.bottom - 20
         reportButton.bottom = UIScreen.height - view.safeAreaInsets.bottom - 20
         blockButton.bottom = UIScreen.height - view.safeAreaInsets.bottom - 20
+    }
+    
+    @objc private func onTapAvatar() {
+        showAvatar()
     }
     
     private func setupUI() {

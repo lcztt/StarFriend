@@ -19,6 +19,8 @@ class EditHeaderCell: EditUserInfoBaseCell {
         return imageView
     }()
     
+    var onTapAvatar: (() -> Void)?
+    
     let cameraIcon = UIImageView(image: UIImage(named: "camera"))
     
     lazy var reviewLabel: UILabel = {
@@ -54,6 +56,8 @@ class EditHeaderCell: EditUserInfoBaseCell {
         avatarView.layer.borderColor = UIColor.hexVal(0xbfbfbf).cgColor
         contentView.addSubview(avatarView)
         
+        let tap = UITapGestureRecognizer(target: self, action: #selector(onTapAvatarBlockHandler))
+        
         avatarView.snp.makeConstraints { make in
             make.size.equalTo(140)
             make.centerX.equalToSuperview()
@@ -88,5 +92,11 @@ class EditHeaderCell: EditUserInfoBaseCell {
             avatarView.image = UIImage(named: user.avatarUrl)
         }
         reviewLabel.isHidden = !user.isAvatarReview
+    }
+    
+    @objc private func onTapAvatarBlockHandler() {
+        if let block = onTapAvatar {
+            block()
+        }
     }
 }

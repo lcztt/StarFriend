@@ -7,9 +7,9 @@
 
 import Foundation
 import UIKit
-import RxSwift
-import RxDataSources
-import RxCocoa
+// import RxSwift
+// import RxDataSources
+// import RxCocoa
 import SnapKit
 
 
@@ -36,7 +36,7 @@ class FriendListController: BaseViewController {
         return button
     }()
     
-    let dataList = PublishSubject<[SectionModel<String, UserItem>]>()
+    let dataList:Array<UserItem> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,39 +51,7 @@ class FriendListController: BaseViewController {
             make.edges.equalToSuperview().inset(UIEdgeInsets.zero)
         }
         
-        // 绑定数据源获取方法
-        //        userList =
-        //        refreshButton.rx.tap.asObservable()
-        //            .startWith(()) // 加这个为了让一开始就能自动请求一次数据
-        //            .flatMapLatest(getFriendList)
-        //            .share(replay: 1)
         
-        //创建数据源
-        let dataSource = RxCollectionViewSectionedReloadDataSource
-        <SectionModel<String, UserItem>>(
-            configureCell: { (dataSource, collectionView, indexPath, element) in
-                print("初始化 User:\(element.nickname)")
-                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserCardCell",
-                                                              for: indexPath) as! FriendListCell
-                
-                
-                cell.setUser(element)
-                return cell
-            }
-        )
-        
-        dataList
-            .bind(to: collectionView.rx.items(dataSource: dataSource))
-            .disposed(by: disposeBag)
-        
-        // touches
-        collectionView.rx.modelSelected(UserItem.self)
-            .subscribe(onNext: { [weak self] user in
-                print("选中的用户是\(user)")
-                let vc = UserHomeViewController(user: user)
-                vc.delegate = self
-                self?.navigationController?.pushViewController(vc, animated: true)
-            }).disposed(by: disposeBag)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -96,11 +64,7 @@ class FriendListController: BaseViewController {
     func reloadDataSource() {
         print("正在请求数据......")
         
-        let items = UserData.shared.friendList.filter { user in
-            user.isBlock == false
-        }
         
-        dataList.onNext([SectionModel(model: "", items: items)])
     }
     
     override func viewSafeAreaInsetsDidChange() {
@@ -113,6 +77,53 @@ class FriendListController: BaseViewController {
             make.edges.equalToSuperview().inset(edge)
         }
     }
+}
+
+extension FriendListController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let user = dataList[indexPath.item]
+        let vc = UserHomeViewController(user: user)
+        vc.delegate = self
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return dataList.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let user = dataList[indexPath.item]
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UserCardCell",
+                                                      for: indexPath) as! FriendListCell
+        
+        cell.setUser(user)
+        return cell
+    }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+//        
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+//        
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+//        
+//    }
 }
 
 extension FriendListController: UserHomeViewControllerDelegate {

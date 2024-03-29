@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 import SnapKit
-import PromiseKit
+//import PromiseKit
 import JFPopup
 //import LiquidLoader
 
@@ -141,29 +141,29 @@ extension FindFriendViewController {
         findButton.backgroundColor = UIColor.hexVal(0x19AA5A, 0.9)
         findButton.titleLabel?.font = UIFont.size(18)
         findButton.setTitleColor(UIColor.white, for: .normal)
-        findButton.rx.tap.subscribe {[weak self] button in
-            guard let self = self else {
-                return
-            }
-            
-            self.findButton.animateTouchUpInside {
-                
-                if self.todayFreeTime <= 0 {
-                    // MARK: 弹框提示内购
-                    if UserData.shared.me.gold > UserData.onceGold {
-                        self.showUseGoldTips()
-                    } else {
-                        self.showByGoldTips()
-                    }
-                    return
-                }
-                
-                self.todayFreeTime -= 1
-                self.findButton.isSelected = !self.findButton.isSelected
-                
-                self.handlerFindButtonClick()
-            }
-        }.disposed(by: disposeBag)
+//        findButton.rx.tap.subscribe {[weak self] button in
+//            guard let self = self else {
+//                return
+//            }
+//            
+//            self.findButton.animateTouchUpInside {
+//                
+//                if self.todayFreeTime <= 0 {
+//                    // MARK: 弹框提示内购
+//                    if UserData.shared.me.gold > UserData.onceGold {
+//                        self.showUseGoldTips()
+//                    } else {
+//                        self.showByGoldTips()
+//                    }
+//                    return
+//                }
+//                
+//                self.todayFreeTime -= 1
+//                self.findButton.isSelected = !self.findButton.isSelected
+//                
+//                self.handlerFindButtonClick()
+//            }
+//        }.disposed(by: disposeBag)
     }
     
     @objc func showUseGoldTips() {

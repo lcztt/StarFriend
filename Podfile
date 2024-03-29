@@ -9,14 +9,7 @@ target 'StarFriend' do
   pod 'Kingfisher'
   pod 'Alamofire'
   pod 'GRDB.swift'
-  
-  pod 'RxSwift', '6.6.0'
-  pod 'RxCocoa', '6.6.0'
-  pod 'RxDataSources', '~> 5.0'
-  pod "RxGesture"
-  #  pod 'RxCoreLocation', '~> 1.5.1'
-  pod 'PromiseKit'
-  
+    
   pod "Position", "~> 0.7.0" # 定位
   pod 'SwiftyStoreKit' # 内购
   

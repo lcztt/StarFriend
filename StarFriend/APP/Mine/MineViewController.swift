@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 import SnapKit
-import RxSwift
-import RxDataSources
-import RxCocoa
+// import RxSwift
+// import RxDataSources
+// import RxCocoa
 import MessageUI
 import JFPopup
 import SafariServices
@@ -25,16 +25,19 @@ enum MineVCCellType {
 }
 
 class MineViewController: BaseViewController {
+    
     lazy var tableView: UITableView = {
         let view = UITableView(frame: .zero, style: .plain)
         view.backgroundColor = .clear
         return view
     }()
     
-//    let dataSource: [MineVCCellType] = {
-//        let array = [MineVCCellType.profile, .vip, .gold, .inviteFriend, .setting]
-//        return array
-//    }()
+    let dataSource: [MineVCCellType] = [MineVCCellType.profile,
+                                        .gold,
+                                        .inviteFriend,
+                                        .privacy,
+                                        .support,
+                                        .aboutApp]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,54 +58,9 @@ class MineViewController: BaseViewController {
         let button = UIButton(type: .custom)
         button.setImage(UIImage(named: "feedback"), for: .normal)
         button.size = CGSize(width: 25, height: 25)
-        button.rx.tap.subscribe { [weak self] (element) in
-            let vc = ReportUserController(nibName: nil, bundle: nil)
-            self?.navigationController?.pushViewController(vc, animated: true)
-        }.disposed(by: disposeBag)
+        button.addTarget(self, action: #selector(onReportButtonHandler(_:)), for: .touchUpInside)
         let rightBar = UIBarButtonItem(customView: button)
         navigationItem.rightBarButtonItem = rightBar
-        
-        // 初始化数据
-        let sections = Observable.just([SectionModel(model: "",
-                                                     items: [MineVCCellType.profile,
-                                                             .gold,
-                                                             .inviteFriend,
-                                                             .privacy,
-                                                             .support,
-                                                             .aboutApp])])
-        
-        // 创建数据源
-        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, MineVCCellType>> { dataSource, tableView, indexPath, item in
-            switch dataSource[indexPath] {
-            case .profile:
-                let cell = MineProfileTableCell.cellWithTable(tableView)
-                cell.setUserInfo(UserData.shared.me)
-                return cell
-            case .gold:
-                let cell = MineGoldTableCell.cellWithTable(tableView)
-                cell.setUserInfo(UserData.shared.me)
-                cell.rechargeButton.addTarget(self, action: #selector(self.onRechargeButtonHander(_:)), for: .touchUpInside)
-                return cell
-            case .inviteFriend:
-                let cell = MineInviteTableCell.cellWithTable(tableView)
-                cell.shareButton.addTarget(self, action: #selector(self.onInviteFriendHandler(_:)), for: .touchUpInside)
-                return cell
-            case .privacy:
-                let cell = MineSettingCell.cellWithTable(tableView)
-                cell.setData(.privacy)
-                return cell
-            case .support:
-                let cell = MineSettingCell.cellWithTable(tableView)
-                cell.setData(.support)
-                return cell
-            case .aboutApp:
-                let cell = MineAboutAppCell.cellWithTable(tableView)
-                return cell
-            }
-        }
-        
-        //绑定单元格数据
-        sections.bind(to: tableView.rx.items(dataSource:dataSource)).disposed(by: disposeBag)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -143,9 +101,16 @@ class MineViewController: BaseViewController {
         let vc = StoreViewController(nibName: nil, bundle: nil)
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    @objc private func onReportButtonHandler(_ button: UIButton) {
+        let vc = ReportUserController(nibName: nil, bundle: nil)
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
-extension MineViewController: UITableViewDelegate, SFSafariViewControllerDelegate {
+extension MineViewController:UITableViewDataSource, UITableViewDelegate, SFSafariViewControllerDelegate {
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
             let vc = EditUserInfoViewController(nibName: nil, bundle: nil)
@@ -165,6 +130,39 @@ extension MineViewController: UITableViewDelegate, SFSafariViewControllerDelegat
         } else if indexPath.row == 5 {
             let vc = AboutAppController(nibName: nil, bundle: nil)
             navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch dataSource[indexPath.row] {
+        case .profile:
+            let cell = MineProfileTableCell.cellWithTable(tableView)
+            cell.setUserInfo(UserData.shared.me)
+            return cell
+        case .gold:
+            let cell = MineGoldTableCell.cellWithTable(tableView)
+            cell.setUserInfo(UserData.shared.me)
+            cell.rechargeButton.addTarget(self, action: #selector(self.onRechargeButtonHander(_:)), for: .touchUpInside)
+            return cell
+        case .inviteFriend:
+            let cell = MineInviteTableCell.cellWithTable(tableView)
+            cell.shareButton.addTarget(self, action: #selector(self.onInviteFriendHandler(_:)), for: .touchUpInside)
+            return cell
+        case .privacy:
+            let cell = MineSettingCell.cellWithTable(tableView)
+            cell.setData(.privacy)
+            return cell
+        case .support:
+            let cell = MineSettingCell.cellWithTable(tableView)
+            cell.setData(.support)
+            return cell
+        case .aboutApp:
+            let cell = MineAboutAppCell.cellWithTable(tableView)
+            return cell
         }
     }
 }

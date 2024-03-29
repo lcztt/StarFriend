@@ -7,8 +7,8 @@
 
 import Foundation
 import SnapKit
-import RxSwift
-import RxCocoa
+// import RxSwift
+// import RxCocoa
 import SwiftyStoreKit
 import Toast_Swift
 //import SVProgressHUD

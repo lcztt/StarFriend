@@ -13,7 +13,6 @@ PODS:
     - BRPickerView/Base
   - BRPickerView/StringPickerView (2.8.1):
     - BRPickerView/Base
-  - Differentiator (5.0.0)
   - GRDB.swift (6.24.1):
     - GRDB.swift/standard (= 6.24.1)
   - GRDB.swift/standard (6.24.1)
@@ -23,28 +22,6 @@ PODS:
   - JXPhotoBrowser (3.1.4)
   - Kingfisher (7.10.1)
   - Position (0.7.1)
-  - PromiseKit (8.1.1):
-    - PromiseKit/CorePromise (= 8.1.1)
-    - PromiseKit/Foundation (= 8.1.1)
-    - PromiseKit/UIKit (= 8.1.1)
-  - PromiseKit/CorePromise (8.1.1)
-  - PromiseKit/Foundation (8.1.1):
-    - PromiseKit/CorePromise
-  - PromiseKit/UIKit (8.1.1):
-    - PromiseKit/CorePromise
-  - RxCocoa (6.6.0):
-    - RxRelay (= 6.6.0)
-    - RxSwift (= 6.6.0)
-  - RxDataSources (5.0.0):
-    - Differentiator (~> 5.0)
-    - RxCocoa (~> 6.0)
-    - RxSwift (~> 6.0)
-  - RxGesture (4.0.4):
-    - RxCocoa (~> 6.0)
-    - RxSwift (~> 6.0)
-  - RxRelay (6.6.0):
-    - RxSwift (= 6.6.0)
-  - RxSwift (6.6.0)
   - SnapKit (5.6.0)
   - SwiftyStoreKit (0.16.1)
   - Toast-Swift (5.0.1)
@@ -61,11 +38,6 @@ DEPENDENCIES:
   - JXPhotoBrowser (~> 3.0)
   - Kingfisher
   - Position (~> 0.7.0)
-  - PromiseKit
-  - RxCocoa (= 6.6.0)
-  - RxDataSources (~> 5.0)
-  - RxGesture
-  - RxSwift (= 6.6.0)
   - SnapKit
   - SwiftyStoreKit
   - Toast-Swift (~> 5.0.1)
@@ -76,19 +48,12 @@ SPEC REPOS:
     - Alamofire
     - AMPopTip
     - BRPickerView
-    - Differentiator
     - GRDB.swift
     - JFPopup
     - JRBaseKit
     - JXPhotoBrowser
     - Kingfisher
     - Position
-    - PromiseKit
-    - RxCocoa
-    - RxDataSources
-    - RxGesture
-    - RxRelay
-    - RxSwift
     - SnapKit
     - SwiftyStoreKit
     - Toast-Swift
@@ -99,25 +64,18 @@ SPEC CHECKSUMS:
   Alamofire: 02b772c9910e8eba1a079227c32fbd9e46c90a24
   AMPopTip: cf89d8690aa6e59ddc86bf46c0ccabb3e7d148a1
   BRPickerView: 2531a2d4d0fea0b57a1c738de215af0f88863a2f
-  Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   GRDB.swift: 136dcb5d8dddca50aae3ba7d77475f79e7232cd8
   JFPopup: c3ada13bbda3cfe85bd71228e20a0b622eab72af
   JRBaseKit: 825cca458a73990f6019deaaaaff75840dea477f
   JXPhotoBrowser: 41ffa41252c8d5264f97ab3c1936a5cf935a58d7
   Kingfisher: bc5abe80a8e0144537ef1dd5a0b2621b04f7f439
   Position: e60213a31dd920abe9ea375020d20c9a5eee3cc5
-  PromiseKit: d1be44b474e5acfa16adf007a1f49f104e10fead
-  RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
-  RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
-  RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
-  RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
-  RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftyStoreKit: 6b9c08810269f030586dac1fae8e75871a82e84a
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
   UMCommon: 9399105b64e099c3c66aad21fc85ae695567a1f1
   UMDevice: dcdf7ec167387837559d149fbc7d793d984faf82
 
-PODFILE CHECKSUM: d6779a2c81f2a68d05865faaa61e3d6f463870da
+PODFILE CHECKSUM: f9d90d83a000850b287d380b9faf3797f37e28a2
 
 COCOAPODS: 1.14.3

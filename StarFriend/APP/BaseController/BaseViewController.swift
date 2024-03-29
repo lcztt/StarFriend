@@ -6,12 +6,12 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
+// import RxSwift
+// import RxCocoa
 import SnapKit
 
 class BaseViewController: UIViewController {
-    let disposeBag = DisposeBag()
+//    let disposeBag = DisposeBag()
     
     lazy var backgroundView: UIImageView = {
         let view = UIImageView(image: UIImage(named: "view_background_2"))
@@ -54,9 +54,8 @@ class BaseViewController: UIViewController {
             navigationItem.leftBarButtonItem = backbarbutton
         }
         
-        backButton.rx.tap.subscribe { [weak self] (element) in
-            self?.navigationController?.popViewController(animated: true)
-        }.disposed(by: disposeBag)
+        backButton.addTarget(self, action: #selector(backButtonHandler(_:)), for: .touchUpInside)
+        
         
         addBackgroundView()
     }
@@ -67,6 +66,10 @@ class BaseViewController: UIViewController {
     
     override var prefersStatusBarHidden: Bool {
         return false
+    }
+    
+    @objc private func backButtonHandler(_ button: UIButton) {
+        navigationController?.popViewController(animated: true)
     }
     
     private func addBackgroundView() {

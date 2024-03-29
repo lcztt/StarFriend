@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 import SnapKit
-import RxSwift
-import RxCocoa
-import RxGesture
+// import RxSwift
+// import RxCocoa
+// import RxGesture
 import Toast_Swift
 
 class ReportUserController: BaseViewController {
@@ -111,29 +111,40 @@ class ReportUserController: BaseViewController {
     
     private func setupEvent() {
         
-        view.rx.tapGesture().when(.recognized).subscribe { [weak self] _ in
-            self?.view.endEditing(true)
-        }.disposed(by: disposeBag)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapViewHandler))
+        view.addGestureRecognizer(tap)
+//
+//        view.rx.tapGesture().when(.recognized).subscribe { [weak self] _ in
+//            self?.view.endEditing(true)
+//        }.disposed(by: disposeBag)
         
-        imageView.rx.tapGesture().when(.recognized).flatMapLatest { [weak self] _ in
-            return UIImagePickerController.rx.createWithParent(self) { picker in
-                picker.sourceType = .photoLibrary
-                picker.allowsEditing = false
-            }
-            .flatMap {
-                $0.rx.didFinishPickingMediaWithInfo
-            }
-            .take(1)
-        }
-        .map {[weak self] info in
-            self?.imageView.contentMode = .scaleToFill
-            return info[.originalImage] as? UIImage
-        }
-        .bind(to: imageView.rx.image)
-        .disposed(by: disposeBag)
+        let tapImg = UITapGestureRecognizer(target: self, action: #selector(showImagePicker))
+        imageView.addGestureRecognizer(tapImg)
+//        imageView.rx.tapGesture().when(.recognized).flatMapLatest { [weak self] _ in
+//            return UIImagePickerController.rx.createWithParent(self) { picker in
+//                picker.sourceType = .photoLibrary
+//                picker.allowsEditing = false
+//            }
+//            .flatMap {
+//                $0.rx.didFinishPickingMediaWithInfo
+//            }
+//            .take(1)
+//        }
+//        .map {[weak self] info in
+//            self?.imageView.contentMode = .scaleToFill
+//            return info[.originalImage] as? UIImage
+//        }
+//        .bind(to: imageView.rx.image)
+//        .disposed(by: disposeBag)
         
         sendButton.addTarget(self, action: #selector(onSendButton(_:)), for: .touchUpInside)
     }
+    
+    @objc private func tapViewHandler() {
+        view.endEditing(true)
+    }
+    
+    
     
     @objc func onSendButton(_ button: UIButton) {
         
@@ -148,5 +159,27 @@ class ReportUserController: BaseViewController {
             self.view.hideToastActivity()
             self.navigationController?.popViewController(animated: true)
         }
+    }
+}
+
+extension ReportUserController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    @objc fileprivate func showImagePicker() {
+        let vc = UIImagePickerController()
+        vc.sourceType = .photoLibrary
+        vc.allowsEditing = false
+        vc.delegate = self
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let image = info[.originalImage] as? UIImage {
+            imageView.contentMode = .scaleToFill
+            imageView.image = image
+        }
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
     }
 }

@@ -17,9 +17,6 @@
 		43297B392B2A166B00A538D0 /* UserItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43297B372B2A166B00A538D0 /* UserItem.swift */; };
 		43297B3A2B2A166B00A538D0 /* UserHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43297B382B2A166B00A538D0 /* UserHomeViewController.swift */; };
 		43297B3C2B2A168200A538D0 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43297B3B2B2A168200A538D0 /* UIColor+Extension.swift */; };
-		43297B3E2B2A174200A538D0 /* RadarTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43297B3D2B2A174200A538D0 /* RadarTargetView.swift */; };
-		43297B402B2A17CE00A538D0 /* FindFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43297B3F2B2A17CE00A538D0 /* FindFriendViewController.swift */; };
-		43297B422B2A17F900A538D0 /* RadarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43297B412B2A17F900A538D0 /* RadarView.swift */; };
 		43297B622B2BFB2E00A538D0 /* AutoScrollLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43297B612B2BFB2E00A538D0 /* AutoScrollLabel.swift */; };
 		43297B642B2BFB4400A538D0 /* NoticeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43297B632B2BFB4400A538D0 /* NoticeView.swift */; };
 		43297B682B2C06D200A538D0 /* UserHomeCellRowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43297B672B2C06D200A538D0 /* UserHomeCellRowModel.swift */; };
@@ -33,12 +30,7 @@
 		4353A50B2B29B3A5006C7CC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4353A5092B29B3A5006C7CC4 /* LaunchScreen.storyboard */; };
 		4353A5382B29B57C006C7CC4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A5142B29B57C006C7CC4 /* BaseViewController.swift */; };
 		4353A53A2B29B57C006C7CC4 /* ReportUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A5172B29B57C006C7CC4 /* ReportUserController.swift */; };
-		4353A53B2B29B57C006C7CC4 /* UIImagePickerController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A5182B29B57C006C7CC4 /* UIImagePickerController+Rx.swift */; };
-		4353A53C2B29B57C006C7CC4 /* RxImagePickerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A5192B29B57C006C7CC4 /* RxImagePickerDelegateProxy.swift */; };
-		4353A53D2B29B57C006C7CC4 /* RadarIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A51C2B29B57C006C7CC4 /* RadarIndicatorView.swift */; };
-		4353A5422B29B57C006C7CC4 /* Feedbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A5222B29B57C006C7CC4 /* Feedbacks.swift */; };
 		4353A5442B29B57C006C7CC4 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A5242B29B57C006C7CC4 /* UIViewController+Extension.swift */; };
-		4353A5452B29B57C006C7CC4 /* Observable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A5252B29B57C006C7CC4 /* Observable+Extensions.swift */; };
 		4353A5462B29B57C006C7CC4 /* UIScreen+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A5262B29B57C006C7CC4 /* UIScreen+Extension.swift */; };
 		4353A5492B29B57C006C7CC4 /* NumberSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A52A2B29B57C006C7CC4 /* NumberSectionView.swift */; };
 		4353A54A2B29B57C006C7CC4 /* FriendListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A52B2B29B57C006C7CC4 /* FriendListCell.swift */; };
@@ -51,8 +43,6 @@
 		4353A5532B29B57C006C7CC4 /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A5372B29B57C006C7CC4 /* ChatMessageCell.swift */; };
 		4353A5552B29B5B4006C7CC4 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4353A5542B29B5B4006C7CC4 /* TabViewController.swift */; };
 		435447272B3B1D2A00390D0C /* InputBarAccessoryView in Frameworks */ = {isa = PBXBuildFile; productRef = 435447262B3B1D2A00390D0C /* InputBarAccessoryView */; };
-		435447292B3C6A7600390D0C /* UseGoldTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435447282B3C6A7600390D0C /* UseGoldTipsView.swift */; };
-		4354472B2B3C6A8600390D0C /* ByGoldTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4354472A2B3C6A8600390D0C /* ByGoldTipsView.swift */; };
 		4354472D2B3D5D8600390D0C /* MineTableFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4354472C2B3D5D8600390D0C /* MineTableFooterView.swift */; };
 		4354472F2B3D878F00390D0C /* MyCustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4354472E2B3D878F00390D0C /* MyCustomTabBar.swift */; };
 		4385F40F2B3DB7E5005CE3F2 /* MineAboutAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4385F40E2B3DB7E5005CE3F2 /* MineAboutAppCell.swift */; };
@@ -86,6 +76,12 @@
 		4396526A2BB41C9C007E9F9F /* UserQuestionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439652692BB41C9C007E9F9F /* UserQuestionTableViewCell.swift */; };
 		4396526D2BB425F7007E9F9F /* BubbleTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396526C2BB425F7007E9F9F /* BubbleTipsView.swift */; };
 		4396526F2BB54525007E9F9F /* SocialQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396526E2BB54525007E9F9F /* SocialQuestion.swift */; };
+		439652812BB6C168007E9F9F /* ByGoldTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 439652792BB6C168007E9F9F /* ByGoldTipsView.swift */; };
+		439652822BB6C168007E9F9F /* RadarIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396527A2BB6C168007E9F9F /* RadarIndicatorView.swift */; };
+		439652832BB6C168007E9F9F /* RadarTargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396527B2BB6C168007E9F9F /* RadarTargetView.swift */; };
+		439652842BB6C168007E9F9F /* RadarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396527C2BB6C168007E9F9F /* RadarView.swift */; };
+		439652852BB6C168007E9F9F /* UseGoldTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396527D2BB6C168007E9F9F /* UseGoldTipsView.swift */; };
+		439652862BB6C168007E9F9F /* FindFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4396527F2BB6C168007E9F9F /* FindFriendViewController.swift */; };
 		43973B4B2B39ADE300F73A96 /* SwiftLocation in Frameworks */ = {isa = PBXBuildFile; productRef = 43973B4A2B39ADE300F73A96 /* SwiftLocation */; };
 		43973B4D2B3AA64B00F73A96 /* InviteSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43973B4C2B3AA64B00F73A96 /* InviteSheetView.swift */; };
 		43973B4F2B3AAFEE00F73A96 /* RechargeProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43973B4E2B3AAFEE00F73A96 /* RechargeProductModel.swift */; };
@@ -145,9 +141,6 @@
 		43297B372B2A166B00A538D0 /* UserItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserItem.swift; sourceTree = "<group>"; };
 		43297B382B2A166B00A538D0 /* UserHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserHomeViewController.swift; sourceTree = "<group>"; };
 		43297B3B2B2A168200A538D0 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		43297B3D2B2A174200A538D0 /* RadarTargetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarTargetView.swift; sourceTree = "<group>"; };
-		43297B3F2B2A17CE00A538D0 /* FindFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindFriendViewController.swift; sourceTree = "<group>"; };
-		43297B412B2A17F900A538D0 /* RadarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarView.swift; sourceTree = "<group>"; };
 		43297B612B2BFB2E00A538D0 /* AutoScrollLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoScrollLabel.swift; sourceTree = "<group>"; };
 		43297B632B2BFB4400A538D0 /* NoticeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticeView.swift; sourceTree = "<group>"; };
 		43297B672B2C06D200A538D0 /* UserHomeCellRowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHomeCellRowModel.swift; sourceTree = "<group>"; };
@@ -162,12 +155,7 @@
 		4353A50C2B29B3A5006C7CC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4353A5142B29B57C006C7CC4 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		4353A5172B29B57C006C7CC4 /* ReportUserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportUserController.swift; sourceTree = "<group>"; };
-		4353A5182B29B57C006C7CC4 /* UIImagePickerController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImagePickerController+Rx.swift"; sourceTree = "<group>"; };
-		4353A5192B29B57C006C7CC4 /* RxImagePickerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxImagePickerDelegateProxy.swift; sourceTree = "<group>"; };
-		4353A51C2B29B57C006C7CC4 /* RadarIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarIndicatorView.swift; sourceTree = "<group>"; };
-		4353A5222B29B57C006C7CC4 /* Feedbacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Feedbacks.swift; sourceTree = "<group>"; };
 		4353A5242B29B57C006C7CC4 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		4353A5252B29B57C006C7CC4 /* Observable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Observable+Extensions.swift"; sourceTree = "<group>"; };
 		4353A5262B29B57C006C7CC4 /* UIScreen+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScreen+Extension.swift"; sourceTree = "<group>"; };
 		4353A52A2B29B57C006C7CC4 /* NumberSectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberSectionView.swift; sourceTree = "<group>"; };
 		4353A52B2B29B57C006C7CC4 /* FriendListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendListCell.swift; sourceTree = "<group>"; };
@@ -179,8 +167,6 @@
 		4353A5362B29B57C006C7CC4 /* SendMessageAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SendMessageAPI.swift; sourceTree = "<group>"; };
 		4353A5372B29B57C006C7CC4 /* ChatMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatMessageCell.swift; sourceTree = "<group>"; };
 		4353A5542B29B5B4006C7CC4 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
-		435447282B3C6A7600390D0C /* UseGoldTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseGoldTipsView.swift; sourceTree = "<group>"; };
-		4354472A2B3C6A8600390D0C /* ByGoldTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ByGoldTipsView.swift; sourceTree = "<group>"; };
 		4354472C2B3D5D8600390D0C /* MineTableFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineTableFooterView.swift; sourceTree = "<group>"; };
 		4354472E2B3D878F00390D0C /* MyCustomTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCustomTabBar.swift; sourceTree = "<group>"; };
 		4385F40E2B3DB7E5005CE3F2 /* MineAboutAppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineAboutAppCell.swift; sourceTree = "<group>"; };
@@ -215,6 +201,12 @@
 		4396526C2BB425F7007E9F9F /* BubbleTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTipsView.swift; sourceTree = "<group>"; };
 		4396526E2BB54525007E9F9F /* SocialQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialQuestion.swift; sourceTree = "<group>"; };
 		439652772BB656DD007E9F9F /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		439652792BB6C168007E9F9F /* ByGoldTipsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ByGoldTipsView.swift; sourceTree = "<group>"; };
+		4396527A2BB6C168007E9F9F /* RadarIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarIndicatorView.swift; sourceTree = "<group>"; };
+		4396527B2BB6C168007E9F9F /* RadarTargetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarTargetView.swift; sourceTree = "<group>"; };
+		4396527C2BB6C168007E9F9F /* RadarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadarView.swift; sourceTree = "<group>"; };
+		4396527D2BB6C168007E9F9F /* UseGoldTipsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UseGoldTipsView.swift; sourceTree = "<group>"; };
+		4396527F2BB6C168007E9F9F /* FindFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindFriendViewController.swift; sourceTree = "<group>"; };
 		43973B4C2B3AA64B00F73A96 /* InviteSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteSheetView.swift; sourceTree = "<group>"; };
 		43973B4E2B3AAFEE00F73A96 /* RechargeProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeProductModel.swift; sourceTree = "<group>"; };
 		43973B532B3AB22000F73A96 /* StoreMyBalanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMyBalanceCell.swift; sourceTree = "<group>"; };
@@ -313,7 +305,6 @@
 				43297B3B2B2A168200A538D0 /* UIColor+Extension.swift */,
 				4353A5242B29B57C006C7CC4 /* UIViewController+Extension.swift */,
 				43297B352B2A165400A538D0 /* UIView+Extension.swift */,
-				4353A5252B29B57C006C7CC4 /* Observable+Extensions.swift */,
 				43E3A1E32B314D950082050F /* String+Extension.swift */,
 				43E3A1E52B3152230082050F /* UIFont+Extension.swift */,
 				4391E28C2B331F0E00123E80 /* Array+Extension.swift */,
@@ -400,10 +391,10 @@
 		4353A5122B29B572006C7CC4 /* APP */ = {
 			isa = PBXGroup;
 			children = (
+				439652802BB6C168007E9F9F /* FindFriend */,
 				43297B602B2BF70500A538D0 /* API */,
 				4353A5132B29B57C006C7CC4 /* BaseController */,
 				4353A5322B29B57C006C7CC4 /* Chat */,
-				4353A51A2B29B57C006C7CC4 /* FindFriend */,
 				4353A5272B29B57C006C7CC4 /* FirendList */,
 				4353A52D2B29B57C006C7CC4 /* IAP */,
 				439652362BB067E6007E9F9F /* Map */,
@@ -430,31 +421,8 @@
 			isa = PBXGroup;
 			children = (
 				4353A5172B29B57C006C7CC4 /* ReportUserController.swift */,
-				4353A5182B29B57C006C7CC4 /* UIImagePickerController+Rx.swift */,
-				4353A5192B29B57C006C7CC4 /* RxImagePickerDelegateProxy.swift */,
 			);
 			path = Report;
-			sourceTree = "<group>";
-		};
-		4353A51A2B29B57C006C7CC4 /* FindFriend */ = {
-			isa = PBXGroup;
-			children = (
-				43297B3F2B2A17CE00A538D0 /* FindFriendViewController.swift */,
-				4353A51B2B29B57C006C7CC4 /* RadarView */,
-			);
-			path = FindFriend;
-			sourceTree = "<group>";
-		};
-		4353A51B2B29B57C006C7CC4 /* RadarView */ = {
-			isa = PBXGroup;
-			children = (
-				4353A51C2B29B57C006C7CC4 /* RadarIndicatorView.swift */,
-				43297B412B2A17F900A538D0 /* RadarView.swift */,
-				43297B3D2B2A174200A538D0 /* RadarTargetView.swift */,
-				435447282B3C6A7600390D0C /* UseGoldTipsView.swift */,
-				4354472A2B3C6A8600390D0C /* ByGoldTipsView.swift */,
-			);
-			path = RadarView;
 			sourceTree = "<group>";
 		};
 		4353A5212B29B57C006C7CC4 /* Utils */ = {
@@ -463,7 +431,6 @@
 				43189D9D2B33ED9400A212E5 /* Extension */,
 				43297B632B2BFB4400A538D0 /* NoticeView.swift */,
 				43297B612B2BFB2E00A538D0 /* AutoScrollLabel.swift */,
-				4353A5222B29B57C006C7CC4 /* Feedbacks.swift */,
 				43E3A1DF2B3144620082050F /* WaveAnimationButton.swift */,
 				43E3A1E12B3144AF0082050F /* CircularRevealAnimator.swift */,
 				43189D9B2B33EB9F00A212E5 /* CustomImageView.swift */,
@@ -564,6 +531,27 @@
 				4396526C2BB425F7007E9F9F /* BubbleTipsView.swift */,
 			);
 			path = TipsBubble;
+			sourceTree = "<group>";
+		};
+		4396527E2BB6C168007E9F9F /* RadarView */ = {
+			isa = PBXGroup;
+			children = (
+				439652792BB6C168007E9F9F /* ByGoldTipsView.swift */,
+				4396527A2BB6C168007E9F9F /* RadarIndicatorView.swift */,
+				4396527B2BB6C168007E9F9F /* RadarTargetView.swift */,
+				4396527C2BB6C168007E9F9F /* RadarView.swift */,
+				4396527D2BB6C168007E9F9F /* UseGoldTipsView.swift */,
+			);
+			path = RadarView;
+			sourceTree = "<group>";
+		};
+		439652802BB6C168007E9F9F /* FindFriend */ = {
+			isa = PBXGroup;
+			children = (
+				4396527E2BB6C168007E9F9F /* RadarView */,
+				4396527F2BB6C168007E9F9F /* FindFriendViewController.swift */,
+			);
+			path = FindFriend;
 			sourceTree = "<group>";
 		};
 		43973B502B3AB1F000F73A96 /* IAP */ = {
@@ -862,18 +850,19 @@
 				4353A54A2B29B57C006C7CC4 /* FriendListCell.swift in Sources */,
 				43973B4F2B3AAFEE00F73A96 /* RechargeProductModel.swift in Sources */,
 				43D36F012B3F137600B76D72 /* StoreTableFooterView.swift in Sources */,
-				4354472B2B3C6A8600390D0C /* ByGoldTipsView.swift in Sources */,
 				4353A5442B29B57C006C7CC4 /* UIViewController+Extension.swift in Sources */,
 				4385F40F2B3DB7E5005CE3F2 /* MineAboutAppCell.swift in Sources */,
+				439652862BB6C168007E9F9F /* FindFriendViewController.swift in Sources */,
 				43924A272B39839300F4CD25 /* EditUserInputViewController.swift in Sources */,
+				439652812BB6C168007E9F9F /* ByGoldTipsView.swift in Sources */,
 				43F6FDCF2B359DF60053AC61 /* MineSettingCell.swift in Sources */,
 				4391E28D2B331F0E00123E80 /* Array+Extension.swift in Sources */,
 				4301E7532B3AFC850073F46F /* MessageTableHeaderView.swift in Sources */,
 				43297B3C2B2A168200A538D0 /* UIColor+Extension.swift in Sources */,
 				43297B682B2C06D200A538D0 /* UserHomeCellRowModel.swift in Sources */,
 				4353A54E2B29B57C006C7CC4 /* StoreViewController.swift in Sources */,
-				4353A53D2B29B57C006C7CC4 /* RadarIndicatorView.swift in Sources */,
 				4396526F2BB54525007E9F9F /* SocialQuestion.swift in Sources */,
+				439652832BB6C168007E9F9F /* RadarTargetView.swift in Sources */,
 				4353A5552B29B5B4006C7CC4 /* TabViewController.swift in Sources */,
 				4301E74F2B3AF92E0073F46F /* ChatMessageModel.swift in Sources */,
 				43973B562B3AB22F00F73A96 /* StoreProductCell.swift in Sources */,
@@ -881,6 +870,7 @@
 				4301E7512B3AF93B0073F46F /* ChatMessageData.swift in Sources */,
 				4353A5532B29B57C006C7CC4 /* ChatMessageCell.swift in Sources */,
 				43297B6A2B2C081000A538D0 /* UserProfileTableCell.swift in Sources */,
+				439652852BB6C168007E9F9F /* UseGoldTipsView.swift in Sources */,
 				4354472D2B3D5D8600390D0C /* MineTableFooterView.swift in Sources */,
 				43924A252B396B2F00F4CD25 /* EditNickNameCell.swift in Sources */,
 				4391E28F2B331F6F00123E80 /* Dictionary+Extension.swift in Sources */,
@@ -888,24 +878,20 @@
 				4385F4112B3DBC27005CE3F2 /* AboutAppController.swift in Sources */,
 				4353A4FF2B29B3A5006C7CC4 /* AppDelegate.swift in Sources */,
 				43E3A1E22B3144AF0082050F /* CircularRevealAnimator.swift in Sources */,
-				4353A53B2B29B57C006C7CC4 /* UIImagePickerController+Rx.swift in Sources */,
 				43297B642B2BFB4400A538D0 /* NoticeView.swift in Sources */,
 				4396523D2BB10DCF007E9F9F /* MapHidingViewController.swift in Sources */,
 				4353A53A2B29B57C006C7CC4 /* ReportUserController.swift in Sources */,
 				4391E28A2B331D4C00123E80 /* UserData.swift in Sources */,
 				43E3A1E02B3144620082050F /* WaveAnimationButton.swift in Sources */,
 				4353A5492B29B57C006C7CC4 /* NumberSectionView.swift in Sources */,
-				435447292B3C6A7600390D0C /* UseGoldTipsView.swift in Sources */,
 				4396526D2BB425F7007E9F9F /* BubbleTipsView.swift in Sources */,
-				43297B422B2A17F900A538D0 /* RadarView.swift in Sources */,
 				43189D9F2B341FC000A212E5 /* BaseNavigationController.swift in Sources */,
-				4353A5422B29B57C006C7CC4 /* Feedbacks.swift in Sources */,
 				4396523F2BB16E89007E9F9F /* MapHidingCollectionViewCell.swift in Sources */,
 				439652382BB067F8007E9F9F /* MapViewController.swift in Sources */,
 				43F6FDC52B3533BD0053AC61 /* MineViewController.swift in Sources */,
-				43297B402B2A17CE00A538D0 /* FindFriendViewController.swift in Sources */,
 				43973B542B3AB22100F73A96 /* StoreMyBalanceCell.swift in Sources */,
 				439652682BB40A50007E9F9F /* EditUserQuestionTableViewCell.swift in Sources */,
+				439652822BB6C168007E9F9F /* RadarIndicatorView.swift in Sources */,
 				4396523B2BB10D9A007E9F9F /* MapSearchViewController.swift in Sources */,
 				43924A1D2B3969D300F4CD25 /* EditUserInfoViewController.swift in Sources */,
 				4353A5382B29B57C006C7CC4 /* BaseViewController.swift in Sources */,
@@ -916,17 +902,15 @@
 				4353A54B2B29B57C006C7CC4 /* FriendListController.swift in Sources */,
 				43297B392B2A166B00A538D0 /* UserItem.swift in Sources */,
 				43189D9C2B33EB9F00A212E5 /* CustomImageView.swift in Sources */,
+				439652842BB6C168007E9F9F /* RadarView.swift in Sources */,
 				439652642BB3F339007E9F9F /* FillAnswerViewController.swift in Sources */,
 				4353A5462B29B57C006C7CC4 /* UIScreen+Extension.swift in Sources */,
-				4353A5452B29B57C006C7CC4 /* Observable+Extensions.swift in Sources */,
 				4353A5522B29B57C006C7CC4 /* SendMessageAPI.swift in Sources */,
 				43297B362B2A165400A538D0 /* UIView+Extension.swift in Sources */,
-				4353A53C2B29B57C006C7CC4 /* RxImagePickerDelegateProxy.swift in Sources */,
 				43F6FDD22B35A0080053AC61 /* MineProfileTableCell.swift in Sources */,
 				4396526A2BB41C9C007E9F9F /* UserQuestionTableViewCell.swift in Sources */,
 				433E8A032B31834D002773DC /* UserHomeTableHeaderView.swift in Sources */,
 				43F6FDBF2B348E2F0053AC61 /* UITabBarController+Extensions.swift in Sources */,
-				43297B3E2B2A174200A538D0 /* RadarTargetView.swift in Sources */,
 				43F6FDCB2B359DB70053AC61 /* MineGoldTableCell.swift in Sources */,
 				43F6FDCD2B359DE70053AC61 /* MineInviteTableCell.swift in Sources */,
 				433E8A052B3197FF002773DC /* UserHomeSwitchCell.swift in Sources */,

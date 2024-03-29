@@ -40,7 +40,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window.rootViewController = TabViewController()
         window.makeKeyAndVisible()
         
-        RxImagePickerDelegateProxy.register { RxImagePickerDelegateProxy(imagePicker: $0) }
+//        RxImagePickerDelegateProxy.register { RxImagePickerDelegateProxy(imagePicker: $0) }
         
         // 监听自动续费支付完成
         SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
