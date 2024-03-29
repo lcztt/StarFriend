@@ -10,6 +10,7 @@ import SwiftyStoreKit
 import Toast_Swift
 //import AMapFoundationKit
 //import MAMapKit
+import UMCommon
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -23,6 +24,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         UICommonSetter()
+        
+        UMConfigure.initWithAppkey("66062932cac2a664de10043f", channel: "")
         
 //        AMapServices.shared().apiKey = "cde2e1cd79376e1880be566ce4566f01"
         

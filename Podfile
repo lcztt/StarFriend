@@ -5,29 +5,28 @@ target 'StarFriend' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
+  pod 'SnapKit'
+  pod 'Kingfisher'
+  pod 'Alamofire'
+  pod 'GRDB.swift'
+  
   pod 'RxSwift', '6.6.0'
   pod 'RxCocoa', '6.6.0'
   pod 'RxDataSources', '~> 5.0'
-  pod 'RxGRDB'
-  pod 'RxGRDB/SQLCipher'
-  pod 'SnapKit'
-  pod 'SwiftyStoreKit' # 内购
   pod "RxGesture"
+  #  pod 'RxCoreLocation', '~> 1.5.1'
   pod 'PromiseKit'
-  pod 'Kingfisher'
-  pod 'JXPhotoBrowser', '~> 3.0'
-#  pod "LiquidLoader", '~> 1.2.0'
-#  pod 'Alamofire' # 网络
-  pod 'Toast-Swift', '~> 5.0.1'
-#  pod 'SVProgressHUD'
-  pod 'BRPickerView'
-#  pod 'RxCoreLocation', '~> 1.5.1'
-  pod "Position", "~> 0.7.0"
-  pod 'JFPopup', '1.5.4'
   
-#  pod 'AMap2DMap'
-#  pod 'AMap3DMap'
-#  pod 'AMapLocation'
+  pod "Position", "~> 0.7.0" # 定位
+  pod 'SwiftyStoreKit' # 内购
+  
+  pod 'JXPhotoBrowser', '~> 3.0'
+  pod 'JFPopup', '1.5.4' # replaced with popupview smp
+  pod 'AMPopTip' # 提示
+  pod 'Toast-Swift', '~> 5.0.1'
+  pod 'BRPickerView'
+  
+  pod 'UMCommon' # 友盟统计
 
   post_install do |installer|
     installer.generated_projects.each do |project|

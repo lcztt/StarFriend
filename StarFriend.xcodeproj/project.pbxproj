@@ -214,6 +214,7 @@
 		439652692BB41C9C007E9F9F /* UserQuestionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserQuestionTableViewCell.swift; sourceTree = "<group>"; };
 		4396526C2BB425F7007E9F9F /* BubbleTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTipsView.swift; sourceTree = "<group>"; };
 		4396526E2BB54525007E9F9F /* SocialQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialQuestion.swift; sourceTree = "<group>"; };
+		439652772BB656DD007E9F9F /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		43973B4C2B3AA64B00F73A96 /* InviteSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InviteSheetView.swift; sourceTree = "<group>"; };
 		43973B4E2B3AAFEE00F73A96 /* RechargeProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RechargeProductModel.swift; sourceTree = "<group>"; };
 		43973B532B3AB22000F73A96 /* StoreMyBalanceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreMyBalanceCell.swift; sourceTree = "<group>"; };
@@ -391,6 +392,7 @@
 				4353A50C2B29B3A5006C7CC4 /* Info.plist */,
 				43E3A1852B2C5B8D0082050F /* avatar */,
 				439652402BB1B900007E9F9F /* color.json */,
+				439652772BB656DD007E9F9F /* PrivacyInfo.xcprivacy */,
 			);
 			path = StarFriend;
 			sourceTree = "<group>";
@@ -754,8 +756,9 @@
 			mainGroup = 4353A4F22B29B3A5006C7CC4;
 			packageReferences = (
 				43973B492B39ADE300F73A96 /* XCRemoteSwiftPackageReference "SwiftLocation" */,
-				435447252B3B1D2A00390D0C /* XCRemoteSwiftPackageReference "InputBarAccessoryView.git" */,
+				435447252B3B1D2A00390D0C /* XCRemoteSwiftPackageReference "InputBarAccessoryView" */,
 				4396525E2BB311B0007E9F9F /* XCRemoteSwiftPackageReference "SHSearchBar" */,
+				439652782BB66930007E9F9F /* XCRemoteSwiftPackageReference "PopupView" */,
 			);
 			productRefGroup = 4353A4FC2B29B3A5006C7CC4 /* Products */;
 			projectDirPath = "";
@@ -1080,7 +1083,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.0.2;
-				DEVELOPMENT_TEAM = 9KKD3X33MC;
+				DEVELOPMENT_TEAM = L7L2847Q43;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/StarFriend/APP/Frameworks",
@@ -1123,7 +1126,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.0.0.2;
-				DEVELOPMENT_TEAM = 9KKD3X33MC;
+				DEVELOPMENT_TEAM = L7L2847Q43;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/StarFriend/APP/Frameworks",
@@ -1182,7 +1185,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		435447252B3B1D2A00390D0C /* XCRemoteSwiftPackageReference "InputBarAccessoryView.git" */ = {
+		435447252B3B1D2A00390D0C /* XCRemoteSwiftPackageReference "InputBarAccessoryView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/nathantannar4/InputBarAccessoryView.git";
 			requirement = {
@@ -1198,6 +1201,14 @@
 				kind = branch;
 			};
 		};
+		439652782BB66930007E9F9F /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.1;
+			};
+		};
 		43973B492B39ADE300F73A96 /* XCRemoteSwiftPackageReference "SwiftLocation" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/malcommac/SwiftLocation";
@@ -1211,7 +1222,7 @@
 /* Begin XCSwiftPackageProductDependency section */
 		435447262B3B1D2A00390D0C /* InputBarAccessoryView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 435447252B3B1D2A00390D0C /* XCRemoteSwiftPackageReference "InputBarAccessoryView.git" */;
+			package = 435447252B3B1D2A00390D0C /* XCRemoteSwiftPackageReference "InputBarAccessoryView" */;
 			productName = InputBarAccessoryView;
 		};
 		43924A292B39ACCF00F4CD25 /* SwiftLocation */ = {
